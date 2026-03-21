@@ -9,6 +9,7 @@
 
 <style>
 
+/* ===== ESTILO GENERAL DE LA PÁGINA ===== */
 body{
 font-family: Arial, sans-serif;
 margin:0;
@@ -16,6 +17,7 @@ background:#F5F7FA;
 color:#333;
 }
 
+/* ===== HEADER (PORTADA) ===== */
 header{
 background:#1F5AA6;
 color:white;
@@ -23,6 +25,7 @@ text-align:center;
 padding:80px 20px;
 }
 
+/* Logo circular */
 .logo{
 width:220px;
 border-radius:50%;
@@ -39,6 +42,7 @@ header p{
 font-size:20px;
 }
 
+/* ===== SECCIONES ===== */
 section{
 max-width:1000px;
 margin:auto;
@@ -51,6 +55,7 @@ color:#1F5AA6;
 margin-bottom:30px;
 }
 
+/* ===== TARJETAS GENERALES ===== */
 .cards{
 display:flex;
 flex-wrap:wrap;
@@ -66,6 +71,68 @@ min-width:250px;
 box-shadow:0 4px 10px rgba(0,0,0,0.1);
 }
 
+/* ===== SECCIÓN PRO: MIEMBROS ===== */
+.miembros{
+display:grid;
+grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+gap:30px;
+}
+
+/* Tarjeta individual */
+.miembro{
+background:white;
+border-radius:16px;
+padding:25px;
+text-align:center;
+box-shadow:0 8px 20px rgba(0,0,0,0.08);
+transition: all 0.3s ease;
+}
+
+/* Animación al pasar el mouse */
+.miembro:hover{
+transform: translateY(-10px);
+box-shadow:0 15px 30px rgba(0,0,0,0.15);
+}
+
+/* Imagen del miembro */
+.miembro img{
+width:130px;
+height:130px;
+border-radius:50%;
+object-fit:cover;
+margin-bottom:15px;
+border:4px solid #1F5AA6;
+}
+
+.miembro h3{
+margin:10px 0 5px;
+color:#1F5AA6;
+}
+
+/* Rol del miembro */
+.miembro span{
+font-size:14px;
+color:#777;
+display:block;
+margin-bottom:10px;
+}
+
+/* Mensaje oculto */
+.mensaje{
+font-size:14px;
+opacity:0;
+max-height:0;
+transition: all 0.3s ease;
+}
+
+/* Mostrar mensaje al pasar el mouse */
+.miembro:hover .mensaje{
+opacity:1;
+max-height:200px;
+margin-top:10px;
+}
+
+/* ===== TABLA DE PROGRAMA ===== */
 table{
 width:100%;
 border-collapse:collapse;
@@ -87,6 +154,7 @@ padding:10px;
 text-align:center;
 }
 
+/* ===== FOOTER ===== */
 footer{
 background:#1F5AA6;
 color:white;
@@ -107,8 +175,10 @@ font-weight:bold;
 
 <body>
 
+<!-- ===== HEADER PRINCIPAL ===== -->
 <header>
 
+<!-- IMPORTANTE: el logo debe estar en el repo -->
 <img src="logo_isrib.jpeg" class="logo">
 
 <h1>ISRIB 2026</h1>
@@ -120,6 +190,7 @@ font-weight:bold;
 </header>
 
 
+<!-- ===== SOBRE EL EVENTO ===== -->
 <section>
 
 <h2>Sobre el evento</h2>
@@ -134,12 +205,14 @@ para fomentar la investigación científica y la innovación.
 
 
 
+<!-- ===== ÁREAS ===== -->
 <section>
 
 <h2>Áreas del Bootcamp</h2>
 
 <div class="cards">
 
+<!-- Puedes duplicar estas tarjetas -->
 <div class="card">
 <h3>Ingeniería Biomédica</h3>
 <p>Tecnología médica, dispositivos biomédicos y soluciones para el sector salud.</p>
@@ -161,35 +234,27 @@ para fomentar la investigación científica y la innovación.
 
 
 
+<!-- ===== MIEMBROS DEL COMITÉ ===== -->
 <section>
 
-<h2>Comité Organizador</h2>
+<h2>Mensajes del Comité</h2>
 
-<div class="cards">
+<div class="miembros">
 
-<div class="card">
-<h3>Coordinación General</h3>
-<p>
-• Nombre miembro 1<br>
-• Nombre miembro 2<br>
-• Nombre miembro 3
-</p>
+<!-- DUPLICA ESTE BLOQUE PARA LOS 15 MIEMBROS -->
+<div class="miembro">
+
+<!-- IMPORTANTE: ruta de la imagen -->
+<img src="miembros/persona1.jpg">
+
+<h3>Nombre Apellido</h3>
+
+<span>Rol (Ej: Coordinación General)</span>
+
+<div class="mensaje">
+Es un honor formar parte de ISRIB y contribuir al desarrollo de la investigación.
 </div>
 
-<div class="card">
-<h3>Área Académica</h3>
-<p>
-• Nombre miembro<br>
-• Nombre miembro
-</p>
-</div>
-
-<div class="card">
-<h3>Comunicaciones</h3>
-<p>
-• Nombre miembro<br>
-• Nombre miembro
-</p>
 </div>
 
 </div>
@@ -198,6 +263,7 @@ para fomentar la investigación científica y la innovación.
 
 
 
+<!-- ===== PONENTES ===== -->
 <section>
 
 <h2>Ponentes Invitados</h2>
@@ -206,26 +272,7 @@ para fomentar la investigación científica y la innovación.
 
 <div class="card">
 <h3>Nombre del Ponente</h3>
-<p>
-Institución<br>
-Tema de la charla
-</p>
-</div>
-
-<div class="card">
-<h3>Nombre del Ponente</h3>
-<p>
-Institución<br>
-Tema de la charla
-</p>
-</div>
-
-<div class="card">
-<h3>Nombre del Ponente</h3>
-<p>
-Institución<br>
-Tema de la charla
-</p>
+<p>Institución<br>Tema de la charla</p>
 </div>
 
 </div>
@@ -234,6 +281,7 @@ Tema de la charla
 
 
 
+<!-- ===== PROGRAMA ===== -->
 <section>
 
 <h2>Programa del Evento</h2>
@@ -252,36 +300,13 @@ Tema de la charla
 <td>Comité organizador</td>
 </tr>
 
-<tr>
-<td>09:30</td>
-<td>Charla Magistral</td>
-<td>Nombre del ponente</td>
-</tr>
-
-<tr>
-<td>10:30</td>
-<td>Break</td>
-<td>-</td>
-</tr>
-
-<tr>
-<td>11:00</td>
-<td>Panel Interdisciplinario</td>
-<td>Invitados</td>
-</tr>
-
-<tr>
-<td>12:30</td>
-<td>Cierre</td>
-<td>Organización</td>
-</tr>
-
 </table>
 
 </section>
 
 
 
+<!-- ===== FOOTER ===== -->
 <footer>
 
 <p>Contacto: isrib.official@gmail.com</p>
