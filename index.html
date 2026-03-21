@@ -9,15 +9,43 @@
 
 <style>
 
-/* ===== ESTILO GENERAL DE LA PÁGINA ===== */
+/* ===== SCROLL SUAVE ===== */
+html{
+scroll-behavior:smooth;
+}
+
+/* ===== BODY ===== */
 body{
 font-family: Arial, sans-serif;
 margin:0;
 background:#F5F7FA;
 color:#333;
+padding-top:70px; /* espacio para menú fijo */
 }
 
-/* ===== HEADER (PORTADA) ===== */
+/* ===== NAVBAR ===== */
+.navbar{
+position:fixed;
+top:0;
+width:100%;
+background:#1F5AA6;
+padding:15px;
+text-align:center;
+z-index:1000;
+}
+
+.navbar a{
+color:white;
+margin:0 15px;
+text-decoration:none;
+font-weight:bold;
+}
+
+.navbar a:hover{
+text-decoration:underline;
+}
+
+/* ===== HEADER ===== */
 header{
 background:#1F5AA6;
 color:white;
@@ -25,7 +53,6 @@ text-align:center;
 padding:80px 20px;
 }
 
-/* Logo circular */
 .logo{
 width:220px;
 border-radius:50%;
@@ -55,7 +82,7 @@ color:#1F5AA6;
 margin-bottom:30px;
 }
 
-/* ===== TARJETAS GENERALES ===== */
+/* ===== CARDS ===== */
 .cards{
 display:flex;
 flex-wrap:wrap;
@@ -71,14 +98,13 @@ min-width:250px;
 box-shadow:0 4px 10px rgba(0,0,0,0.1);
 }
 
-/* ===== SECCIÓN PRO: MIEMBROS ===== */
+/* ===== MIEMBROS ===== */
 .miembros{
 display:grid;
 grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
 gap:30px;
 }
 
-/* Tarjeta individual */
 .miembro{
 background:white;
 border-radius:16px;
@@ -88,13 +114,11 @@ box-shadow:0 8px 20px rgba(0,0,0,0.08);
 transition: all 0.3s ease;
 }
 
-/* Animación al pasar el mouse */
 .miembro:hover{
 transform: translateY(-10px);
 box-shadow:0 15px 30px rgba(0,0,0,0.15);
 }
 
-/* Imagen del miembro */
 .miembro img{
 width:130px;
 height:130px;
@@ -109,7 +133,6 @@ margin:10px 0 5px;
 color:#1F5AA6;
 }
 
-/* Rol del miembro */
 .miembro span{
 font-size:14px;
 color:#777;
@@ -117,7 +140,6 @@ display:block;
 margin-bottom:10px;
 }
 
-/* Mensaje oculto */
 .mensaje{
 font-size:14px;
 opacity:0;
@@ -125,14 +147,13 @@ max-height:0;
 transition: all 0.3s ease;
 }
 
-/* Mostrar mensaje al pasar el mouse */
 .miembro:hover .mensaje{
 opacity:1;
 max-height:200px;
 margin-top:10px;
 }
 
-/* ===== TABLA DE PROGRAMA ===== */
+/* ===== TABLA ===== */
 table{
 width:100%;
 border-collapse:collapse;
@@ -175,10 +196,20 @@ font-weight:bold;
 
 <body>
 
-<!-- ===== HEADER PRINCIPAL ===== -->
-<header>
+<!-- ===== MENÚ ===== -->
+<nav class="navbar">
+<a href="#inicio">Inicio</a>
+<a href="#sobre">Sobre</a>
+<a href="#areas">Áreas</a>
+<a href="#miembros">Comité</a>
+<a href="#ponentes">Ponentes</a>
+<a href="#programa">Programa</a>
+</nav>
 
-<!-- IMPORTANTE: el logo debe estar en el repo -->
+
+<!-- ===== HEADER ===== -->
+<header id="inicio">
+
 <img src="logo_isrib.jpeg" class="logo">
 
 <h1>ISRIB 2026</h1>
@@ -190,42 +221,37 @@ font-weight:bold;
 </header>
 
 
-<!-- ===== SOBRE EL EVENTO ===== -->
-<section>
+<section id="sobre">
 
 <h2>Sobre el evento</h2>
 
 <p style="text-align:center; max-width:700px; margin:auto;">
-El International Student Research & Innovation Bootcamp (ISRIB) es un evento interdisciplinario
-que reúne a estudiantes de Ingeniería Biomédica, Derecho y Ciencias de la Información
-para fomentar la investigación científica y la innovación.
+ISRIB es un evento interdisciplinario que reúne a estudiantes de Ingeniería Biomédica,
+Derecho y Ciencias de la Información para fomentar la investigación científica.
 </p>
 
 </section>
 
 
-
-<!-- ===== ÁREAS ===== -->
-<section>
+<section id="areas">
 
 <h2>Áreas del Bootcamp</h2>
 
 <div class="cards">
 
-<!-- Puedes duplicar estas tarjetas -->
 <div class="card">
 <h3>Ingeniería Biomédica</h3>
-<p>Tecnología médica, dispositivos biomédicos y soluciones para el sector salud.</p>
+<p>Tecnología médica y salud.</p>
 </div>
 
 <div class="card">
 <h3>Derecho</h3>
-<p>Aspectos legales, regulación tecnológica y bioética.</p>
+<p>Regulación y bioética.</p>
 </div>
 
 <div class="card">
 <h3>Ciencias de la Información</h3>
-<p>Datos, inteligencia artificial y sistemas de información para investigación.</p>
+<p>Datos e inteligencia artificial.</p>
 </div>
 
 </div>
@@ -233,28 +259,17 @@ para fomentar la investigación científica y la innovación.
 </section>
 
 
-
-<!-- ===== MIEMBROS DEL COMITÉ ===== -->
-<section>
+<section id="miembros">
 
 <h2>Mensajes del Comité</h2>
 
 <div class="miembros">
 
-<!-- DUPLICA ESTE BLOQUE PARA LOS 15 MIEMBROS -->
 <div class="miembro">
-
-<!-- IMPORTANTE: ruta de la imagen -->
 <img src="miembros/persona1.jpg">
-
-<h3>Nombre Apellido</h3>
-
-<span>Rol (Ej: Coordinación General)</span>
-
-<div class="mensaje">
-Es un honor formar parte de ISRIB y contribuir al desarrollo de la investigación.
-</div>
-
+<h3>Nombre</h3>
+<span>Rol</span>
+<div class="mensaje">Mensaje del miembro.</div>
 </div>
 
 </div>
@@ -262,17 +277,15 @@ Es un honor formar parte de ISRIB y contribuir al desarrollo de la investigació
 </section>
 
 
+<section id="ponentes">
 
-<!-- ===== PONENTES ===== -->
-<section>
-
-<h2>Ponentes Invitados</h2>
+<h2>Ponentes</h2>
 
 <div class="cards">
 
 <div class="card">
-<h3>Nombre del Ponente</h3>
-<p>Institución<br>Tema de la charla</p>
+<h3>Nombre del ponente</h3>
+<p>Institución<br>Tema</p>
 </div>
 
 </div>
@@ -280,11 +293,9 @@ Es un honor formar parte de ISRIB y contribuir al desarrollo de la investigació
 </section>
 
 
+<section id="programa">
 
-<!-- ===== PROGRAMA ===== -->
-<section>
-
-<h2>Programa del Evento</h2>
+<h2>Programa</h2>
 
 <table>
 
@@ -297,7 +308,7 @@ Es un honor formar parte de ISRIB y contribuir al desarrollo de la investigació
 <tr>
 <td>09:00</td>
 <td>Apertura</td>
-<td>Comité organizador</td>
+<td>Equipo</td>
 </tr>
 
 </table>
@@ -305,23 +316,16 @@ Es un honor formar parte de ISRIB y contribuir al desarrollo de la investigació
 </section>
 
 
-
-<!-- ===== FOOTER ===== -->
 <footer>
 
 <p>Contacto: isrib.official@gmail.com</p>
 
 <div class="social">
-
 <a href="https://www.instagram.com/isrib.official/" target="_blank">Instagram</a>
-
 <a href="https://www.facebook.com/profile.php?id=61580579842807" target="_blank">Facebook</a>
-
 </div>
 
-<p style="margin-top:20px;">
-© 2026 ISRIB Bootcamp
-</p>
+<p>© 2026 ISRIB</p>
 
 </footer>
 
