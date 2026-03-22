@@ -123,13 +123,11 @@ background:white;
 border-radius:18px;
 padding:30px;
 text-align:center;
-box-shadow:0 10px 25px rgba(0,0,0,0.1);
 transition: all 0.3s ease;
 }
 
 .miembro:hover{
 transform: translateY(-10px);
-box-shadow:0 15px 30px rgba(0,0,0,0.15);
 }
 
 .miembro img{
@@ -137,7 +135,6 @@ width:150px;
 height:150px;
 border-radius:50%; /* 🔥 CLAVE */
 object-fit:cover;  /* 🔥 evita deformación */
-box-shadow:0 5px 15px rgba(0,0,0,0.2);
 }
 
 .miembro h3{
@@ -281,6 +278,31 @@ cursor:pointer;
 background:white;
 }
 
+#ponentes{
+background: linear-gradient(135deg, #1F5AA6, #2E7BEF);
+color:white;
+border-radius:20px;
+margin-top:40px;
+}
+
+#ponentes h2{
+color:white;
+font-size:32px;
+}
+
+#ponentes .card{
+transform: scale(1.05);
+box-shadow:0 10px 30px rgba(0,0,0,0.3);
+}
+
+#ponentes .card:hover{
+transform: scale(1.08);
+}
+
+#ponentes .ponente{
+border-left:5px solid #5FA33A;
+}
+  
 .ponente:hover{
 transform: translateY(-8px);
 box-shadow:0 12px 25px rgba(0,0,0,0.15);
@@ -416,7 +438,90 @@ Derecho y Ciencias de la Información para fomentar la investigación científic
 
 </section>
 
+<p style="text-align:center; color:white;">
+Conoce a nuestros speakers invitados
+</p>
+<section id="ponentes">
 
+<h2>Ponentes</h2>
+
+<div class="carousel">
+
+<button onclick="mover(-1, 'ponentes-track')">◀</button>
+
+<div class="carousel-wrapper">
+
+<div class="carousel-track" id="ponentes-track">
+
+<!-- 🔽 GRUPO 1 -->
+<div class="grupo">
+
+<div class="card ponente">
+
+  <img src="ponentes/ponente1.webp" class="foto-ponente" loading="lazy">
+
+  <div class="info">
+    <h3>Ponente 1</h3>
+    <span class="uni">Universidad</span>
+    <p class="tema">Tema de la charla</p>
+  </div>
+
+</div>
+
+<div class="card ponente">
+
+  <img src="ponentes/ponente1.webp" class="foto-ponente" loading="lazy">
+
+  <div class="info">
+    <h3>Ponente 2</h3>
+    <span class="uni">Universidad</span>
+    <p class="tema">Tema de la charla</p>
+  </div>
+
+</div>
+
+</div>
+
+<!-- 🔽 GRUPO 2 -->
+<div class="grupo">
+
+<div class="card ponente">
+
+  <img src="ponentes/ponente1.webp" class="foto-ponente" loading="lazy">
+
+  <div class="info">
+    <h3>Ponente 3</h3>
+    <span class="uni">Universidad</span>
+    <p class="tema">Tema de la charla</p>
+  </div>
+
+</div>
+
+<div class="card ponente">
+
+  <img src="ponentes/ponente1.webp" class="foto-ponente" loading="lazy">
+
+  <div class="info">
+    <h3>Ponente 4</h3>
+    <span class="uni">Universidad</span>
+    <p class="tema">Tema de la charla</p>
+  </div>
+
+</div>
+
+</div>
+
+</div> <!-- 👈 CIERRA carousel-track -->
+</div> <!-- 👈 CIERRA wrapper -->
+
+<button onclick="mover(1, 'ponentes-track')">▶</button>
+
+</div> <!-- 👈 CIERRA carousel -->
+
+<div class="indicadores" id="dots-ponentes-track"></div>
+
+</section>
+  
 <section id="miembros">
 
 <h2>Comité Organizador</h2>
@@ -564,86 +669,6 @@ Derecho y Ciencias de la Información para fomentar la investigación científic
 </section>
 
 
-<section id="ponentes">
-
-<h2>Ponentes</h2>
-
-<div class="carousel">
-
-<button onclick="mover(-1, 'ponentes-track')">◀</button>
-
-<div class="carousel-wrapper">
-
-<div class="carousel-track" id="ponentes-track">
-
-<!-- 🔽 GRUPO 1 -->
-<div class="grupo">
-
-<div class="card ponente">
-
-  <img src="ponentes/ponente1.webp" class="foto-ponente" loading="lazy">
-
-  <div class="info">
-    <h3>Ponente 1</h3>
-    <span class="uni">Universidad</span>
-    <p class="tema">Tema de la charla</p>
-  </div>
-
-</div>
-
-<div class="card ponente">
-
-  <img src="ponentes/ponente1.webp" class="foto-ponente" loading="lazy">
-
-  <div class="info">
-    <h3>Ponente 2</h3>
-    <span class="uni">Universidad</span>
-    <p class="tema">Tema de la charla</p>
-  </div>
-
-</div>
-
-</div>
-
-<!-- 🔽 GRUPO 2 -->
-<div class="grupo">
-
-<div class="card ponente">
-
-  <img src="ponentes/ponente1.webp" class="foto-ponente" loading="lazy">
-
-  <div class="info">
-    <h3>Ponente 3</h3>
-    <span class="uni">Universidad</span>
-    <p class="tema">Tema de la charla</p>
-  </div>
-
-</div>
-
-<div class="card ponente">
-
-  <img src="ponentes/ponente1.webp" class="foto-ponente" loading="lazy">
-
-  <div class="info">
-    <h3>Ponente 4</h3>
-    <span class="uni">Universidad</span>
-    <p class="tema">Tema de la charla</p>
-  </div>
-
-</div>
-
-</div>
-
-</div> <!-- 👈 CIERRA carousel-track -->
-</div> <!-- 👈 CIERRA wrapper -->
-
-<button onclick="mover(1, 'ponentes-track')">▶</button>
-
-</div> <!-- 👈 CIERRA carousel -->
-
-<div class="indicadores" id="dots-ponentes-track"></div>
-
-</section>
 
 <section id="programa">
 
