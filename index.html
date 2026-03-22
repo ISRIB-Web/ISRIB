@@ -2,85 +2,44 @@
 <html lang="es">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>ISRIB 2026</title>
+<title>Test Slider</title>
 
 <style>
+body{font-family:Arial}
 
-/* ===== GENERAL ===== */
-body{
-font-family: Arial;
-margin:0;
-background:#f5f7fa;
-}
-
-/* ===== HEADER ===== */
-header{
-background:#1F5AA6;
-color:white;
-text-align:center;
-padding:60px;
-}
-
-.logo{
-width:200px;
-border-radius:50%;
-}
-
-/* ===== CARRUSEL ===== */
+/* CARRUSEL */
 .carousel{
 display:flex;
 align-items:center;
 justify-content:center;
-margin:40px;
+gap:10px;
 }
 
-.wrapper{
+.carousel-wrapper{
 overflow:hidden;
-width:80%;
+width:600px;
+border:2px solid red; /* 👈 PARA VER SI FUNCIONA */
 }
 
-.track{
+.carousel-track{
 display:flex;
 transition:0.5s;
 }
 
-.slide{
+.grupo{
 min-width:100%;
 display:flex;
-gap:20px;
-justify-content:center;
+gap:10px;
 }
 
-/* ===== CARDS ===== */
 .card{
-background:white;
+background:#eee;
 padding:20px;
-border-radius:10px;
-width:250px;
-text-align:center;
-box-shadow:0 5px 10px rgba(0,0,0,0.1);
-}
-
-.card img{
-width:120px;
-height:120px;
-border-radius:50%;
-}
-
-/* ===== BOTONES ===== */
-button{
-background:#1F5AA6;
-color:white;
-border:none;
-padding:10px;
-cursor:pointer;
-}
-
-/* ===== DOTS ===== */
-.dots{
+flex:1;
 text-align:center;
 }
+
+button{padding:10px;}
 
 .dot{
 width:10px;
@@ -92,166 +51,91 @@ border-radius:50%;
 cursor:pointer;
 }
 
-.active{
-background:#1F5AA6;
-}
+.active{background:black;}
 
 </style>
-
 </head>
 
 <body>
 
-<header>
-<img src="logo_isrib.jpeg" class="logo">
-<h1>ISRIB 2026</h1>
-</header>
-
-<!-- ===================== -->
-<!-- COMITÉ -->
-<!-- ===================== -->
-<h2 style="text-align:center;">Comité</h2>
+<h2>Slider prueba</h2>
 
 <div class="carousel">
 
-<button onclick="move(-1,'comite')">◀</button>
+<button onclick="mover(-1)">◀</button>
 
-<div class="wrapper">
-<div class="track" id="comite">
+<div class="carousel-wrapper">
+<div class="carousel-track" id="slider">
 
-<!-- SLIDE 1 -->
-<div class="slide">
-
-<!-- 👇 EDITA AQUÍ -->
-<div class="card">
-<img src="ISRIB/miembros/prueba1.jpg">
-<h3>Nombre</h3>
-<p>Rol + descripción</p>
+<div class="grupo">
+<div class="card">1</div>
+<div class="card">2</div>
 </div>
 
-<div class="card">
-<img src="ISRIB/miembros/prueba1.jpg">
-<h3>Nombre</h3>
-<p>Rol + descripción</p>
+<div class="grupo">
+<div class="card">3</div>
+<div class="card">4</div>
 </div>
 
-<div class="card">
-<img src="ISRIB/miembros/prueba1.jpg">
-<h3>Nombre</h3>
-<p>Rol + descripción</p>
-</div>
-
-</div>
-
-<!-- 👉 DUPLICA ESTE BLOQUE PARA MÁS PERSONAS -->
-<div class="slide">
-<div class="card"><img src="ISRIB/miembros/prueba1.jpg"><h3>Nombre</h3><p>Desc</p></div>
-<div class="card"><img src="ISRIB/miembros/prueba1.jpg"><h3>Nombre</h3><p>Desc</p></div>
-<div class="card"><img src="ISRIB/miembros/prueba1.jpg"><h3>Nombre</h3><p>Desc</p></div>
+<div class="grupo">
+<div class="card">5</div>
+<div class="card">6</div>
 </div>
 
 </div>
 </div>
 
-<button onclick="move(1,'comite')">▶</button>
+<button onclick="mover(1)">▶</button>
 
 </div>
 
-<div class="dots" id="dots-comite"></div>
-
-<!-- ===================== -->
-<!-- PONENTES -->
-<!-- ===================== -->
-<h2 style="text-align:center;">Ponentes</h2>
-
-<div class="carousel">
-
-<button onclick="move(-1,'ponentes')">◀</button>
-
-<div class="wrapper">
-<div class="track" id="ponentes">
-
-<!-- SLIDE -->
-<div class="slide">
-
-<!-- 👇 EDITA AQUÍ -->
-<div class="card">
-<h3>Ponente</h3>
-<p>Universidad<br><b>Tema</b></p>
-</div>
-
-<div class="card">
-<h3>Ponente</h3>
-<p>Universidad<br><b>Tema</b></p>
-</div>
-
-</div>
-
-<!-- 👉 DUPLICA PARA MÁS -->
-<div class="slide">
-<div class="card"><h3>Ponente</h3></div>
-<div class="card"><h3>Ponente</h3></div>
-</div>
-
-</div>
-</div>
-
-<button onclick="move(1,'ponentes')">▶</button>
-
-</div>
-
-<div class="dots" id="dots-ponentes"></div>
+<div id="dots"></div>
 
 <script>
 
-/* ===== SLIDER SIMPLE ===== */
-let sliders = {
-comite:0,
-ponentes:0
-};
+let index=0;
 
-function init(id){
-let track = document.getElementById(id);
-let dots = document.getElementById("dots-"+id);
+function init(){
+let total=document.getElementById("slider").children.length;
+let dots=document.getElementById("dots");
 
-for(let i=0;i<track.children.length;i++){
+for(let i=0;i<total;i++){
 let d=document.createElement("span");
 d.className="dot";
 if(i===0)d.classList.add("active");
 
-d.onclick=()=>go(i,id);
+d.onclick=()=>irA(i);
 dots.appendChild(d);
 }
 }
 
-function move(dir,id){
-let track=document.getElementById(id);
+function mover(dir){
+let track=document.getElementById("slider");
 let total=track.children.length;
 
-sliders[id]+=dir;
+index+=dir;
 
-if(sliders[id]<0)sliders[id]=0;
-if(sliders[id]>=total)sliders[id]=total-1;
+if(index<0)index=0;
+if(index>=total)index=total-1;
 
-track.style.transform=`translateX(-${sliders[id]*100}%)`;
+track.style.transform=`translateX(-${index*100}%)`;
 
-update(id);
+actualizar();
 }
 
-function go(i,id){
-sliders[id]=i;
-document.getElementById(id).style.transform=`translateX(-${i*100}%)`;
-update(id);
+function irA(i){
+index=i;
+document.getElementById("slider").style.transform=`translateX(-${i*100}%)`;
+actualizar();
 }
 
-function update(id){
-let dots=document.querySelectorAll("#dots-"+id+" .dot");
+function actualizar(){
+let dots=document.querySelectorAll(".dot");
 dots.forEach(d=>d.classList.remove("active"));
-dots[sliders[id]].classList.add("active");
+dots[index].classList.add("active");
 }
 
-init("comite");
-init("ponentes");
+init();
 
 </script>
 
