@@ -100,7 +100,7 @@ background:white;
 padding:30px;
 border-radius:14px;
 flex:1;
-min-width:300px;
+min-width:400px;
 box-shadow:0 6px 15px rgba(0,0,0,0.12);
 font-size:16px;
 }
@@ -201,7 +201,7 @@ padding:40px;
 display:inline-block;
 margin:10px;
 padding:10px 15px;
-background:#5FA33A;
+background:var(--azul);
 color:white;
 border-radius:6px;
 text-decoration:none;
@@ -293,15 +293,6 @@ margin-top:20px;
 #ponentes h2{
 color:white;
 font-size:32px;
-}
-
-#ponentes .card{
-transform: scale(2);
-box-shadow:0 10px 30px rgba(0,0,0,0.3);
-}
-
-#ponentes .card:hover{
-transform: scale(2);
 }
 
 #ponentes .ponente{
@@ -439,16 +430,17 @@ Derecho y Ciencias de la Información para fomentar la investigación científic
 </div>
 
 </div>
+</div>
 
 </section>
 
-<p style="text-align:center; color:white;">
-Conoce a nuestros speakers invitados
-</p>
+
 <section id="ponentes">
 
 <h2>Ponentes</h2>
-
+<p style="text-align:center; color:white;">
+Conoce a nuestros speakers invitados
+</p>
 <div class="carousel">
 
 <button onclick="mover(-1, 'ponentes-track')">◀</button>
