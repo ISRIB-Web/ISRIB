@@ -237,8 +237,9 @@ transition:transform 0.5s ease-in-out;
 
 .grupo{
 display:grid;
-grid-template-columns: repeat(3, 1fr); /* default comité */
+grid-template-columns: repeat(3, 1fr);
 min-width:100%;
+box-sizing:border-box; /* ✅ AÑADE esto */
 gap:25px;
 }
 #ponentes .grupo{
@@ -523,22 +524,30 @@ dots[sliders[id].index].classList.add("active");
 function mover(dir, id){
 const track = document.getElementById(id);
 const total = track.children.length;
+const wrapper = track.parentElement;
 
 sliders[id].index += dir;
 
 if(sliders[id].index < 0) sliders[id].index = 0;
 if(sliders[id].index >= total) sliders[id].index = total - 1;
 
-track.style.transform = `translateX(-${sliders[id].index * 100}%)`;
+// 🔥 calcular ancho REAL
+const ancho = wrapper.offsetWidth;
+
+track.style.transform = `translateX(-${sliders[id].index * ancho}px)`;
 
 actualizarDots(id);
 }
 
 function irA(i, id){
-sliders[id].index = i;
 const track = document.getElementById(id);
+const wrapper = track.parentElement;
 
-track.style.transform = `translateX(-${i * 100}%)`;
+sliders[id].index = i;
+
+const ancho = wrapper.offsetWidth;
+
+track.style.transform = `translateX(-${i * ancho}px)`;
 
 actualizarDots(id);
 }
