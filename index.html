@@ -160,13 +160,46 @@ display:block;
 margin-bottom:10px;
 }
 
-.mensaje{
-font-size:14px;
-opacity:0;
-max-height:0;
-transition: all 0.3s ease;
+.miembro{
+  position: relative;
+  overflow: hidden;
 }
 
+.mensaje{
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+
+  background: linear-gradient(to top, rgba(0,0,0,0.8), transparent);
+  color: white;
+  padding: 20px;
+  font-size: 14px;
+
+  opacity: 0;
+  transform: translateY(100%);
+  transition: all 0.4s ease;
+
+  border-radius: 0 0 18px 18px;
+}
+
+/* aparece al pasar el mouse */
+.miembro:hover .mensaje{
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@media(max-width:768px){
+  .mensaje{
+    position: static;
+    opacity: 1;
+    transform: none;
+    background: none;
+    color: var(--gris-oscuro);
+    padding: 10px 0;
+  }
+}
+  
 .miembro:hover .mensaje{
 opacity:1;
 max-height:200px;
@@ -543,10 +576,13 @@ Conoce a nuestros speakers invitados
 <!--  GRUPO 1 -->
 <div class="grupo">
 <div class="miembro">
-<img src="ISRIB/miembros/prueba1.jpg">
-<h3>Nombre 1</h3>
-<span>Rol</span>
-<p>Descripción</p>
+  <img src="ISRIB/miembros/prueba1.jpg">
+  <h3>Nombre 1</h3>
+  <span>Rol</span>
+
+  <p class="mensaje">
+    Estudiante de ingeniería biomédica apasionado por la investigación y la innovación.
+  </p>
 </div>
 
 <div class="miembro">
