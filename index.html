@@ -232,7 +232,7 @@ max-width:95%;
 
 .carousel-track{
 display:flex;
-transition:transform 0.5s ease;
+transition:transform 0.5s ease-in-out;
 }
 
 .grupo{
@@ -396,11 +396,11 @@ Derecho y Ciencias de la Información para fomentar la investigación científic
 
 <div class="carousel">
 
-<button onclick="mover(-1, 'ponentes')">◀</button>
+<button onclick="mover(-1, 'ponentes-track')">◀</button>
 
 <div class="carousel-wrapper">
 
-<div class="carousel-track" id="ponentes">
+<div class="carousel-track" id="ponentes-track">
 
 <!-- 🔽 GRUPO 1 -->
 <div class="grupo">
@@ -435,11 +435,11 @@ Derecho y Ciencias de la Información para fomentar la investigación científic
 </div> <!-- 👈 CIERRA carousel-track -->
 </div> <!-- 👈 CIERRA wrapper -->
 
-<button onclick="mover(1, 'ponentes')">▶</button>
+<button onclick="mover(1, 'ponentes-track')">▶</button>
 
 </div> <!-- 👈 CIERRA carousel -->
 
-<div class="indicadores" id="dots-ponentes"></div>
+<div class="indicadores" id="dots-ponentes-track"></div>
 
 </section>
 
@@ -490,7 +490,7 @@ Derecho y Ciencias de la Información para fomentar la investigación científic
 
 let sliders = {
 comite: { index: 0 },
-ponentes: { index: 0 }
+"ponentes-track": { index: 0 }
 };
 
 function initSlider(id){
@@ -545,7 +545,7 @@ actualizarDots(id);
 
 /* inicializar */
 initSlider("comite");
-initSlider("ponentes");
+initSlider("ponentes-track");
 
 </script>
 
