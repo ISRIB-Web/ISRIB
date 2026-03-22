@@ -265,6 +265,60 @@ cursor:pointer;
 .dot.active{
 background:#1F5AA6;
 }
+/* ===== PONENTES PRO ===== */
+
+.ponente{
+display:flex;
+gap:15px;
+align-items:center;
+padding:20px;
+border-radius:16px;
+transition: all 0.3s ease;
+cursor:pointer;
+background:white;
+}
+
+.ponente:hover{
+transform: translateY(-8px);
+box-shadow:0 12px 25px rgba(0,0,0,0.15);
+}
+
+.foto-ponente{
+width:80px;
+height:80px;
+border-radius:50%;
+object-fit:cover;
+box-shadow:0 4px 10px rgba(0,0,0,0.2);
+}
+
+.info h3{
+margin:0;
+color:#1F5AA6;
+font-size:18px;
+}
+
+.uni{
+font-size:13px;
+color:#777;
+display:block;
+margin-bottom:5px;
+}
+
+.tema{
+font-size:14px;
+margin:0;
+}
+@media(max-width:600px){
+  .ponente{
+    flex-direction:column;
+    text-align:center;
+  }
+
+  .foto-ponente{
+    width:100px;
+    height:100px;
+  }
+}
 </style>
 
 </head>
