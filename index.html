@@ -101,8 +101,15 @@ box-shadow:0 4px 10px rgba(0,0,0,0.1);
 /* ===== MIEMBROS ===== */
 .miembros{
 display:grid;
-grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+grid-template-columns: repeat(3, 1fr); /* SIEMPRE 3 columnas */
 gap:30px;
+}
+
+/* En celular baja a 1 columna */
+@media(max-width:900px){
+.miembros{
+grid-template-columns: 1fr;
+}
 }
 
 .miembro{
@@ -268,15 +275,38 @@ Derecho y Ciencias de la Información para fomentar la investigación científic
 
 <section id="miembros">
 
-<h2>Mensajes del Comité</h2>
+<h2>Comité Organizador</h2>
 
 <div class="miembros">
 
+<!--  PERSONA 1 -->
 <div class="miembro">
-<img src="miembros/persona1.jpg">
-<h3>Nombre</h3>
-<span>Rol</span>
-<div class="mensaje">Mensaje del miembro.</div>
+<img src="ISRIB/miembros/prueba1.jpg">
+<h3>Nombre Apellido</h3>
+<span>Coordinador General</span>
+<div class="mensaje">
+Encargado de la planificación estratégica y coordinación general del programa ISRIB.
+</div>
+</div>
+
+<!--  PERSONA 2 -->
+<div class="miembro">
+<img src="ISRIB/miembros/prueba2.jpg">
+<h3>Nombre Apellido</h3>
+<span>Coordinador Académico</span>
+<div class="mensaje">
+Responsable del diseño metodológico y supervisión académica del bootcamp.
+</div>
+</div>
+
+<!-- PERSONA 3 -->
+<div class="miembro">
+<img src="ISRIB/miembros/prueba3.jpg">
+<h3>Nombre Apellido</h3>
+<span>Relaciones Institucionales</span>
+<div class="mensaje">
+Gestión de alianzas estratégicas y vinculación internacional del programa.
+</div>
 </div>
 
 </div>
@@ -286,13 +316,28 @@ Derecho y Ciencias de la Información para fomentar la investigación científic
 
 <section id="ponentes">
 
-<h2>Ponentes</h2>
+<h2>Ponentes Internacionales</h2>
 
 <div class="cards">
 
+<!--  PONENTE 1 -->
 <div class="card">
-<h3>Nombre del ponente</h3>
-<p>Institución<br>Tema</p>
+<h3>Dr. Javier Pascau</h3>
+<p><b>Universidad Carlos III de Madrid</b></p>
+<p>
+Especialista en imagen médica y tecnologías aplicadas a la salud, 
+con experiencia en innovación en sistemas de diagnóstico avanzado.
+</p>
+</div>
+
+<!--  PONENTE 2 -->
+<div class="card">
+<h3>Dr. Carlos Spuch</h3>
+<p><b>IIS Galicia Sur</b></p>
+<p>
+Investigador en neurociencia y biomedicina, enfocado en el desarrollo 
+de soluciones innovadoras para enfermedades complejas.
+</p>
 </div>
 
 </div>
