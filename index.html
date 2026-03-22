@@ -1,26 +1,20 @@
 <!DOCTYPE html>
 <html lang="es">
-
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
 <title>ISRIB 2026</title>
 
 <style>
 
-/* ===== CONFIG GENERAL ===== */
-html{scroll-behavior:smooth;}
-
+/* ===== GENERAL ===== */
 body{
-font-family: Arial, sans-serif;
+font-family:Arial;
 margin:0;
 background:#F5F7FA;
-color:#333;
 padding-top:70px;
 }
 
-/* ===== NAVBAR ===== */
 .navbar{
 position:fixed;
 top:0;
@@ -28,17 +22,14 @@ width:100%;
 background:#1F5AA6;
 padding:15px;
 text-align:center;
-z-index:1000;
 }
 
 .navbar a{
 color:white;
-margin:0 15px;
+margin:10px;
 text-decoration:none;
-font-weight:bold;
 }
 
-/* ===== HEADER ===== */
 header{
 background:#1F5AA6;
 color:white;
@@ -49,54 +40,6 @@ padding:80px 20px;
 .logo{
 width:220px;
 border-radius:50%;
-box-shadow:0 6px 15px rgba(0,0,0,0.3);
-margin-bottom:20px;
-}
-
-/* ===== SECCIONES ===== */
-section{
-max-width:1000px;
-margin:auto;
-padding:60px 20px;
-}
-
-h2{
-text-align:center;
-color:#1F5AA6;
-}
-
-/* ===== CARDS ===== */
-.card{
-background:white;
-padding:25px;
-border-radius:14px;
-box-shadow:0 6px 15px rgba(0,0,0,0.12);
-transition:0.3s;
-}
-
-.card:hover{
-transform:translateY(-8px);
-}
-
-/* ===== MIEMBROS ===== */
-.miembro{
-background:white;
-border-radius:18px;
-padding:20px;
-text-align:center;
-box-shadow:0 10px 25px rgba(0,0,0,0.1);
-transition:0.3s;
-}
-
-.miembro:hover{
-transform:translateY(-10px);
-}
-
-.miembro img{
-width:150px;
-height:150px;
-border-radius:50%;
-margin-bottom:10px;
 }
 
 /* ===== CARRUSEL ===== */
@@ -109,13 +52,12 @@ gap:10px;
 
 .carousel-wrapper{
 overflow:hidden;
-width:1100px;
-max-width:95%;
+width:1000px;
 }
 
 .carousel-track{
 display:flex;
-transition:transform 0.5s ease;
+transition:0.5s;
 }
 
 .grupo{
@@ -125,62 +67,61 @@ min-width:100%;
 gap:20px;
 }
 
-/* 👉 SOLO PONENTES EN 2 COLUMNAS */
+/* 👉 PONENTES EN 2 COLUMNAS */
 #ponentes .grupo{
 grid-template-columns:repeat(2,1fr);
 }
 
-/* ===== BOTONES ===== */
-.carousel button{
+/* ===== CARDS ===== */
+.miembro, .card{
+background:white;
+padding:20px;
+border-radius:12px;
+text-align:center;
+}
+
+.miembro img{
+width:120px;
+height:120px;
+border-radius:50%;
+}
+
+button{
 background:#1F5AA6;
 color:white;
 border:none;
 padding:10px;
 cursor:pointer;
-border-radius:6px;
 }
 
-/* ===== DOTS ===== */
 .dot{
-display:inline-block;
-width:10px;
 height:10px;
-margin:5px;
+width:10px;
 background:#ccc;
+display:inline-block;
+margin:5px;
 border-radius:50%;
 cursor:pointer;
 }
 
-.dot.active{background:#1F5AA6;}
-
-/* ===== FOOTER ===== */
-footer{
-background:#1F5AA6;
-color:white;
-text-align:center;
-padding:40px;
-}
+.active{background:#1F5AA6;}
 
 </style>
-
 </head>
 
 <body>
 
-<!-- ===== HEADER ===== -->
 <header>
 <img src="logo_isrib.jpeg" class="logo">
-
 <h1>ISRIB 2026</h1>
-<p>International Student Research & Innovation Bootcamp</p>
 </header>
 
-<!-- ========================= -->
-<!-- ===== COMITÉ ===== -->
-<!-- ========================= -->
+<!-- ===================== -->
+<!-- COMITÉ -->
+<!-- ===================== -->
 <section id="miembros">
 
-<h2>Comité Organizador</h2>
+<h2 style="text-align:center;">Comité</h2>
 
 <div class="carousel">
 
@@ -189,44 +130,60 @@ padding:40px;
 <div class="carousel-wrapper">
 <div class="carousel-track" id="comite">
 
-<!-- ========================= -->
-<!-- 🔵 GRUPO 1 (EDITAR AQUÍ) -->
-<!-- ========================= -->
+<!-- 🔵 GRUPO 1 -->
 <div class="grupo">
 
+<!-- 👇 EDITAR PERSONA -->
 <div class="miembro">
-<img src="ISRIB/miembros/prueba1.jpg"> <!-- 👉 CAMBIAR FOTO -->
-<h3>Nombre</h3> <!-- 👉 CAMBIAR -->
-<span>Rol</span> <!-- 👉 CAMBIAR -->
-<p>Descripción breve</p> <!-- 👉 CAMBIAR -->
+<img src="ISRIB/miembros/prueba1.jpg">
+<h3>Nombre 1</h3>
+<span>Rol</span>
+<p>Descripción</p>
 </div>
 
-<!-- COPIA ESTE BLOQUE PARA MÁS PERSONAS -->
 <div class="miembro">
 <img src="ISRIB/miembros/prueba2.jpg">
-<h3>Nombre</h3>
+<h3>Nombre 2</h3>
 <span>Rol</span>
-<p>Descripción breve</p>
+<p>Descripción</p>
 </div>
 
 <div class="miembro">
 <img src="ISRIB/miembros/prueba3.jpg">
-<h3>Nombre</h3>
+<h3>Nombre 3</h3>
 <span>Rol</span>
-<p>Descripción breve</p>
+<p>Descripción</p>
 </div>
 
 </div>
 
-<!-- ========================= -->
-<!-- 🔵 GRUPOS EXTRA (5 TOTAL) -->
-<!-- ========================= -->
+<!-- 🔵 GRUPO 2 -->
+<div class="grupo">
+<div class="miembro"><img src="ISRIB/miembros/prueba1.jpg"><h3>Nombre</h3><span>Rol</span><p>Descripción</p></div>
+<div class="miembro"><img src="ISRIB/miembros/prueba2.jpg"><h3>Nombre</h3><span>Rol</span><p>Descripción</p></div>
+<div class="miembro"><img src="ISRIB/miembros/prueba3.jpg"><h3>Nombre</h3><span>Rol</span><p>Descripción</p></div>
+</div>
 
-<!-- 👉 DUPLICA ESTE BLOQUE PARA LLEGAR A 15 PERSONAS -->
-<div class="grupo"> ... </div>
-<div class="grupo"> ... </div>
-<div class="grupo"> ... </div>
-<div class="grupo"> ... </div>
+<!-- 🔵 GRUPO 3 -->
+<div class="grupo">
+<div class="miembro"><img src="ISRIB/miembros/prueba1.jpg"><h3>Nombre</h3><span>Rol</span><p>Descripción</p></div>
+<div class="miembro"><img src="ISRIB/miembros/prueba2.jpg"><h3>Nombre</h3><span>Rol</span><p>Descripción</p></div>
+<div class="miembro"><img src="ISRIB/miembros/prueba3.jpg"><h3>Nombre</h3><span>Rol</span><p>Descripción</p></div>
+</div>
+
+<!-- 🔵 GRUPO 4 -->
+<div class="grupo">
+<div class="miembro"><img src="ISRIB/miembros/prueba1.jpg"><h3>Nombre</h3><span>Rol</span><p>Descripción</p></div>
+<div class="miembro"><img src="ISRIB/miembros/prueba2.jpg"><h3>Nombre</h3><span>Rol</span><p>Descripción</p></div>
+<div class="miembro"><img src="ISRIB/miembros/prueba3.jpg"><h3>Nombre</h3><span>Rol</span><p>Descripción</p></div>
+</div>
+
+<!-- 🔵 GRUPO 5 -->
+<div class="grupo">
+<div class="miembro"><img src="ISRIB/miembros/prueba1.jpg"><h3>Nombre</h3><span>Rol</span><p>Descripción</p></div>
+<div class="miembro"><img src="ISRIB/miembros/prueba2.jpg"><h3>Nombre</h3><span>Rol</span><p>Descripción</p></div>
+<div class="miembro"><img src="ISRIB/miembros/prueba3.jpg"><h3>Nombre</h3><span>Rol</span><p>Descripción</p></div>
+</div>
 
 </div>
 </div>
@@ -235,16 +192,16 @@ padding:40px;
 
 </div>
 
-<div id="dots-comite"></div>
+<div id="dots-comite" style="text-align:center;"></div>
 
 </section>
 
-<!-- ========================= -->
-<!-- ===== PONENTES ===== -->
-<!-- ========================= -->
+<!-- ===================== -->
+<!-- PONENTES -->
+<!-- ===================== -->
 <section id="ponentes">
 
-<h2>Ponentes</h2>
+<h2 style="text-align:center;">Ponentes</h2>
 
 <div class="carousel">
 
@@ -253,35 +210,46 @@ padding:40px;
 <div class="carousel-wrapper">
 <div class="carousel-track" id="ponentes">
 
-<!-- ========================= -->
-<!-- 🟢 GRUPO 1 -->
-<!-- ========================= -->
+<!-- 🟢 GRUPOS (2 por slide) -->
 <div class="grupo">
-
-<div class="card">
-<h3>Nombre Ponente</h3> <!-- 👉 CAMBIAR -->
-<p>
-Universidad<br> <!-- 👉 CAMBIAR -->
-<b>Tema:</b> Tema charla<br> <!-- 👉 CAMBIAR -->
-<span>Descripción breve</span> <!-- 👉 CAMBIAR -->
-</p>
+<div class="card"><h3>Ponente 1</h3><p>Universidad<br><b>Tema</b></p></div>
+<div class="card"><h3>Ponente 2</h3><p>Universidad<br><b>Tema</b></p></div>
 </div>
 
-<div class="card">
-<h3>Nombre Ponente</h3>
-<p>Universidad<br><b>Tema:</b> Tema<br><span>Descripción</span></p>
+<div class="grupo">
+<div class="card"><h3>Ponente 3</h3><p>Universidad</p></div>
+<div class="card"><h3>Ponente 4</h3><p>Universidad</p></div>
 </div>
 
+<div class="grupo">
+<div class="card"><h3>Ponente 5</h3></div>
+<div class="card"><h3>Ponente 6</h3></div>
 </div>
 
-<!-- 👉 DUPLICAR PARA LLEGAR A 16 PONENTES (8 GRUPOS) -->
-<div class="grupo"> ... </div>
-<div class="grupo"> ... </div>
-<div class="grupo"> ... </div>
-<div class="grupo"> ... </div>
-<div class="grupo"> ... </div>
-<div class="grupo"> ... </div>
-<div class="grupo"> ... </div>
+<div class="grupo">
+<div class="card"><h3>Ponente 7</h3></div>
+<div class="card"><h3>Ponente 8</h3></div>
+</div>
+
+<div class="grupo">
+<div class="card"><h3>Ponente 9</h3></div>
+<div class="card"><h3>Ponente 10</h3></div>
+</div>
+
+<div class="grupo">
+<div class="card"><h3>Ponente 11</h3></div>
+<div class="card"><h3>Ponente 12</h3></div>
+</div>
+
+<div class="grupo">
+<div class="card"><h3>Ponente 13</h3></div>
+<div class="card"><h3>Ponente 14</h3></div>
+</div>
+
+<div class="grupo">
+<div class="card"><h3>Ponente 15</h3></div>
+<div class="card"><h3>Ponente 16</h3></div>
+</div>
 
 </div>
 </div>
@@ -290,45 +258,29 @@ Universidad<br> <!-- 👉 CAMBIAR -->
 
 </div>
 
-<div id="dots-ponentes"></div>
+<div id="dots-ponentes" style="text-align:center;"></div>
 
 </section>
 
-<!-- ===== FOOTER (RESPETADO) ===== -->
-<footer>
-
-<p>Contacto: isrib.official@gmail.com</p>
-
-<p>© 2026 ISRIB</p>
-
-</footer>
-
 <script>
 
-/* ===== SLIDER ===== */
 let sliders={
 comite:{index:0},
 ponentes:{index:0}
 };
 
 function initSlider(id){
-const track=document.getElementById(id);
-const dotsContainer=document.getElementById("dots-"+id);
+let track=document.getElementById(id);
+let dots=document.getElementById("dots-"+id);
 
 for(let i=0;i<track.children.length;i++){
-let dot=document.createElement("span");
-dot.classList.add("dot");
-if(i===0)dot.classList.add("active");
+let d=document.createElement("span");
+d.className="dot";
+if(i===0)d.classList.add("active");
 
-dot.onclick=()=>irA(i,id);
-dotsContainer.appendChild(dot);
+d.onclick=()=>irA(i,id);
+dots.appendChild(d);
 }
-}
-
-function actualizarDots(id){
-let dots=document.querySelectorAll("#dots-"+id+" .dot");
-dots.forEach(d=>d.classList.remove("active"));
-dots[sliders[id].index].classList.add("active");
 }
 
 function mover(dir,id){
@@ -336,17 +288,25 @@ let track=document.getElementById(id);
 let total=track.children.length;
 
 sliders[id].index+=dir;
+
 if(sliders[id].index<0)sliders[id].index=0;
 if(sliders[id].index>=total)sliders[id].index=total-1;
 
 track.style.transform=`translateX(-${sliders[id].index*100}%)`;
-actualizarDots(id);
+
+actualizar(id);
 }
 
 function irA(i,id){
 sliders[id].index=i;
 document.getElementById(id).style.transform=`translateX(-${i*100}%)`;
-actualizarDots(id);
+actualizar(id);
+}
+
+function actualizar(id){
+let dots=document.querySelectorAll("#dots-"+id+" .dot");
+dots.forEach(d=>d.classList.remove("active"));
+dots[sliders[id].index].classList.add("active");
 }
 
 initSlider("comite");
