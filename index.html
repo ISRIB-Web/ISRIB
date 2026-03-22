@@ -9,7 +9,12 @@
 <title>ISRIB 2026</title>
 
 <style>
-
+:root{
+  --azul: #0048ab;
+  --verde: #60a332;
+  --gris-oscuro: #737373;
+  --gris-claro: #d9d9d9;
+}
 /* ===== SCROLL SUAVE ===== */
 html{
 scroll-behavior:smooth;
@@ -19,7 +24,7 @@ scroll-behavior:smooth;
 body{
 font-family: Arial, sans-serif;
 margin:0;
-background:#F5F7FA;
+background:var(--gris-claro);
 color:#333;
 padding-top:70px; /* espacio para menú fijo */
 }
@@ -29,7 +34,7 @@ padding-top:70px; /* espacio para menú fijo */
 position:fixed;
 top:0;
 width:100%;
-background:#1F5AA6;
+background:var(--azul);
 padding:15px;
 text-align:center;
 z-index:1000;
@@ -48,7 +53,7 @@ text-decoration:underline;
 
 /* ===== HEADER ===== */
 header{
-background:#1F5AA6;
+background:var(--azul);
 color:white;
 text-align:center;
 padding:80px 20px;
@@ -79,7 +84,7 @@ padding:60px 20px;
 
 h2{
 text-align:center;
-color:#1F5AA6;
+color:var(--azul);
 margin-bottom:30px;
 }
 
@@ -144,7 +149,7 @@ color:#1F5AA6;
 
 .miembro span{
 font-size:14px;
-color:#777;
+color:var(--gris-oscuro);
 display:block;
 margin-bottom:10px;
 }
@@ -203,7 +208,7 @@ text-decoration:none;
 }
 
 .social a:hover{
-background:#4a8c2f;
+background:var(--verde);
 }
   
 /* ===== CARRUSEL PRO ===== */
@@ -215,7 +220,7 @@ gap:10px;
 }
 
 .carousel button{
-background:#1F5AA6;
+background:var(--azul);
 color:white;
 border:none;
 padding:10px 15px;
@@ -324,7 +329,7 @@ font-size:18px;
 
 .uni{
 font-size:13px;
-color:#777;
+color:var(--gris-oscuro);
 display:block;
 margin-bottom:5px;
 }
