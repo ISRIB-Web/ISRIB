@@ -9,7 +9,7 @@
 
 <style>
 
-/* ===== CONFIG GENERAL ===== */
+/* ===== GENERAL ===== */
 html { scroll-behavior: smooth; }
 
 body {
@@ -28,7 +28,6 @@ width:100%;
 background:#1F5AA6;
 padding:15px;
 text-align:center;
-z-index:1000;
 }
 
 .navbar a{
@@ -40,9 +39,7 @@ font-weight:bold;
 
 /* ===== HERO ===== */
 header{
-background: linear-gradient(rgba(31,90,166,0.9), rgba(31,90,166,0.9)),
-url('https://images.unsplash.com/photo-1522202176988-66273c2fd55f');
-background-size:cover;
+background:#1F5AA6;
 color:white;
 text-align:center;
 padding:100px 20px;
@@ -52,21 +49,6 @@ padding:100px 20px;
 width:180px;
 border-radius:50%;
 margin-bottom:20px;
-}
-
-header h1{
-font-size:50px;
-}
-
-.cta-btn{
-display:inline-block;
-margin-top:20px;
-background:white;
-color:#1F5AA6;
-padding:12px 25px;
-border-radius:8px;
-text-decoration:none;
-font-weight:bold;
 }
 
 /* ===== SECCIONES ===== */
@@ -96,11 +78,6 @@ border-radius:12px;
 flex:1;
 min-width:250px;
 box-shadow:0 6px 15px rgba(0,0,0,0.1);
-transition:0.3s;
-}
-
-.card:hover{
-transform:translateY(-8px);
 }
 
 /* ===== COMITÉ ===== */
@@ -112,15 +89,10 @@ gap:30px;
 
 .miembro{
 background:white;
-border-radius:16px;
 padding:25px;
+border-radius:16px;
 text-align:center;
 box-shadow:0 8px 20px rgba(0,0,0,0.08);
-transition:0.3s;
-}
-
-.miembro:hover{
-transform: translateY(-10px);
 }
 
 .miembro img{
@@ -137,20 +109,13 @@ color:#1F5AA6;
 }
 
 .miembro span{
-font-size:14px;
 color:#777;
+font-size:14px;
 }
 
 .mensaje{
 font-size:14px;
 margin-top:10px;
-}
-
-/* ===== ALIANZAS ===== */
-.alianzas{
-text-align:center;
-font-size:18px;
-line-height:2;
 }
 
 /* ===== TABLA ===== */
@@ -167,8 +132,8 @@ padding:10px;
 
 td{
 padding:10px;
-text-align:center;
 border:1px solid #ddd;
+text-align:center;
 }
 
 /* ===== FOOTER ===== */
@@ -179,13 +144,7 @@ text-align:center;
 padding:30px;
 }
 
-footer a{
-color:white;
-margin:0 10px;
-text-decoration:none;
-}
-
-/* 📱 RESPONSIVE */
+/* ===== RESPONSIVE ===== */
 @media(max-width:900px){
 .miembros{
 grid-template-columns: 1fr;
@@ -214,16 +173,11 @@ grid-template-columns: 1fr;
 <img src="logo_isrib.jpeg" class="logo">
 
 <h1>ISRIB 2026</h1>
-
 <p><b>International Student Research & Innovation Bootcamp</b></p>
 
-<!-- 🔽 EDITA ESTE TEXO -->
 <p style="max-width:700px; margin:auto;">
-Programa internacional que impulsa la investigación científica temprana 
-con estándares globales en ingeniería, derecho y ciencia de datos.
+Programa internacional de investigación interdisciplinaria.
 </p>
-
-<a href="#programa" class="cta-btn">Ver programa</a>
 
 </header>
 
@@ -232,9 +186,8 @@ con estándares globales en ingeniería, derecho y ciencia de datos.
 
 <h2>¿Qué es ISRIB?</h2>
 
-<!-- 🔽 PUEDES PEGAR TU CARTA RESUMIDA -->
-<p style="text-align:center; max-width:750px; margin:auto;">
-El ISRIB 2026 es una iniciativa académica internacional que articula investigación, innovación y formación interdisciplinaria.
+<p style="text-align:center; max-width:700px; margin:auto;">
+Aquí puedes pegar tu descripción o carta resumida.
 </p>
 
 </section>
@@ -242,23 +195,23 @@ El ISRIB 2026 es una iniciativa académica internacional que articula investigac
 <!-- ===== ÁREAS ===== -->
 <section id="areas">
 
-<h2>Áreas del Bootcamp</h2>
+<h2>Áreas</h2>
 
 <div class="cards">
 
 <div class="card">
-<h3>🧬 Ingeniería Biomédica</h3>
-<p>Tecnología aplicada a la salud.</p>
+<h3>Ingeniería Biomédica</h3>
+<p>Innovación en salud.</p>
 </div>
 
 <div class="card">
-<h3>⚖️ Derecho</h3>
-<p>Regulación y bioética.</p>
+<h3>Derecho</h3>
+<p>Ética y regulación.</p>
 </div>
 
 <div class="card">
-<h3>💻 Ciencia de Datos</h3>
-<p>IA y análisis de datos.</p>
+<h3>Ciencia de Datos</h3>
+<p>IA y análisis.</p>
 </div>
 
 </div>
@@ -272,26 +225,26 @@ El ISRIB 2026 es una iniciativa académica internacional que articula investigac
 
 <div class="miembros">
 
-<!-- 🔽 EDITA PERSONAS -->
+<!-- 🔽 EDITA CADA PERSONA -->
 <div class="miembro">
-<img src="miembro1.jpg">
+<img src="ISRIB/miembros/prueba1.jpg">
 <h3>Nombre Apellido</h3>
 <span>Rol</span>
-<p class="mensaje">Descripción breve.</p>
+<p class="mensaje">Breve descripción.</p>
 </div>
 
 <div class="miembro">
-<img src="miembro2.jpg">
+<img src="ISRIB/miembros/prueba2.jpg">
 <h3>Nombre Apellido</h3>
 <span>Rol</span>
-<p class="mensaje">Descripción breve.</p>
+<p class="mensaje">Breve descripción.</p>
 </div>
 
 <div class="miembro">
-<img src="miembro3.jpg">
+<img src="ISRIB/miembros/prueba3.jpg">
 <h3>Nombre Apellido</h3>
 <span>Rol</span>
-<p class="mensaje">Descripción breve.</p>
+<p class="mensaje">Breve descripción.</p>
 </div>
 
 </div>
@@ -301,37 +254,23 @@ El ISRIB 2026 es una iniciativa académica internacional que articula investigac
 <!-- ===== PONENTES ===== -->
 <section id="ponentes">
 
-<h2>Ponentes Internacionales</h2>
+<h2>Ponentes</h2>
 
 <div class="cards">
 
+<!-- 🔽 EDITA PONENTES -->
 <div class="card">
-<h3>Dr. Javier Pascau</h3>
-<p><b>UC3M</b></p>
-<p>Especialista en imagen médica e innovación tecnológica en salud.</p>
+<h3>Nombre del ponente</h3>
+<p><b>Institución</b></p>
+<p>Descripción del ponente y su especialidad.</p>
 </div>
 
 <div class="card">
-<h3>Dr. Carlos Spuch</h3>
-<p><b>IIS Galicia Sur</b></p>
-<p>Investigador en neurociencia aplicada y biomedicina.</p>
+<h3>Nombre del ponente</h3>
+<p><b>Institución</b></p>
+<p>Descripción del ponente y su especialidad.</p>
 </div>
 
-</div>
-
-</section>
-
-<!-- ===== ALIANZAS ===== -->
-<section id="alianzas">
-
-<h2>Alianzas Estratégicas</h2>
-
-<div class="alianzas">
-PUCP <br>
-UC3M <br>
-IEEE EMBS <br>
-THEMIS <br>
-PARES
 </div>
 
 </section>
@@ -342,6 +281,7 @@ PARES
 <h2>Programa</h2>
 
 <table>
+
 <tr>
 <th>Hora</th>
 <th>Actividad</th>
@@ -362,11 +302,6 @@ PARES
 <footer>
 
 <p>isrib.official@gmail.com</p>
-
-<a href="#">Instagram</a>
-<a href="#">Facebook</a>
-<a href="#">YouTube</a>
-<a href="#">LinkedIn</a>
 
 <p>© 2026 ISRIB</p>
 
