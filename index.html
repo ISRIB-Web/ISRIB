@@ -203,7 +203,61 @@ text-decoration:none;
 .social a:hover{
 background:#4a8c2f;
 }
+  
+/* ===== CARRUSEL PRO ===== */
+.carousel{
+display:flex;
+align-items:center;
+justify-content:center;
+gap:10px;
+}
 
+.carousel button{
+background:#1F5AA6;
+color:white;
+border:none;
+padding:10px 15px;
+cursor:pointer;
+font-size:18px;
+border-radius:6px;
+}
+
+.carousel-wrapper{
+overflow:hidden;
+width:900px;
+}
+
+.carousel-track{
+display:flex;
+transition:transform 0.5s ease;
+}
+
+.grupo{
+display:flex;
+min-width:100%;
+gap:20px;
+justify-content:center;
+}
+
+/* ===== INDICADORES ===== */
+.indicadores{
+text-align:center;
+margin-top:15px;
+}
+
+.dot{
+display:inline-block;
+width:10px;
+height:10px;
+margin:5px;
+background:#ccc;
+border-radius:50%;
+cursor:pointer;
+}
+
+.dot.active{
+background:#1F5AA6;
+}
 </style>
 
 </head>
@@ -277,67 +331,97 @@ Derecho y Ciencias de la Información para fomentar la investigación científic
 
 <h2>Comité Organizador</h2>
 
-<div class="miembros">
+<div class="carousel">
 
-<!--  PERSONA 1 -->
+<button onclick="mover(-1, 'comite')">◀</button>
+
+<div class="carousel-wrapper">
+
+<div class="carousel-track" id="comite">
+
+<!--  GRUPO 1 -->
+<div class="grupo">
 <div class="miembro">
-<img src="ISRIB/miembros/prueba1.jpeg">
-<h3>Nombre Apellido</h3>
-<span>Coordinador General</span>
-<div class="mensaje">
-Encargado de la planificación estratégica y coordinación general del programa ISRIB.
-</div>
+<img src="ISRIB/miembros/prueba1.jpg">
+<h3>Nombre 1</h3>
+<span>Rol</span>
+<p>Descripción</p>
 </div>
 
-<!--  PERSONA 2 -->
 <div class="miembro">
 <img src="ISRIB/miembros/prueba2.jpg">
-<h3>Nombre Apellido</h3>
-<span>Coordinador Académico</span>
-<div class="mensaje">
-Responsable del diseño metodológico y supervisión académica del bootcamp.
+<h3>Nombre 2</h3>
+<span>Rol</span>
+<p>Descripción</p>
+</div>
+
+<div class="miembro">
+<img src="ISRIB/miembros/prueba3.jpg">
+<h3>Nombre 3</h3>
+<span>Rol</span>
+<p>Descripción</p>
 </div>
 </div>
 
-<!-- PERSONA 3 -->
-<div class="miembro">
-<img src="ISRIB/miembros/prueba3.jpg">
-<h3>Nombre Apellido</h3>
-<span>Relaciones Institucionales</span>
-<div class="mensaje">
-Gestión de alianzas estratégicas y vinculación internacional del programa.
+<!-- AGREGA MÁS GRUPOS AQUÍ -->
+<div class="grupo">3 personas</div>
+<div class="grupo">3 personas</div>
+<div class="grupo">3 personas</div>
+<div class="grupo">3 personas</div>
+<div class="grupo">3 personas</div>
+
 </div>
+
+</div>
+
+<button onclick="mover(1, 'comite')">▶</button>
+
+</div>
+
+<!--  INDICADORES -->
+<div class="indicadores" id="dots-comite"></div>
 
 </section>
 
 
 <section id="ponentes">
 
-<h2>Ponentes Internacionales</h2>
+<h2>Ponentes</h2>
 
-<div class="cards">
+<div class="carousel">
 
-<!--  PONENTE 1 -->
+<button onclick="mover(-1, 'ponentes')">◀</button>
+
+<div class="carousel-wrapper">
+
+<div class="carousel-track" id="ponentes">
+
+<div class="grupo">
 <div class="card">
-<h3>Dr. Javier Pascau</h3>
-<p><b>Universidad Carlos III de Madrid</b></p>
-<p>
-Especialista en imagen médica y tecnologías aplicadas a la salud, 
-con experiencia en innovación en sistemas de diagnóstico avanzado.
-</p>
+<h3>Ponente 1</h3>
+<p>Descripción</p>
 </div>
 
-<!--  PONENTE 2 -->
 <div class="card">
-<h3>Dr. Carlos Spuch</h3>
-<p><b>IIS Galicia Sur</b></p>
-<p>
-Investigador en neurociencia y biomedicina, enfocado en el desarrollo 
-de soluciones innovadoras para enfermedades complejas.
-</p>
+<h3>Ponente 2</h3>
+<p>Descripción</p>
+</div>
+
+<div class="card">
+<h3>Ponente 3</h3>
+<p>Descripción</p>
+</div>
 </div>
 
 </div>
+
+</div>
+
+<button onclick="mover(1, 'ponentes')">▶</button>
+
+</div>
+
+<div class="indicadores" id="dots-ponentes"></div>
 
 </section>
 
@@ -384,6 +468,69 @@ de soluciones innovadoras para enfermedades complejas.
 <p>© 2026 ISRIB</p>
 
 </footer>
+
+<script>
+
+let sliders = {
+comite: { index: 0 },
+ponentes: { index: 0 }
+};
+
+function initSlider(id){
+
+const track = document.getElementById(id);
+const total = track.children.length;
+const dotsContainer = document.getElementById("dots-" + id);
+
+// crear dots
+for(let i=0; i<total; i++){
+let dot = document.createElement("span");
+dot.classList.add("dot");
+if(i === 0) dot.classList.add("active");
+
+dot.onclick = () => irA(i, id);
+
+dotsContainer.appendChild(dot);
+}
+
+}
+
+function actualizarDots(id){
+const dots = document.querySelectorAll("#dots-" + id + " .dot");
+
+dots.forEach(dot => dot.classList.remove("active"));
+
+dots[sliders[id].index].classList.add("active");
+}
+
+function mover(dir, id){
+const track = document.getElementById(id);
+const total = track.children.length;
+
+sliders[id].index += dir;
+
+if(sliders[id].index < 0) sliders[id].index = 0;
+if(sliders[id].index >= total) sliders[id].index = total - 1;
+
+track.style.transform = `translateX(-${sliders[id].index * 100}%)`;
+
+actualizarDots(id);
+}
+
+function irA(i, id){
+sliders[id].index = i;
+const track = document.getElementById(id);
+
+track.style.transform = `translateX(-${i * 100}%)`;
+
+actualizarDots(id);
+}
+
+/* inicializar */
+initSlider("comite");
+initSlider("ponentes");
+
+</script>
 
 </body>
 </html>
