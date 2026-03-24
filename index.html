@@ -105,10 +105,21 @@ background:var(--gris-claro);
 padding:30px;
 border-radius:14px;
 flex:1;
-min-width:400px;
+min-width:250px;
 box-shadow:0 6px 15px rgba(0,0,0,0.12);
 font-size:16px;
 }
+
+@media(max-width:768px){
+  .cards{
+    flex-direction:column;
+  }
+
+  .card{
+    min-width:100%;
+  }
+}
+
 #ponentes .card{
 padding:35px;
 font-size:17px;
@@ -285,10 +296,13 @@ box-sizing:border-box; /* ✅ AÑADE esto */
 gap:25px;
 }
 #ponentes .grupo{
-grid-template-columns: 1fr; /* 🔥 aquí aplicas 2 columnas */
-gap:30px;
+  grid-template-columns: repeat(2, 1fr);
 }
-
+@media(max-width:768px){
+  #ponentes .grupo{
+    grid-template-columns: 1fr;
+  }
+}
 /* ===== INDICADORES ===== */
 .indicadores{
 text-align:center;
@@ -324,7 +338,7 @@ background:white;
 #ponentes{
 background: var(--azul);
 color:white;
-border-radius:20px
+border-radius:20px;
 margin-top:20px;
 }
 
@@ -371,10 +385,9 @@ margin:0;
     text-align:center;
   }
 
-  .foto-ponente{
-    width:100px;
-    height:100px;
-  }
+.foto-ponente{
+  border-radius:50%;
+  object-fit:cover;
 }
 
 /* ===== MOBILE FIX CARRUSEL ===== */
