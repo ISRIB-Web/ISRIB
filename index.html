@@ -331,21 +331,37 @@ background:#1F5AA6;
   display:flex;
   gap:15px;
   align-items:center;
-  justify-content:flex-start;
 
-  background:white; /* 🔥 clave */
+  background:white;
   padding:20px;
   border-radius:16px;
 
-  height:100%;
-  transition: all 0.3s ease;
+  border-left:6px solid var(--verde);
+
+  box-shadow:0 8px 20px rgba(0,0,0,0.15);
+}
+
+.ponente .info h3{
+  color: var(--azul); /* nombre */
+}
+
+.ponente .uni{
+  color: var(--verde); /* universidad */
+}
+
+.ponente .tema{
+  color: #333; /* tema */
+}
+
+.ponente .descripcion{
+  color: #555; /* descripción */
 }
  
 #ponentes{
-background: var(--azul);
-color:white;
-border-radius:20px;
-margin-top:20px;
+  background: var(--azul);
+  border-radius:20px;
+  margin-top:20px;
+  padding:40px 20px; /* 👈 agrega esto */
 }
 
 #ponentes h2{
@@ -544,6 +560,9 @@ Conoce a nuestros speakers invitados
     <h3>Ponente 1</h3>
     <span class="uni">Universidad</span>
     <p class="tema">Tema de la charla</p>
+    <p class="descripcion">
+      Breve descripción del ponente, experiencia, logros, etc.
+    </p>
   </div>
 
 </div>
@@ -553,9 +572,12 @@ Conoce a nuestros speakers invitados
   <img src="ponentes/ponente1.webp" class="foto-ponente" loading="lazy">
 
   <div class="info">
-    <h3>Ponente 2</h3>
+    <h3>Ponente 1</h3>
     <span class="uni">Universidad</span>
     <p class="tema">Tema de la charla</p>
+    <p class="descripcion">
+      Breve descripción del ponente, experiencia, logros, etc.
+    </p>
   </div>
 
 </div>
@@ -570,11 +592,12 @@ Conoce a nuestros speakers invitados
   <img src="ponentes/ponente1.webp" class="foto-ponente" loading="lazy">
 
   <div class="info">
-    <h3>Ponente 3</h3>
+    <h3>Ponente 1</h3>
     <span class="uni">Universidad</span>
     <p class="tema">Tema de la charla</p>
-    <p class="descripcion">Especialista en inteligencia artificial aplicada a salud, 
-      con experiencia en proyectos internacionales.</p>
+    <p class="descripcion">
+      Breve descripción del ponente, experiencia, logros, etc.
+    </p>
   </div>
 
 </div>
@@ -584,9 +607,12 @@ Conoce a nuestros speakers invitados
   <img src="ponentes/ponente1.webp" class="foto-ponente" loading="lazy">
 
   <div class="info">
-    <h3>Ponente 4</h3>
+    <h3>Ponente 1</h3>
     <span class="uni">Universidad</span>
     <p class="tema">Tema de la charla</p>
+    <p class="descripcion">
+      Breve descripción del ponente, experiencia, logros, etc.
+    </p>
   </div>
 
 </div>
