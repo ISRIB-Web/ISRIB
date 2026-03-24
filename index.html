@@ -121,9 +121,8 @@ min-width:0; /* 🔥 clave */
 }
 
 #ponentes .card{
-padding:35px;
-font-size:17px;
-transform: scale(1.05);
+  padding:25px;
+  font-size:16px;
 }
 
 /* ===== MIEMBROS ===== */
@@ -290,11 +289,10 @@ width:100%
 }
 
 .grupo{
-display:grid;
-grid-template-columns: repeat(3, 1fr);
-min-width:100%;
-box-sizing:border-box; /* ✅ AÑADE esto */
-gap:25px;
+  display:grid;
+  min-width:100%;
+  box-sizing:border-box;
+  gap:25px;
 }
 #ponentes .grupo{
   display:grid;
@@ -329,15 +327,11 @@ background:#1F5AA6;
 /* ===== PONENTES PRO ===== */
 
 .ponente{
-display:flex;
-gap:15px;
-align-items:center;
-padding:20px;
-border-radius:16px;
-transition: all 0.3s ease;
-cursor:pointer;
-background:white;
-justify-content:flex-start;
+  display:flex;
+  gap:15px;
+  align-items:center;
+  justify-content:flex-start;
+  height:100%; /* 🔥 CLAVE */
 }
  
 #ponentes{
@@ -376,7 +370,8 @@ font-size:18px;
 .descripcion{
   font-size:13px;
   color:#555;
-  margin-top:5px;
+  margin-top:8px;
+  line-height:1.4;
 }
 
 .uni{
@@ -387,8 +382,8 @@ margin-bottom:5px;
 }
 
 .tema{
-font-size:14px;
-margin:0;
+  font-size:14px;
+  margin:5px 0;
 }
 @media(max-width:600px){
   .ponente{
@@ -398,7 +393,9 @@ margin:0;
   }
 
   .info{
-    text-align:center;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
   }
 }
 .foto-ponente{
