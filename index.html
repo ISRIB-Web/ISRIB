@@ -121,8 +121,9 @@ min-width:0; /* 🔥 clave */
 }
 
 #ponentes .card{
-  padding:25px;
-  font-size:16px;
+  background:transparent; /* 🔥 evita doble fondo */
+  box-shadow:none;
+  padding:0;
 }
 
 /* ===== MIEMBROS ===== */
@@ -331,7 +332,13 @@ background:#1F5AA6;
   gap:15px;
   align-items:center;
   justify-content:flex-start;
-  height:100%; /* 🔥 CLAVE */
+
+  background:white; /* 🔥 clave */
+  padding:20px;
+  border-radius:16px;
+
+  height:100%;
+  transition: all 0.3s ease;
 }
  
 #ponentes{
@@ -352,15 +359,17 @@ box-shadow:0 10px 30px rgba(0,0,0,0.2);
 }
   
 .ponente:hover{
-transform: translateY(-10px);
-box-shadow:0 12px 25px rgba(0,0,0,0.15);
+  transform: translateY(-5px);
+  box-shadow:0 10px 25px rgba(0,0,0,0.2);
 }
 
 .foto-ponente{
 width:100px;
 height:100px;
 }
-
+.ponente img{
+  flex-shrink:0;
+}
 .info h3{
 margin:0;
 color:var(--azul);
@@ -393,10 +402,15 @@ margin-bottom:5px;
   }
 
   .info{
+    text-align:center;
+  }
+}
+
+.info{
   display:flex;
   flex-direction:column;
   justify-content:center;
-  }
+}
 }
 .foto-ponente{
   width:100px;
