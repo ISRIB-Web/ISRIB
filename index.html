@@ -113,6 +113,7 @@ margin-bottom:30px;
   text-align:center;
   transition: all 0.3s ease;
   position:relative;
+  overflow: hidden;
 }
 
 .miembro:hover{
@@ -144,32 +145,38 @@ margin-bottom:30px;
   flex-direction: column;
   align-items: center;
 }
+
+.miembro:hover img,
+.miembro:hover h3,
+.miembro:hover span{
+  opacity: 0;
+}
+  
 /* ============== Mensaje ========================= */    
 .mensaje{
   position: absolute;
-  bottom: 0;
+  top: 0;       /* 🔥 en vez de bottom */
   left: 0;
-  right: 0;
+  width: 100%;
+  height: 100%; /* 🔥 ocupa TODA la card */
 
-  background: linear-gradient(to top, rgba(0,0,0,0.85), transparent);;
-  color: var(--azul);
+  background: var(--azul); /* 🔥 azul sólido */
+  color: white;
+
   padding: 20px;
   font-size: 14px;
 
   opacity: 0;
-  transform: translateY(100%);
   transition: all 0.4s ease;
 
-  border-radius: 0 0 18px 18px;
+  border-radius: 18px;
 
-  max-height: 100%;
-  overflow-y: auto; /* 🔥 CLAVE */
+  overflow-y: auto; /* scroll si es largo */
 }
 
 /* aparece al pasar el mouse */
 .miembro:hover .mensaje{
   opacity: 1;
-  transform: translateY(0);
 }
 
 /* ===== TABLA ===== */
