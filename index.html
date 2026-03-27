@@ -123,10 +123,6 @@ padding:30px;
 text-align:center;
 transition: all 0.3s ease;
 position:relative;
-height: 100%;
-display: flex;
-flex-direction: column;
-justify-content: flex-start;
 }
 
 .miembro:hover{
@@ -160,21 +156,30 @@ margin-bottom:10px;
 }
     
 .mensaje{
-  margin-top: 10px;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+
+  background: linear-gradient(to top, rgba(0,0,0,0.85), transparent);
+  color: white;
+  padding: 20px;
   font-size: 14px;
-  color: var(--gris-oscuro);
-  line-height: 1.5;
 
   opacity: 0;
-  max-height: 0;
-  overflow: hidden;
+  transform: translateY(100%);
   transition: all 0.4s ease;
+
+  border-radius: 0 0 18px 18px;
+
+  max-height: 100%;
+  overflow-y: auto; /* 🔥 CLAVE */
 }
 
 /* aparece al pasar el mouse */
 .miembro:hover .mensaje{
   opacity: 1;
-  max-height: 500px; /* suficiente para mostrar todo */
+  transform: translateY(0);
 }
 
 @media(max-width:600px){
@@ -259,7 +264,6 @@ max-width:1100px;
 .carousel-track{
 display:flex;
 transition:transform 0.5s ease-in-out;
-align-items: stretch;
 }
   
 /* carrusel general */
@@ -268,7 +272,7 @@ align-items: stretch;
   grid-template-columns: repeat(3, 1fr); /* 🔥 3 miembros por slide */
   min-width: 100%;
   gap: 25px;
-  flex-shrink: 0;
+  flex-shrink: 0
   box-sizing: border-box;
 }
 
@@ -494,7 +498,6 @@ margin-bottom:5px;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 20px;
-  align-items: stretch; 
 }
 
 .grupo.ponentes {
