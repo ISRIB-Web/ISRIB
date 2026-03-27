@@ -31,13 +31,15 @@ padding-top:70px; /* espacio para menú fijo */
 
 /* ===== NAVBAR ===== */
 .navbar{
-position:fixed;
-top:0;
-width:100%;
-background:var(--verde);
-padding:15px;
-text-align:center;
-z-index:1000;
+  position:fixed;
+  top:0;
+  width:100%;
+  background:var(--verde);
+  padding:15px;
+  display:flex;
+  justify-content:center;
+  gap:20px;
+  z-index:1000;
 }
 
 .navbar a{
@@ -92,22 +94,15 @@ margin-bottom:30px;
 
 /* ===== CARDS ===== */
 .cards{
-display:flex;
-flex-wrap:wrap;
-gap:20px;
-align-items: stretch;
+  display:flex;
+  gap:20px;
 }
-.cards .card{
-flex:1;
-min-width:0; /* 🔥 clave */
-}
+
 .card{
+  flex:1;
   background:var(--gris-claro);
   padding:25px;
   border-radius:14px;
-  flex:1;
-  min-width:0; /* 🔥 CLAVE */
-  width:100%;
   box-shadow:0 6px 15px rgba(0,0,0,0.12);
 }
 
@@ -171,7 +166,11 @@ margin-bottom:10px;
   position: relative;
   overflow: hidden;
 }
-
+  
+#miembros .grupo{
+  grid-template-columns: repeat(3, 1fr);
+}
+  
 .mensaje{
   position: absolute;
   bottom: 0;
@@ -463,13 +462,6 @@ margin-bottom:5px;
 
 }
 
-
-/* 🔥 EVITA DESBORDE EN FLEX */
-.cards .card,
-.ponente {
-  min-width: 0;
-}
-
 /* 🔥 TEXTOS MÁS CÓMODOS EN CELULAR */
 @media(max-width:768px){
 
@@ -501,12 +493,6 @@ margin-bottom:5px;
 /* 🔥 FIX TEXTO PONENTES */
 .ponente .info {
   min-width: 0; /* 🔥 CRÍTICO */
-}
-
-.ponente p,
-.ponente h3,
-.ponente span {
-  overflow-wrap: break-word;
 }
 
 .miembro h3{
@@ -583,8 +569,6 @@ experiencia académica.</p>
 </div>
 
 </div>
-</div>
-
 </section>
 
 
