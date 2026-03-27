@@ -264,7 +264,6 @@ max-width:1100px;
 .carousel-track{
 display:flex;
 transition:transform 0.5s ease-in-out;
-width:100%
 }
   
 /* carrusel general */
@@ -273,7 +272,8 @@ width:100%
   grid-template-columns: repeat(3, 1fr); /* 🔥 3 miembros por slide */
   min-width: 100%;
   gap: 25px;
-  flex-shrink: 0;
+  flex-shrink: 0
+  box-sizing: border-box;
 }
 
 /* MOBILE */
@@ -493,6 +493,18 @@ margin-bottom:5px;
 .ponente .info {
   overflow: hidden;
 }
+
+.grupo.miembros {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.grupo.ponentes {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+}
   
 </style>
 
@@ -581,7 +593,7 @@ Conoce a nuestros speakers invitados
 <div class="carousel-track" id="ponentes-track">
 
 <!-- 🔽 GRUPO 1 -->
-<div class="grupo">
+<div class="grupo ponentes">
 
 <div class="card ponente">
 
@@ -616,7 +628,7 @@ Conoce a nuestros speakers invitados
 </div>
 
 <!-- 🔽 GRUPO 2 -->
-<div class="grupo">
+<div class="grupo ponentes">
 
 <div class="card ponente">
 
@@ -674,7 +686,7 @@ Conoce a nuestros speakers invitados
 <div class="carousel-track" id="comite">
 
 <!--  GRUPO 1 -->
-<div class="grupo">
+<div class="grupo miembros">
 <div class="miembro">
   <img src="miembros/Maria_Jose_Velasquez_Carhuatocto.jpeg">
   <h3>María José Velásquez Carhuatocto</h3>
@@ -702,7 +714,7 @@ Conoce a nuestros speakers invitados
 </div>
 
 <div class="miembro">
-<img src="miembros/micaela.jpeg">
+<img src="miembros/micaela.jpg">
   <h3>Micaela De Fátima Tassara Camarena</h3>
   <span>Área de Revista y Marketing</span>
 
@@ -716,7 +728,7 @@ Conoce a nuestros speakers invitados
 
 <!-- AGREGA MÁS GRUPOS AQUÍ -->
 <!--  GRUPO 2 -->
-<div class="grupo">
+<div class="grupo miembros">
 <div class="miembro">
   <img src="miembros/Maria_Jose_Velasquez_Carhuatocto.jpeg">
   <h3>María José Velásquez Carhuatocto</h3>
@@ -757,7 +769,7 @@ Conoce a nuestros speakers invitados
 </div>
   
 <!--  GRUPO 3 -->
-<div class="grupo">
+<div class="grupo miembros">
 <div class="miembro">
   <img src="miembros/Maria_Jose_Velasquez_Carhuatocto.jpeg">
   <h3>María José Velásquez Carhuatocto</h3>
@@ -798,7 +810,7 @@ Conoce a nuestros speakers invitados
 </div>
 
 <!--  GRUPO 4 -->
-<div class="grupo">
+<div class="grupo miembros">
 <div class="miembro">
   <img src="miembros/Maria_Jose_Velasquez_Carhuatocto.jpeg">
   <h3>María José Velásquez Carhuatocto</h3>
@@ -839,7 +851,7 @@ Conoce a nuestros speakers invitados
 </div>
 
 <!--  GRUPO 5 -->
-<div class="grupo">
+<div class="grupo miembros">
 <div class="miembro">
   <img src="miembros/Maria_Jose_Velasquez_Carhuatocto.jpeg">
   <h3>María José Velásquez Carhuatocto</h3>
