@@ -25,7 +25,7 @@ body{
 font-family: Monserrat, sans-serif;
 margin:0;
 background:white;
-color:#333;
+color:var(--gris-oscuro);
 padding-top:70px; /* espacio para menú fijo */
 }
 
@@ -105,47 +105,37 @@ margin-bottom:30px;
   box-shadow:0 6px 15px rgba(0,0,0,0.12);
 }
 
-@media(max-width:600px){
-  .cards{
-    flex-direction:column;
-  }
-  .card{
-    min-width:100%;
-  }
-}
-
-
 /* ===== MIEMBROS ===== */
 .miembro{
-background:white;
-border-radius:18px;
-padding:30px;
-text-align:center;
-transition: all 0.3s ease;
-position:relative;
+  background:white;
+  border-radius:18px;
+  padding:30px;
+  text-align:center;
+  transition: all 0.3s ease;
+  position:relative;
 }
 
 .miembro:hover{
-transform: translateY(-10px);
+  transform: translateY(-10px);
 }
 
 .miembro img{
-width:150px;
-height:150px;
-border-radius:50%; /* 🔥 CLAVE */
-object-fit:cover;  /* 🔥 evita deformación */
+  width:150px;
+  height:150px;
+  border-radius:50%; /* 🔥 CLAVE */
+  object-fit:cover;  /* 🔥 evita deformación */
 }
 
 .miembro h3{
-margin:10px 0 5px;
-color:#1F5AA6;
+  margin:10px 0 5px;
+  color:#1F5AA6;
 }
 
 .miembro span{
-font-size:14px;
-color:var(--gris-oscuro);
-display:block;
-margin-bottom:10px;
+  font-size:14px;
+  color:var(--gris-oscuro);
+  display:block;
+  margin-bottom:10px;
 }
 
 .miembro{
@@ -180,17 +170,6 @@ margin-bottom:10px;
 .miembro:hover .mensaje{
   opacity: 1;
   transform: translateY(0);
-}
-
-@media(max-width:600px){
-  .mensaje{
-    position: static;
-    opacity: 1;
-    transform: none;
-    background: none;
-    color: var(--gris-oscuro);
-    padding: 10px 0;
-  }
 }
 
 /* ===== TABLA ===== */
@@ -272,15 +251,8 @@ transition:transform 0.5s ease-in-out;
   grid-template-columns: repeat(3, 1fr); /* 🔥 3 miembros por slide */
   min-width: 100%;
   gap: 25px;
-  flex-shrink: 0
+  flex-shrink: 0;
   box-sizing: border-box;
-}
-
-/* MOBILE */
-@media(max-width:600px){
-  .carousel-track .grupo{
-    grid-template-columns: 1fr; /* 🔥 1 por slide */
-  }
 }
   
 #ponentes .grupo{
@@ -332,11 +304,11 @@ background:#1F5AA6;
 }
 
 .ponente .tema{
-  color: #333; /* tema */
+  color: var(--gris-oscuro); /* tema */
 }
 
 .ponente .descripcion{
-  color: #555; /* descripción */
+  color:var(--gris-oscuro); /* descripción */
 }
  
 #ponentes{
@@ -376,7 +348,7 @@ font-size:18px;
 
 .descripcion{
   font-size:13px;
-  color:#555;
+  color:var(--gris-oscuro);
   margin-top:8px;
   line-height:1.4;
 }
@@ -407,65 +379,6 @@ margin-bottom:5px;
   object-fit:cover;
   display:block;
 }
-
-/* ===== MOBILE FIX CARRUSEL ===== */
-@media(max-width:600px){
-  /* ponentes: 1 por slide */
-  #ponentes .grupo{
-    grid-template-columns: 1fr;
-  }
-
-  /* reducir padding de cards */
-  .card, .miembro{
-    padding:20px;
-  }
-
-  /* botones más pequeños */
-  .carousel button{
-    padding:8px 10px;
-    font-size:16px;
-  }
-
-}
-  
-@media(max-width:600px){
-  .ponente{
-    flex-direction:column;
-    text-align:center;
-    align-items:center;
-  }
-  .info{
-    text-align:center;
-  }
-}
-  
-/* 🔥 TEXTOS MÁS CÓMODOS EN CELULAR */
-@media(max-width:600px){
-
-  body{
-    font-size:15px;
-  }
-
-  h1{
-    font-size:28px;
-  }
-
-  h2{
-    font-size:22px;
-  }
-
-  p{
-    font-size:14px;
-    line-height:1.5;
-  }
-
-  .descripcion{
-    font-size:13px;
-  }
-
-}
-
-
 
 /* 🔥 FIX TEXTO PONENTES */
 .ponente .info {
