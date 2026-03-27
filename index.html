@@ -909,8 +909,8 @@ function mover(dir, id){
 
   sliders[id].index += dir;
 
-  if(sliders[id].index < 0) sliders[id].index = 0;
-  if(sliders[id].index >= total) sliders[id].index = total - 1;
+  if(sliders[id].index < 0) sliders[id].index = total - 1;
+  if(sliders[id].index >= total) sliders[id].index = 0;
 
   actualizarSlider(id);
 }
@@ -921,20 +921,15 @@ const wrapper = track.parentElement;
 
 sliders[id].index = i;
 
-const ancho = wrapper.offsetWidth;
-
-track.style.transform = `translateX(-${i * ancho}px)`;
+track.style.transform = `translateX(-${i * 100}%)`;
 
 actualizarDots(id);
 }
 
 function actualizarSlider(id){
   const track = document.getElementById(id);
-  const wrapper = track.parentElement;
 
-  const ancho = wrapper.offsetWidth;
-
-  track.style.transform = `translateX(-${sliders[id].index * ancho}px)`;
+  track.style.transform = `translateX(-${sliders[id].index * 100}%)`;
 
   actualizarDots(id);
 }
