@@ -203,10 +203,6 @@ margin-bottom:10px;
   transform: translateY(0);
 }
 
-.miembro h3, .info h3 {
-  word-break: break-word;
-}
-
 @media(max-width:600px){
   .mensaje{
     position: static;
@@ -512,10 +508,27 @@ margin-bottom:5px;
   min-width: 0; /* 🔥 CRÍTICO */
 }
 
-.miembro h3{
-  overflow-wrap: break-word;
+.cards {
+  display: flex;
+  gap: 20px;
+  align-items: stretch; /* 🔥 AGREGA ESTO */
 }
 
+.card {
+  flex: 1;
+  display: flex;              /* 🔥 */
+  flex-direction: column;     /* 🔥 */
+  justify-content: center;    /* 🔥 opcional */
+}
+
+.ponente {
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.ponente .info {
+  overflow: hidden;
+}
   
 </style>
 
