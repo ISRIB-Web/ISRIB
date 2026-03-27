@@ -298,7 +298,10 @@ width:100%
   
 /* carrusel general */
 .carousel-track .grupo{
-  grid-template-columns: repeat(3, 1fr);
+  display:grid;
+  min-width:100%;
+  gap:25px;
+  flex-shrink:0;
 }
   
 .grupo{
@@ -309,29 +312,23 @@ width:100%
   flex-shrink:0;
 }
 #ponentes .grupo{
+  grid-template-columns: repeat(2, 1fr);
+}
+
+#miembros .grupo{
   grid-template-columns: repeat(3, 1fr);
 }
 
-@media(max-width:900px){
-  .carousel-track .grupo{
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
-
-/* móvil */
 @media(max-width:600px){
-  .carousel-track .grupo{
-    grid-template-columns: 1fr;
-  }
-}
-  
-@media(max-width:600px){
-
-  .carousel-track .grupo{
+  #miembros .grupo{
     grid-template-columns: 1fr;
   }
 
+  #ponentes .grupo{
+    grid-template-columns: 1fr;
+  }
 }
+
 
 /* ===== INDICADORES ===== */
 .indicadores{
