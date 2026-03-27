@@ -109,7 +109,6 @@ margin-bottom:30px;
   .cards{
     flex-direction:column;
   }
-
   .card{
     min-width:100%;
   }
@@ -297,16 +296,6 @@ width:100%
   grid-template-columns: repeat(2, 1fr);
 }
 
-@media(max-width:600px){
-  #miembros .grupo{
-    grid-template-columns: 1fr;
-  }
-
-  #ponentes .grupo{
-    grid-template-columns: 1fr;
-  }
-}
-
 
 /* ===== INDICADORES ===== */
 .indicadores{
@@ -412,17 +401,7 @@ margin-bottom:5px;
   font-size:14px;
   margin:5px 0;
 }
-@media(max-width:600px){
-  .ponente{
-    flex-direction:column;
-    text-align:center;
-    align-items:center;
-  }
 
-  .info{
-    text-align:center;
-  }
-}
 
 .info{
   display:flex;
@@ -457,7 +436,30 @@ margin-bottom:5px;
   }
 
 }
+  
+@media(max-width:600px){
+  .ponente{
+    flex-direction:column;
+    text-align:center;
+    align-items:center;
+  }
+  .info{
+    text-align:center;
+  }
+}
 
+@media(max-width:600px){
+  #miembros .grupo{
+    grid-template-columns: 1fr;
+  }
+
+  #ponentes .grupo{
+    grid-template-columns: 1fr;
+  }
+}
+
+
+  
 /* 🔥 TEXTOS MÁS CÓMODOS EN CELULAR */
 @media(max-width:600px){
 
