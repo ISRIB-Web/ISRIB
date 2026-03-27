@@ -500,6 +500,46 @@ margin-bottom:5px;
 
 }
 
+/* 🔥 CARDS MISMA ALTURA */
+.cards {
+  display: flex;
+  gap: 20px;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+/* 🔥 FIX TEXTO PONENTES */
+.ponente .info {
+  min-width: 0; /* 🔥 CRÍTICO */
+}
+
+.ponente p,
+.ponente h3,
+.ponente span {
+  overflow-wrap: break-word;
+  word-break: break-word;
+}
+
+.ponente {
+  align-items: stretch; /* 🔥 mejor que flex-start */
+}
+
+.info {
+  width: 100%;
+}
+
+#ponentes .grupo {
+  align-items: stretch;
+}
+
+.ponente {
+  height: 100%;
+}
+  
 </style>
 
 </head>
