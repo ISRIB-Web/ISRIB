@@ -95,6 +95,7 @@ margin-bottom:30px;
 display:flex;
 flex-wrap:wrap;
 gap:20px;
+align-items: stretch;
 }
 .cards .card{
 flex:1;
@@ -293,6 +294,7 @@ width:100%
   min-width:100%;
   box-sizing:border-box;
   gap:25px;
+  flex-shrink:0;
 }
 #ponentes .grupo{
   display:grid;
@@ -461,12 +463,6 @@ margin-bottom:5px;
 
 }
 
-/* 🔥 FIX TEXTOS MOBILE */
-.card, .miembro, .ponente, .info {
-  word-wrap: break-word;
-  overflow-wrap: break-word;
-  word-break: break-word;
-}
 
 /* 🔥 EVITA DESBORDE EN FLEX */
 .cards .card,
@@ -500,17 +496,7 @@ margin-bottom:5px;
 
 }
 
-/* 🔥 CARDS MISMA ALTURA */
-.cards {
-  display: flex;
-  gap: 20px;
-}
 
-.card {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-}
 
 /* 🔥 FIX TEXTO PONENTES */
 .ponente .info {
@@ -521,24 +507,12 @@ margin-bottom:5px;
 .ponente h3,
 .ponente span {
   overflow-wrap: break-word;
-  word-break: break-word;
 }
 
-.ponente {
-  align-items: stretch; /* 🔥 mejor que flex-start */
+.miembro h3{
+  overflow-wrap: break-word;
 }
 
-.info {
-  width: 100%;
-}
-
-#ponentes .grupo {
-  align-items: stretch;
-}
-
-.ponente {
-  height: 100%;
-}
   
 </style>
 
@@ -947,21 +921,16 @@ dots[sliders[id].index].classList.add("active");
 }
 
 function mover(dir, id){
-const track = document.getElementById(id);
-const total = track.children.length;
-const wrapper = track.parentElement;
+  const track = document.getElementById(id);
+  const total = track.children.length;
+  const wrapper = track.parentElement;
 
-sliders[id].index += dir;
+  sliders[id].index += dir;
 
-if(sliders[id].index < 0) sliders[id].index = 0;
-if(sliders[id].index >= total) sliders[id].index = total - 1;
+  if(sliders[id].index < 0) sliders[id].index = 0;
+  if(sliders[id].index >= total) sliders[id].index = total - 1;
 
-// 🔥 calcular ancho REAL
-const ancho = wrapper.offsetWidth;
-
-track.style.transform = `translateX(-${sliders[id].index * ancho}px)`;
-
-actualizarDots(id);
+  actualizarSlider(id);
 }
 
 function irA(i, id){
@@ -977,6 +946,22 @@ track.style.transform = `translateX(-${i * ancho}px)`;
 actualizarDots(id);
 }
 
+function actualizarSlider(id){
+  const track = document.getElementById(id);
+  const wrapper = track.parentElement;
+
+  const ancho = wrapper.offsetWidth;
+
+  track.style.transform = `translateX(-${sliders[id].index * ancho}px)`;
+
+  actualizarDots(id);
+}
+
+window.addEventListener("resize", () => {
+  actualizarSlider("comite");
+  actualizarSlider("ponentes-track");
+});
+  
 /* inicializar */
 initSlider("comite");
 initSlider("ponentes-track");
