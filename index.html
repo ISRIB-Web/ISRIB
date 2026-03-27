@@ -116,19 +116,6 @@ margin-bottom:30px;
 
 
 /* ===== MIEMBROS ===== */
-.miembros{
-display:grid;
-grid-template-columns: repeat(3, 1fr); /* SIEMPRE 3 columnas */
-gap:30px;
-}
-
-/* En celular baja a 1 columna */
-@media(max-width:600px){
-  .miembros{
-  grid-template-columns: 1fr;
-  }
-}
-
 .miembro{
 background:white;
 border-radius:18px;
@@ -167,11 +154,7 @@ margin-bottom:10px;
   flex-direction: column;
   align-items: center;
 }
-  
-#miembros .grupo{
-  grid-template-columns: repeat(3, 1fr);
-}
-  
+    
 .mensaje{
   position: absolute;
   bottom: 0;
@@ -286,10 +269,18 @@ width:100%
   
 /* carrusel general */
 .carousel-track .grupo{
-  display:grid;
-  min-width:100%;
-  gap:25px;
-  flex-shrink:0;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* 🔥 3 miembros por slide */
+  min-width: 100%;
+  gap: 25px;
+  flex-shrink: 0;
+}
+
+/* MOBILE */
+@media(max-width:600px){
+  .carousel-track .grupo{
+    grid-template-columns: 1fr; /* 🔥 1 por slide */
+  }
 }
   
 #ponentes .grupo{
@@ -447,18 +438,6 @@ margin-bottom:5px;
     text-align:center;
   }
 }
-
-@media(max-width:600px){
-  #miembros .grupo{
-    grid-template-columns: 1fr;
-  }
-
-  #ponentes .grupo{
-    grid-template-columns: 1fr;
-  }
-}
-
-
   
 /* 🔥 TEXTOS MÁS CÓMODOS EN CELULAR */
 @media(max-width:600px){
