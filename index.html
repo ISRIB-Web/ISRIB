@@ -118,6 +118,7 @@ img{
   transition: all 0.3s ease;
   position:relative;
   overflow: hidden;
+  min-width: 0;
 }
 
 .miembro:hover{
@@ -159,30 +160,33 @@ img{
 /* ============== Mensaje ========================= */    
 .mensaje{
   position: absolute;
-  top: 0;       /* 🔥 en vez de bottom */
+  top: 0;
   left: 0;
   width: 100%;
-  height: 100%; /* 🔥 ocupa TODA la card */
+  height: 100%;
  
-  background: var(--azul); /* 🔥 azul sólido */
+  background: var(--azul);
   color: white;
   
   padding: 15px;
   font-size: 13px;
-  hyphens: auto;
+
   opacity: 0;
   transition: all 0.4s ease;
   
   border-radius: 18px;
  
-  overflow-y: auto; /* scroll si es largo */
+  overflow-y: auto;
+
   line-height: 1.5;
   text-align: left;
 
-  /* 🔥 FIX CLAVE PARA TEXTO */
-  word-wrap: break-word;
-  overflow-wrap: break-word;
+  /* 🔥 FIX REAL */
+  word-break: break-word;
+  overflow-wrap: anywhere;
   white-space: normal;
+
+  box-sizing: border-box; /* 🔥 CLAVE */
 }
 
 /* aparece al pasar el mouse */
@@ -486,6 +490,36 @@ height:100px;
 
   .miembro{
     padding: 15px;
+  }
+
+}
+
+@media (max-width: 768px){
+
+  /* 🔥 Quitar efecto carrusel visual raro */
+  .carousel-track{
+    transform: none !important;
+  }
+
+  /* 🔥 Cada grupo ocupa normal */
+  .carousel-track .grupo{
+    min-width: 100%;
+  }
+
+  /* 🔥 PONENTES en columna */
+  .grupo.ponentes{
+    grid-template-columns: 1fr;
+  }
+
+  /* 🔥 Mejor estructura del card */
+  .ponente{
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .ponente .info{
+    text-align: center;
   }
 
 }
