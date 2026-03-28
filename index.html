@@ -493,34 +493,6 @@ height:100px;
   }
 
 }
-
-@media (max-width: 768px){
-
-  #ponentes .carousel-track{
-    display: block;
-    transform: none !important;
-  }
-
-  #ponentes .grupo{
-    display: block;
-    margin-bottom: 20px;
-  }
-
-  #ponentes .ponente{
-    display: block;
-    text-align: center;
-    padding: 20px;
-  }
-
-  #ponentes .ponente img{
-    margin-bottom: 10px;
-  }
-
-  #ponentes .info{
-    text-align: center;
-  }
-
-}
   
 @media (max-width: 768px){
 
@@ -535,6 +507,22 @@ height:100px;
   .miembro:hover h3,
   .miembro:hover span{
     opacity: 1;
+  }
+
+}
+
+@media (max-width: 768px){
+
+  #miembros .grupo{
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  #ponentes .grupo{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
   }
 
 }
