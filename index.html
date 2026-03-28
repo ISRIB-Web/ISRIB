@@ -496,34 +496,32 @@ height:100px;
 
 @media (max-width: 768px){
 
-  /* 🔥 Quitar efecto carrusel visual raro */
-  .carousel-track{
+  #ponentes .carousel-track{
+    display: block;
     transform: none !important;
   }
 
-  /* 🔥 Cada grupo ocupa normal */
-  .carousel-track .grupo{
-    min-width: 100%;
+  #ponentes .grupo{
+    display: block;
+    margin-bottom: 20px;
   }
 
-  /* 🔥 PONENTES en columna */
-  .grupo.ponentes{
-    grid-template-columns: 1fr;
-  }
-
-  /* 🔥 Mejor estructura del card */
-  .ponente{
-    flex-direction: column;
-    align-items: center;
+  #ponentes .ponente{
+    display: block;
     text-align: center;
+    padding: 20px;
   }
 
-  .ponente .info{
+  #ponentes .ponente img{
+    margin-bottom: 10px;
+  }
+
+  #ponentes .info{
     text-align: center;
   }
 
 }
-
+  
 @media (max-width: 768px){
 
   .mensaje{
