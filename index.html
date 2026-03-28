@@ -95,6 +95,11 @@ h2{
   margin-bottom:30px;
 }
 
+img{
+  max-width: 100%;
+  height: auto;
+}
+
 /* ===== CARDS ===== */
 .card{
   flex:1;
@@ -158,18 +163,23 @@ h2{
   left: 0;
   width: 100%;
   height: 100%; /* 🔥 ocupa TODA la card */
+ 
   background: var(--azul); /* 🔥 azul sólido */
   color: white;
+  
   padding: 20px;
   font-size: 14px;
+  
   opacity: 0;
   transition: all 0.4s ease;
+  
   border-radius: 18px;
+ 
   overflow-y: auto; /* scroll si es largo */
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
+  
+  display: block;
+  line-height: 1.5
+  text-align: left;
 }
 
 /* aparece al pasar el mouse */
@@ -267,18 +277,18 @@ footer{
 
 /* ===== INDICADORES ===== */
 .indicadores{
-text-align:center;
-margin-top:15px;
+  text-align:center;
+  margin-top:15px;
 }
 
 .dot{
-display:inline-block;
-width:10px;
-height:10px;
-margin:5px;
-background:var(--verde);
-border-radius:50%;
-cursor:pointer;
+  display:inline-block;
+  width:10px;
+  height:10px;
+  margin:5px;
+  background:var(--verde);
+  border-radius:50%;
+  cursor:pointer;
 }
 
 .dot.active{
@@ -424,6 +434,12 @@ height:100px;
   gap: 20px;
 }
 
+@media (max-width: 768px){
+  .grupo.ponentes{
+    grid-template-columns: 1fr; /* 🔥 1 por fila */
+  }
+}
+
 @media (max-width: 900px){
   .grupo.miembros{
     grid-template-columns: repeat(2, 1fr);
@@ -449,6 +465,12 @@ height:100px;
 @media (max-width: 500px){
   .grupo.miembros{
     grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 768px){
+  .cards{
+    flex-direction: column; /* 🔥 se vuelven verticales */
   }
 }
   
