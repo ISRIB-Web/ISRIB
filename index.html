@@ -168,8 +168,8 @@ img{
   background: var(--azul);
   color: white;
   
-  padding: 15px;
-  font-size: 13px;
+  padding: 18px;
+  font-size: 13.5px;
 
   opacity: 0;
   transition: all 0.4s ease;
@@ -178,8 +178,9 @@ img{
  
   overflow-y: auto;
 
-  line-height: 1.5;
+  line-height: 1.6;
   text-align: left;
+  padding-bottom: 25px;
 
   /* 🔥 FIX REAL */
   word-break: break-word;
@@ -468,12 +469,6 @@ height:100px;
 
 }
 
-@media (max-width: 500px){
-  .grupo.miembros{
-    grid-template-columns: 1fr;
-  }
-}
-
 @media (max-width: 768px){
   .cards{
     flex-direction: column; /* 🔥 se vuelven verticales */
@@ -510,7 +505,14 @@ height:100px;
 
 }
 
-
+@media (max-width: 768px){
+  .ponente{
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+}
+  
 </style>
 
 </head>
