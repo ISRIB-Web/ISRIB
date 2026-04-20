@@ -447,6 +447,33 @@ height:100px;
 #inscripcion h2{
   color: white;
 }
+.btn-inscripcion{
+  background: white;
+  color: var(--verde);
+  padding: 15px 25px;
+  font-size: 16px;
+  font-weight: bold;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.btn-inscripcion:hover{
+  background: var(--azul);
+  color: white;
+  transform: scale(1.05);
+}
+
+.btn-inscripcion{
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse{
+  0%{ transform: scale(1); }
+  50%{ transform: scale(1.05); }
+  100%{ transform: scale(1); }
+}
   
 /* TABLET */
 @media (max-width: 900px){
@@ -551,10 +578,9 @@ height:100px;
 <section id="inscripcion" style="text-align:center;">
   <h2>Inscripciones abiertas</h2>
   <p>Regístrate ahora para participar en ISRIB 2026</p>
-
-  <a href="https://forms.gle/TU-LINK-AQUI" target="_blank" class="btn-inscripcion">
+  <button class="btn-inscripcion" onclick="window.open('https://forms.gle/TU-LINK-AQUI', '_blank')">
     Inscribirme ahora
-  </a>
+  </button>
 </section>
 
 <section id="sobre">
