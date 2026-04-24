@@ -19,7 +19,9 @@
 html{
 scroll-behavior:smooth;
 }
-
+*{
+  box-sizing: border-box;
+}
 /* ===== BODY ===== */
 body{
   font-family: Monserrat, sans-serif;
@@ -218,12 +220,14 @@ td{
 /* ===== FOOTER ===== */
 footer{
   width: 100%;
-  margin-left: 0;
-  
+  margin: 0;
+  padding: 50px 20px;
+
   background: var(--azul);
-  color:white;
-  text-align:center;
-  padding:40px 20px;
+  color: white;
+  text-align: center;
+
+  box-sizing: border-box;
 }
 
 .social a{
@@ -246,6 +250,8 @@ footer{
   align-items:center;
   justify-content:center;
   gap:10px;
+  max-width: 100%;
+  overflow: hidden;
 }
 
 .carousel button{
@@ -256,6 +262,7 @@ footer{
   cursor:pointer;
   font-size:18px;
   border-radius:6px;
+  flex-shrink: 0;
 }
 
 .carousel-wrapper{
@@ -592,9 +599,6 @@ html, body{
 </section>
 
 <section id="sobre">
-
-<section id="sobre">
-
 <h2>Sobre el evento</h2>
 
 <p style="text-align:center; max-width:700px; margin:auto;">
