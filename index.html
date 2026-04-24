@@ -85,15 +85,25 @@ header p{
 
 /* ===== SECCIONES ===== */
 section{
-  padding:60px 20px;
+  padding:80px 20px;
 }
 
 .container{
+  
   max-width:1100px;
   margin:0 auto;
-  padding:0 20px;
-}
+  padding:30px 25px; /* 🔥 más aire interno */
 
+  background: white; /* 🔥 clave */
+  border-radius:20px; /* 🔥 bordes redondeados */
+  box-shadow:0 10px 30px rgba(0,0,0,0.08); /* 🔥 look pro */
+}
+  
+#ponentes .container,
+#inscripcion .container{
+  background: transparent;
+  box-shadow: none;
+}
 h2{
   text-align:center;
   color:var(--azul);
@@ -291,14 +301,15 @@ footer{
   display:inline-block;
   width:10px;
   height:10px;
-  margin:5px;
-  background:var(--verde);
   border-radius:50%;
   cursor:pointer;
+
+  background: rgba(255,255,255,0.4); /* 🔥 visible en fondo azul */
+  transition: background 0.3s ease;
 }
 
 .dot.active{
-  background:var(--azul);
+  background: var(--verde); /* 🔥 cambio claro */
 }
 /* ===== PONENTES PRO ===== */
 
