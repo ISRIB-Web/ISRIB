@@ -217,8 +217,8 @@ td{
 
 /* ===== FOOTER ===== */
 footer{
-  width: 100vw;              /* 🔥 ocupa todo el ancho de la pantalla */
-  margin-left: calc(-50vw + 50%); /* 🔥 rompe el centrado del container */
+  width: 100%;
+  margin-left: 0;
   
   background: var(--azul);
   color:white;
@@ -472,6 +472,10 @@ height:100px;
   animation: pulse 2s infinite;
 }
 
+html, body{
+  overflow-x: hidden;
+}
+
 @keyframes pulse{
   0%{ transform: scale(1); }
   50%{ transform: scale(1.05); }
@@ -563,6 +567,7 @@ height:100px;
 <a href="#ponentes">Ponentes</a>
 <a href="#miembros">Comité</a>
 <a href="#programa">Programa</a>
+<a href="#contacto">Contacto</a>
 </nav>
 
 
@@ -1017,7 +1022,7 @@ Conoce a nuestros speakers invitados
 </section>
 
 
-<footer>
+<footer id="contacto">
 
 <p>Contacto: isrib.official@gmail.com</p>
 
