@@ -217,10 +217,13 @@ td{
 
 /* ===== FOOTER ===== */
 footer{
-  background:var(--azul);
+  width: 100vw;              /* 🔥 ocupa todo el ancho de la pantalla */
+  margin-left: calc(-50vw + 50%); /* 🔥 rompe el centrado del container */
+  
+  background: var(--azul);
   color:white;
   text-align:center;
-  padding:40px;
+  padding:40px 20px;
 }
 
 .social a{
