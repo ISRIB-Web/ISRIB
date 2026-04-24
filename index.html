@@ -27,7 +27,6 @@ body{
   background:white;
   color:var(--gris-oscuro);
   padding-top:70px; /* espacio para menú fijo */
-  overflow-x:hidden;
 }
 
 /* ===== NAVBAR ===== */
@@ -85,25 +84,11 @@ header p{
 
 /* ===== SECCIONES ===== */
 section{
-  padding:80px 20px;
+  max-width:1000px;
+  margin:auto;
+  padding:60px 20px;
 }
 
-.container{
-  
-  max-width:1100px;
-  margin:0 auto;
-  padding:30px 25px; /* 🔥 más aire interno */
-
-  background: white; /* 🔥 clave */
-  border-radius:20px; /* 🔥 bordes redondeados */
-  box-shadow:0 10px 30px rgba(0,0,0,0.08); /* 🔥 look pro */
-}
-  
-#ponentes .container,
-#inscripcion .container{
-  background: transparent;
-  box-shadow: none;
-}
 h2{
   text-align:center;
   color:var(--azul);
@@ -301,23 +286,14 @@ footer{
   display:inline-block;
   width:10px;
   height:10px;
+  margin:5px;
+  background:var(--verde);
   border-radius:50%;
   cursor:pointer;
-
-  background: rgba(255,255,255,0.4); /* 🔥 visible en fondo azul */
-  transition: background 0.3s ease;
 }
 
 .dot.active{
-  background: var(--verde); /* 🔥 cambio claro */
-
-#miembros .dot{
-  background: rgba(0,0,0,0.2);
-}
-
-#miembros .dot.active{
-  background: var(--gris-claro);
-}
+  background:var(--azul);
 }
 /* ===== PONENTES PRO ===== */
 
@@ -353,11 +329,9 @@ footer{
  
 #ponentes{
   background: var(--azul);
-  padding:60px 0; /* sin padding lateral */
-}
-
-#ponentes .container{
-  background: transparent;
+  border-radius:20px;
+  margin-top:20px;
+  padding:40px 20px; /* 👈 agrega esto */
 }
 
 #ponentes h2{
@@ -464,12 +438,10 @@ height:100px;
 #inscripcion{
   background: var(--verde);
   color: white;
-  padding:60px 0;
-}
-
-#inscripcion .container{
-  text-align:center;
-  max-width:900px;
+  padding: 50px 20px;
+  border-radius: 20px;
+  margin: 40px auto;
+  max-width: 900px;
 }
 
 #inscripcion h2{
@@ -604,34 +576,35 @@ height:100px;
 </header>
 
 <section id="inscripcion" style="text-align:center;">
-  <div class="container">
-    <h2>Inscripciones abiertas</h2>
-    <p>Regístrate ahora para participar en ISRIB 2026</p>
-    <button class="btn-inscripcion" onclick="window.open('https://docs.google.com/forms/d/e/1FAIpQLSevctONfde26FlMuBsuuQqzbPPbliDzIWBW5KKrzAGRUVEEPw/viewform?usp=publish-editor', '_blank')">
-      Inscribirme ahora
-    </button>
-  </div>
+  <h2>Inscripciones abiertas</h2>
+  <p>Regístrate ahora para participar en ISRIB 2026</p>
+  <button class="btn-inscripcion" onclick="window.open('https://docs.google.com/forms/d/e/1FAIpQLSevctONfde26FlMuBsuuQqzbPPbliDzIWBW5KKrzAGRUVEEPw/viewform?usp=publish-editor', '_blank')">
+    Inscribirme ahora
+  </button>
 </section>
 
 <section id="sobre">
-  <div class="container">
-    <h2>Sobre el evento</h2>
-    <p style="text-align:center; max-width:700px; margin:auto;">
-    ISRIB es un evento a nivel nacional e internacional dirigido a estudiantes de últimos años de secundaria y 
-    universitarios de pregrado. Además de reunir a estudiantes de Ingeniería Biomédica,
-    Derecho y Ciencias de la Información para fomentar la investigación científica.</p>
-    <p></p>
-    <p style="text-align:center; max-width:700px; margin:auto;">
-    Siendo nuestro principal objetivo, incentivar a la búsqueda de información en escolares y universitarios, 
-    contribuyendo en la formación académica de los estudiantes mediante la intervención de ponentes con destacada 
-    experiencia académica.</p>
-  </div>
+
+<section id="sobre">
+
+<h2>Sobre el evento</h2>
+
+<p style="text-align:center; max-width:700px; margin:auto;">
+ISRIB es un evento a nivel nacional e internacional dirigido a estudiantes de últimos años de secundaria y 
+universitarios de pregrado. Además de reunir a estudiantes de Ingeniería Biomédica,
+Derecho y Ciencias de la Información para fomentar la investigación científica.</p>
+<p></p>
+<p style="text-align:center; max-width:700px; margin:auto;">
+Siendo nuestro principal objetivo, incentivar a la búsqueda de información en escolares y universitarios, 
+contribuyendo en la formación académica de los estudiantes mediante la intervención de ponentes con destacada 
+experiencia académica.</p>
+
 </section>
 
 
 <section id="areas">
 
-<h2>Carreras involucradas en el evento</h2>
+<h2>Áreas del Bootcamp</h2>
 
 <div class="cards">
 
@@ -655,148 +628,148 @@ height:100px;
 
 
 <section id="ponentes">
-  <div class="container">  
-    <h2>Ponentes</h2>
-    <p style="text-align:center; color:white;">
-    Conoce a nuestros speakers invitados
+
+<h2>Ponentes</h2>
+<p style="text-align:center; color:white;">
+Conoce a nuestros speakers invitados
+</p>
+<div class="carousel">
+
+<button onclick="mover(-1, 'ponentes-track')">◀</button>
+
+<div class="carousel-wrapper">
+
+<div class="carousel-track" id="ponentes-track">
+
+<!-- 🔽 GRUPO 1 -->
+<div class="grupo ponentes">
+
+<div class="card ponente">
+
+  <a href="https://www.linkedin.com/in/usuario" target="_blank">
+  <img src="ponentes/sinImagen.jpg" class="foto-ponente" loading="lazy">
+  </a>
+
+  <div class="info">
+    <h3>Dante Angel Elias Giordano</h3>
+    <span class="uni">Universidad</span>
+    <p class="tema">Tema de la charla</p>
+    <p class="descripcion">
+      Ingeniero mecánico por la Pontificia Universidad Católica del Perú (PUCP) y doctor en Ciencias de la 
+      Ingeniería con mención en Diseño Mecánico Asistido por Computador por la Pontificia Universidad Católica de 
+      Chile. Profesor a tiempo completo en la PUCP desde 1992 e investigador desde el año 2000. Es coordinador del 
+      Grupo de Investigación en Biomecánica y Robótica Aplicada (GIRAB). Ha sido reconocido con el Premio Nacional 
+      SINACYT a la Innovación (2014) y el Premio Especial a Inventos con Mayor Impacto Social otorgado por NESST 
+      Perú (2013). Cuenta con amplia experiencia como autor de publicaciones científicas, organizador de eventos 
+      académicos internacionales y revisor de artículos para congresos y revistas especializadas. Además, 
+      se desempeña como asesor en la formulación y ejecución de proyectos de investigación.
     </p>
-    <div class="carousel">
-    
-    <button onclick="mover(-1, 'ponentes-track')">◀</button>
-    
-    <div class="carousel-wrapper">
-    
-    <div class="carousel-track" id="ponentes-track">
-    
-    <!-- 🔽 GRUPO 1 -->
-    <div class="grupo ponentes">
-    
-    <div class="card ponente">
-    
-      <a href="https://www.linkedin.com/in/usuario" target="_blank">
-      <img src="ponentes/sinImagen.jpg" class="foto-ponente" loading="lazy">
-      </a>
-    
-      <div class="info">
-        <h3>Dante Angel Elias Giordano</h3>
-        <span class="uni">Universidad</span>
-        <p class="tema">Tema de la charla</p>
-        <p class="descripcion">
-          Ingeniero mecánico por la Pontificia Universidad Católica del Perú (PUCP) y doctor en Ciencias de la 
-          Ingeniería con mención en Diseño Mecánico Asistido por Computador por la Pontificia Universidad Católica de 
-          Chile. Profesor a tiempo completo en la PUCP desde 1992 e investigador desde el año 2000. Es coordinador del 
-          Grupo de Investigación en Biomecánica y Robótica Aplicada (GIRAB). Ha sido reconocido con el Premio Nacional 
-          SINACYT a la Innovación (2014) y el Premio Especial a Inventos con Mayor Impacto Social otorgado por NESST 
-          Perú (2013). Cuenta con amplia experiencia como autor de publicaciones científicas, organizador de eventos 
-          académicos internacionales y revisor de artículos para congresos y revistas especializadas. Además, 
-          se desempeña como asesor en la formulación y ejecución de proyectos de investigación.
-        </p>
-      </div>
-    
-    </div>
-    
-    <div class="card ponente">
-    
-      <img src="ponentes/sinImagen.jpg" class="foto-ponente" loading="lazy">
-    
-      <div class="info">
-        <h3>Paulo Camilo Alberto Vela Anton</h3>
-        <span class="uni">Universidad</span>
-        <p class="tema">Tema de la charla</p>
-        <p class="descripcion">
-          Ingeniero mecatrónico y magíster en Informática Biomédica por la Universidad Peruana Cayetano Heredia (UPCH). 
-          Actualmente cursa estudios en política de tecnología e innovación en University College London (UCL). 
-          Es miembro de programas internacionales como Leaders in Innovation Fellowships y Engineering for Change. 
-          Su trabajo se centra en la aplicación de ciencia de datos e inteligencia artificial en salud global, 
-          incluyendo vigilancia farmacéutica y preparación ante pandemias bajo el enfoque One Health. Cuenta con 
-          experiencia en docencia e investigación en IoT médico, machine learning y dispositivos inteligentes. 
-          Actualmente participa en iniciativas de promoción de la inteligencia artificial y transferencia tecnológica 
-          en el Perú, integrando ingeniería, datos y políticas de innovación para fortalecer el desarrollo tecnológico 
-          y el bienestar social.
-        </p>
-      </div>
-    
-    </div>
-    
-    </div>
-    
-    <!-- 🔽 GRUPO 2 -->
-    <div class="grupo ponentes">
-    
-    <div class="card ponente">
-    
-      <img src="ponentes/sinImagen.jpg" class="foto-ponente" loading="lazy">
-    
-      <div class="info">
-        <h3>Lizardo Kendy Torres Ayala</h3>
-        <span class="uni">Universidad</span>
-        <p class="tema">Tema de la charla</p>
-        <p class="descripcion">
-          Breve descripción del ponente, experiencia, logros, etc.
-        </p>
-      </div>
-    
-    </div>
-    
-    <div class="card ponente">
-    
-      <img src="ponentes/sinImagen.jpg" class="foto-ponente" loading="lazy">
-    
-      <div class="info">
-        <h3>Ponente 1</h3>
-        <span class="uni">Universidad</span>
-        <p class="tema">Tema de la charla</p>
-        <p class="descripcion">
-          Breve descripción del ponente, experiencia, logros, etc.
-        </p>
-      </div>
-    
-    </div>
-    
-    </div>
-    <!-- 🔽 GRUPO 3 -->
-    <div class="grupo ponentes">
-    
-    <div class="card ponente">
-    
-      <img src="ponentes/sinImagen.jpg" class="foto-ponente" loading="lazy">
-    
-      <div class="info">
-        <h3>Ponente1</h3>
-        <span class="uni">Universidad</span>
-        <p class="tema">Tema de la charla</p>
-        <p class="descripcion">
-          Breve descripción del ponente, experiencia, logros, etc.
-        </p>
-      </div>
-    
-    </div>
-    
-    <div class="card ponente">
-    
-      <img src="ponentes/sinImagen.jpg" class="foto-ponente" loading="lazy">
-    
-      <div class="info">
-        <h3>Ponente 1</h3>
-        <span class="uni">Universidad</span>
-        <p class="tema">Tema de la charla</p>
-        <p class="descripcion">
-          Breve descripción del ponente, experiencia, logros, etc.
-        </p>
-      </div>
-    
-    </div>
-    
-    </div>
-    </div> <!-- 👈 CIERRA carousel-track -->
-    </div> <!-- 👈 CIERRA wrapper -->
-    
-    <button onclick="mover(1, 'ponentes-track')">▶</button>
-    
-    </div> <!-- 👈 CIERRA carousel -->
-    
-    <div class="indicadores" id="dots-ponentes-track"></div>
   </div>
+
+</div>
+
+<div class="card ponente">
+
+  <img src="ponentes/sinImagen.jpg" class="foto-ponente" loading="lazy">
+
+  <div class="info">
+    <h3>Paulo Camilo Alberto Vela Anton</h3>
+    <span class="uni">Universidad</span>
+    <p class="tema">Tema de la charla</p>
+    <p class="descripcion">
+      Ingeniero mecatrónico y magíster en Informática Biomédica por la Universidad Peruana Cayetano Heredia (UPCH). 
+      Actualmente cursa estudios en política de tecnología e innovación en University College London (UCL). 
+      Es miembro de programas internacionales como Leaders in Innovation Fellowships y Engineering for Change. 
+      Su trabajo se centra en la aplicación de ciencia de datos e inteligencia artificial en salud global, 
+      incluyendo vigilancia farmacéutica y preparación ante pandemias bajo el enfoque One Health. Cuenta con 
+      experiencia en docencia e investigación en IoT médico, machine learning y dispositivos inteligentes. 
+      Actualmente participa en iniciativas de promoción de la inteligencia artificial y transferencia tecnológica 
+      en el Perú, integrando ingeniería, datos y políticas de innovación para fortalecer el desarrollo tecnológico 
+      y el bienestar social.
+    </p>
+  </div>
+
+</div>
+
+</div>
+
+<!-- 🔽 GRUPO 2 -->
+<div class="grupo ponentes">
+
+<div class="card ponente">
+
+  <img src="ponentes/sinImagen.jpg" class="foto-ponente" loading="lazy">
+
+  <div class="info">
+    <h3>Lizardo Kendy Torres Ayala</h3>
+    <span class="uni">Universidad</span>
+    <p class="tema">Tema de la charla</p>
+    <p class="descripcion">
+      Breve descripción del ponente, experiencia, logros, etc.
+    </p>
+  </div>
+
+</div>
+
+<div class="card ponente">
+
+  <img src="ponentes/sinImagen.jpg" class="foto-ponente" loading="lazy">
+
+  <div class="info">
+    <h3>Ponente 1</h3>
+    <span class="uni">Universidad</span>
+    <p class="tema">Tema de la charla</p>
+    <p class="descripcion">
+      Breve descripción del ponente, experiencia, logros, etc.
+    </p>
+  </div>
+
+</div>
+
+</div>
+<!-- 🔽 GRUPO 3 -->
+<div class="grupo ponentes">
+
+<div class="card ponente">
+
+  <img src="ponentes/sinImagen.jpg" class="foto-ponente" loading="lazy">
+
+  <div class="info">
+    <h3>Ponente1</h3>
+    <span class="uni">Universidad</span>
+    <p class="tema">Tema de la charla</p>
+    <p class="descripcion">
+      Breve descripción del ponente, experiencia, logros, etc.
+    </p>
+  </div>
+
+</div>
+
+<div class="card ponente">
+
+  <img src="ponentes/sinImagen.jpg" class="foto-ponente" loading="lazy">
+
+  <div class="info">
+    <h3>Ponente 1</h3>
+    <span class="uni">Universidad</span>
+    <p class="tema">Tema de la charla</p>
+    <p class="descripcion">
+      Breve descripción del ponente, experiencia, logros, etc.
+    </p>
+  </div>
+
+</div>
+
+</div>
+</div> <!-- 👈 CIERRA carousel-track -->
+</div> <!-- 👈 CIERRA wrapper -->
+
+<button onclick="mover(1, 'ponentes-track')">▶</button>
+
+</div> <!-- 👈 CIERRA carousel -->
+
+<div class="indicadores" id="dots-ponentes-track"></div>
+
 </section>
   
 <section id="miembros">
