@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Preguntas Frecuentes - ISRIB 2026</title>
+
+<style>
+:root{
+  --azul: #0048ab;
+  --verde: #60a332;
+  --gris: #737373;
+}
+
+body{
+  font-family: Montserrat, sans-serif;
+  margin:0;
+  color:var(--gris);
+}
+
+/* NAVBAR igual a tu web */
+.navbar{
+  position:sticky;
+  top:0;
+  background:var(--verde);
+  padding:10px;
+  text-align:center;
+}
+
+.navbar a{
+  color:white;
+  text-decoration:none;
+  margin:0 10px;
+  font-weight:bold;
+}
+
+/* CONTENIDO */
+section{
+  max-width:900px;
+  margin:auto;
+  padding:60px 20px;
+}
+
+h1{
+  text-align:center;
+  color:var(--azul);
+}
+
+/* FAQ estilo acordeón */
+.faq{
+  margin-top:30px;
+}
+
+.faq-item{
+  background:#f5f5f5;
+  margin-bottom:15px;
+  border-radius:10px;
+  overflow:hidden;
+}
+
+.faq-question{
+  padding:15px;
+  cursor:pointer;
+  font-weight:bold;
+  background:var(--azul);
+  color:white;
+}
+
+.faq-answer{
+  padding:15px;
+  display:none;
+  background:white;
+}
+</style>
+
+</head>
+
+<body>
+
+<!-- NAV -->
+<nav class="navbar">
+  <a href="index.html">Inicio</a>
+  <a href="index.html#sobre">Sobre</a>
+  <a href="index.html#areas">Áreas</a>
+  <a href="index.html#ponentes">Ponentes</a>
+  <a href="index.html#miembros">Comité</a>
+  <a href="programa.html">Programa</a>
+  <a href="faq.html">FAQ</a>
+  <a href="index.html#contacto">Contacto</a>
+</nav>
+
+<section>
+
+<h1>Preguntas Frecuentes</h1>
+
+<div class="faq">
+
+<div class="faq-item">
+  <div class="faq-question">¿¿Cómo comenzó la idea para este evento??</div>
+  <div class="faq-answer">
+    Todo comenzó con una conversación entre estudiantes de distintas carreras que
+    compartían una misma preocupación: cómo incentivar la investigación en escolares. 
+    A partir de esa idea inicial, tomaron como referencia el evento Biobootcamp de EMBS PUCP, 
+    adaptándolo y expandiéndolo para crear una propuesta propia que fomentara el interés por la 
+    investigación desde etapas tempranas.
+  </div>
+</div>
+
+<div class="faq-item">
+  <div class="faq-question">¿Cómo se relacionan las carreras de Ingeniería Biomédica, Derecho, Ciencias de la Información?</div>
+  <div class="faq-answer">
+    Se relacionan porque cada una cumple un rol clave en la investigación: la Ingeniería Biomédica 
+    aporta el contenido científico, las Ciencias de la Información enseñan cómo investigar y manejar fuentes, 
+    y el Derecho asegura que todo se haga de forma ética y legal. Juntas permiten desarrollar investigaciones 
+    completas, confiables y bien fundamentadas.
+  </div>
+</div>
+
+<div class="faq-item">
+  <div class="faq-question">¿Cómo se relacionan las carreras de Ingeniería Biomédica, Derecho, Ciencias de la Información?</div>
+  <div class="faq-answer">
+    Se relacionan porque cada una cumple un rol clave en la investigación: la Ingeniería Biomédica aporta el 
+    contenido científico, las Ciencias de la Información enseñan cómo investigar y manejar fuentes, y el 
+    Derecho asegura que todo se haga de forma ética y legal. Juntas permiten desarrollar investigaciones 
+    completas, confiables y bien fundamentadas.
+  </div>
+</div>
+
+<div class="faq-item">
+  <div class="faq-question">¿Necesito experiencia previa en investigación?</div>
+  <div class="faq-answer">
+    No, el programa está diseñado para introducir a los estudiantes en el proceso de investigación.
+  </div>
+</div>
+
+</div>
+
+</section>
+
+<script>
+const preguntas = document.querySelectorAll(".faq-question");
+
+preguntas.forEach(p => {
+  p.addEventListener("click", () => {
+    const respuesta = p.nextElementSibling;
+
+    respuesta.style.display =
+      respuesta.style.display === "block" ? "none" : "block";
+  });
+});
+</script>
+
+</body>
+</html>
