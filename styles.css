@@ -1,0 +1,37 @@
+:root{
+  --azul: #0048ab;
+  --verde: #60a332;
+  --gris-oscuro: #737373;
+  --gris-claro: #d9d9d9;
+}
+
+body{
+  font-family: Montserrat, sans-serif;
+  margin:0;
+  background:white;
+  color:var(--gris-oscuro);
+  padding-top:70px; /* 🔥 clave para navbar fixed */
+}
+
+/* NAVBAR GLOBAL */
+.navbar{
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: var(--verde);
+  padding: 10px;
+  text-align: center;
+  z-index: 1000;
+}
+
+.navbar a{
+  color:white;
+  text-decoration:none;
+  margin:0 10px;
+  font-weight:bold;
+}
+
+.navbar a:hover{
+  text-decoration:underline;
+}
