@@ -87,6 +87,8 @@ section{
   max-width:1000px;
   margin:auto;
   padding:60px 20px;
+  scroll-margin-top: 80px;
+}
 }
 
 h2{
@@ -517,6 +519,15 @@ html, body{
   .cards{
     flex-direction: column; /* 🔥 se vuelven verticales */
   }
+    /* ❌ Ocultar descripción de ponentes */
+  .ponente .descripcion{
+    display: none;
+  }
+
+  /* ❌ Ocultar mensaje de miembros */
+  .miembro .mensaje{
+    display: none;
+  }
 }
 
 @media (max-width: 500px){
@@ -533,13 +544,6 @@ html, body{
 }
   
 @media (max-width: 768px){
-
-  .mensaje{
-    position: static;
-    opacity: 1;
-    height: auto;
-    margin-top: 10px;
-  }
 
   .miembro:hover img,
   .miembro:hover h3,
