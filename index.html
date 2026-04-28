@@ -482,16 +482,33 @@ html, body{
   overflow-x: hidden;
 }
 /* ===== NUEVAS SECCIONES ===== */
-#talleristas, #conversatorio{
-  background: var(--azul);
+/* ===== COLORES CORRECTOS ===== */
+
+/* 🟢 Conversatorio */
+#conversatorio{
+  background: var(--verde);
   border-radius:20px;
   margin-top:20px;
   padding:40px 20px;
 }
 
-#talleristas h2, #conversatorio h2{
+#conversatorio h2{
   color:white;
 }
+
+/* ⚪ Talleristas */
+#talleristas{
+  background: var(--gris-claro);
+  border-radius:20px;
+  margin-top:20px;
+  padding:30px 20px; /* 👈 más pequeño */
+  max-width: 900px; /* 👈 MÁS ANGOSTO */
+}
+
+#talleristas h2{
+  color: var(--azul);
+}
+
 
 /* imágenes más grandes */
 #talleristas .foto-ponente,
@@ -934,7 +951,7 @@ Especialistas que guiarán los talleres prácticos
 
 </section>
 
-/* Comité Organizador */
+<!-- Comité Organizador -->
 <section id="miembros">
 
 <h2>Comité Organizador</h2>
