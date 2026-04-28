@@ -481,7 +481,24 @@ height:100px;
 html, body{
   overflow-x: hidden;
 }
+/* ===== NUEVAS SECCIONES ===== */
+#talleristas, #conversatorio{
+  background: var(--azul);
+  border-radius:20px;
+  margin-top:20px;
+  padding:40px 20px;
+}
 
+#talleristas h2, #conversatorio h2{
+  color:white;
+}
+
+/* imágenes más grandes */
+#talleristas .foto-ponente,
+#conversatorio .foto-ponente{
+  width:180px;
+  height:180px;
+}
 @keyframes pulse{
   0%{ transform: scale(1); }
   50%{ transform: scale(1.05); }
@@ -666,7 +683,7 @@ Como resultado formativo, los estudiantes desarrollarán un trabajo académico
 </div>
 </section>
 
-
+/*Ponentes charlas magistrales */
 <section id="ponentes">
 
 <h2>Ponentes</h2>
@@ -811,7 +828,113 @@ Conoce a nuestros speakers invitados
 <div class="indicadores" id="dots-ponentes-track"></div>
 
 </section>
+
+/*Ponentes conversatorios*/
+<section id="conversatorio">
+
+<h2>Conversatorio</h2>
+<p style="text-align:center; color:white;">
+Profesionales invitados al panel de discusión
+</p>
+
+<div class="carousel">
+
+<button onclick="mover(-1, 'conversatorio-track')">◀</button>
+
+<div class="carousel-wrapper">
+
+<div class="carousel-track" id="conversatorio-track">
+
+<!-- GRUPO 1 -->
+<div class="grupo ponentes">
+
+<div class="card ponente">
+  <img src="conversatorio/c1.jpg" class="foto-ponente" onerror="this.src='ponentes/sinImagen.jpg'">
+  <div class="info">
+    <h3>Nombre Profesional</h3>
+    <span class="uni">Institución</span>
+    <p class="tema">Rol en el conversatorio</p>
+    <p class="descripcion">Breve perfil</p>
+  </div>
+</div>
+
+<div class="card ponente">
+  <img src="conversatorio/c2.jpg" class="foto-ponente" onerror="this.src='ponentes/sinImagen.jpg'">
+  <div class="info">
+    <h3>Nombre Profesional</h3>
+    <span class="uni">Institución</span>
+    <p class="tema">Rol en el conversatorio</p>
+    <p class="descripcion">Breve perfil</p>
+  </div>
+</div>
+
+</div>
+
+</div>
+</div>
+
+<button onclick="mover(1, 'conversatorio-track')">▶</button>
+
+</div>
+
+<div class="indicadores" id="dots-conversatorio-track"></div>
+
+</section>
+
   
+/*Talleristas*/
+<section id="talleristas">
+
+<h2>Talleristas</h2>
+<p style="text-align:center; color:white;">
+Especialistas que guiarán los talleres prácticos
+</p>
+
+<div class="carousel">
+
+<button onclick="mover(-1, 'talleristas-track')">◀</button>
+
+<div class="carousel-wrapper">
+
+<div class="carousel-track" id="talleristas-track">
+
+<!-- GRUPO 1 -->
+<div class="grupo ponentes">
+
+<div class="card ponente">
+  <img src="talleristas/t1.jpg" class="foto-ponente" onerror="this.src='ponentes/sinImagen.jpg'">
+  <div class="info">
+    <h3>Nombre Tallerista</h3>
+    <span class="uni">Institución</span>
+    <p class="tema">Tema del taller</p>
+    <p class="descripcion">Descripción breve</p>
+  </div>
+</div>
+
+<div class="card ponente">
+  <img src="talleristas/t2.jpg" class="foto-ponente" onerror="this.src='ponentes/sinImagen.jpg'">
+  <div class="info">
+    <h3>Nombre Tallerista</h3>
+    <span class="uni">Institución</span>
+    <p class="tema">Tema del taller</p>
+    <p class="descripcion">Descripción breve</p>
+  </div>
+</div>
+
+</div>
+
+</div>
+</div>
+
+<button onclick="mover(1, 'talleristas-track')">▶</button>
+
+</div>
+
+<div class="indicadores" id="dots-talleristas-track"></div>
+
+</section>
+
+/* Comité Organizador */
 <section id="miembros">
 
 <h2>Comité Organizador</h2>
@@ -1063,7 +1186,9 @@ Conoce a nuestros speakers invitados
 
 let sliders = {
 comite: { index: 0 },
-"ponentes-track": { index: 0 }
+"ponentes-track": { index: 0 },
+"talleristas-track": { index: 0 },
+"conversatorio-track": { index: 0 }
 };
 
 function initSlider(id){
@@ -1128,11 +1253,15 @@ function actualizarSlider(id){
 window.addEventListener("resize", () => {
   actualizarSlider("comite");
   actualizarSlider("ponentes-track");
+  actualizarSlider("talleristas-track");
+  actualizarSlider("conversatorio-track");
 });
   
 /* inicializar */
 initSlider("comite");
 initSlider("ponentes-track");
+initSlider("talleristas-track");
+initSlider("conversatorio-track");
 
 </script>
 
