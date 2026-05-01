@@ -115,53 +115,88 @@ tr:hover{
 }
 
 #calendario{
+  max-width:900px;
+  margin:auto;
   text-align:center;
-  padding:50px 20px;
 }
 
-.calendar-carousel{
+.calendar-header{
   display:flex;
+  justify-content:space-between;
   align-items:center;
-  justify-content:center;
-  gap:10px;
+  margin-bottom:15px;
 }
 
-.calendar-wrapper{
-  overflow:hidden;
-  width:300px;
+.calendar-header button{
+  background:var(--azul);
+  color:white;
+  border:none;
+  padding:8px 12px;
+  cursor:pointer;
+  border-radius:6px;
 }
 
-.calendar-track{
-  display:flex;
-  transition:0.4s;
-}
-
-.calendar{
-  min-width:100%;
-}
-
-.dias{
+.calendar-grid{
   display:grid;
   grid-template-columns: repeat(7, 1fr);
-  gap:5px;
-  margin-top:10px;
+  gap:8px;
 }
 
 .dia{
+  background:#f5f5f5;
   padding:10px;
-  background:#eee;
-  border-radius:5px;
+  border-radius:8px;
+  min-height:80px;
+  text-align:left;
+  position:relative;
+  font-size:13px;
 }
 
-.dia.activo{
+.dia-num{
+  font-weight:bold;
+}
+
+.evento-label{
   background:var(--verde);
   color:white;
+  padding:3px 5px;
+  border-radius:4px;
+  font-size:11px;
+  margin-top:5px;
+  display:block;
   cursor:pointer;
 }
 
-#evento-info{
-  margin-top:20px;
-  font-weight:bold;
+.evento-label:hover{
+  background:var(--azul);
+}
+
+/* MODAL */
+.modal{
+  display:none;
+  position:fixed;
+  top:0;
+  left:0;
+  width:100%;
+  height:100%;
+  background:rgba(0,0,0,0.6);
+  justify-content:center;
+  align-items:center;
+}
+
+.modal-content{
+  background:white;
+  padding:25px;
+  border-radius:12px;
+  max-width:400px;
+  width:90%;
+  text-align:center;
+}
+
+.cerrar{
+  float:right;
+  cursor:pointer;
+  font-size:20px;
 }
   
 </style>
@@ -362,71 +397,113 @@ El programa se desarrolla a través de diversas actividades académicas que comb
 </section>
 
 <section id="calendario">
+  <h2>Calendario del evento</h2>
 
-<h2>Calendario del Evento</h2>
+  <div class="calendar-header">
+    <button onclick="cambiarMes(-1)">◀</button>
+    <h3 id="mes-titulo"></h3>
+    <button onclick="cambiarMes(1)">▶</button>
+  </div>
 
-<div class="calendar-carousel">
+  <div class="calendar-grid" id="calendar"></div>
+</section>
 
-<button onclick="moverMes(-1)">◀</button>
-
-<div class="calendar-wrapper">
-  <div class="calendar-track" id="calendar-track">
-
-    <!-- JUNIO -->
-    <div class="calendar">
-      <h3>Junio 2026</h3>
-      <div class="dias">
-        <div class="dia activo" onclick="mostrarEvento('25 de junio: Inauguración')">25</div>
-      </div>
-    </div>
-
-    <!-- JULIO -->
-    <div class="calendar">
-      <h3>Julio 2026</h3>
-      <div class="dias">
-        <div class="dia activo" onclick="mostrarEvento('02 julio: Pregunta de investigación')">2</div>
-        <div class="dia activo" onclick="mostrarEvento('03 julio: Sesión motivación')">3</div>
-        <div class="dia activo" onclick="mostrarEvento('20 julio: Evento Derecho')">20</div>
-      </div>
-    </div>
-
-    <!-- AGOSTO -->
-    <div class="calendar">
-      <h3>Agosto 2026</h3>
-      <div class="dias">
-        <div class="dia activo" onclick="mostrarEvento('04 agosto: Cierre del evento')">4</div>
-      </div>
-    </div>
-
+<!-- MODAL -->
+<div id="modal" class="modal">
+  <div class="modal-content">
+    <span class="cerrar" onclick="cerrarModal()">×</span>
+    <h3 id="modal-fecha"></h3>
+    <p id="modal-info"></p>
   </div>
 </div>
 
-<button onclick="moverMes(1)">▶</button>
-
-</div>
-
-<p id="evento-info">Selecciona una fecha</p>
-
-</section>
-
 <script>
-let mesIndex = 0;
+<script>
 
-function moverMes(dir){
-  const track = document.getElementById("calendar-track");
-  const total = track.children.length;
+const eventos = {
+  "2026-06-25": "Inauguración del evento (CM - Híbrida)",
 
-  mesIndex += dir;
+  "2026-07-02": "Pregunta de investigación (TP)",
+  "2026-07-03": "Motivación: Proyectos PUCP (SC)",
+  "2026-07-07": "Búsqueda de fuentes (TP)",
+  "2026-07-09": "Estructuración (TP)",
+  "2026-07-11": "Motivación internacional (SC)",
+  "2026-07-14": "Marco teórico (TP)",
+  "2026-07-15": "Motivación PUCP (SC)",
+  "2026-07-16": "Objeto de estudio (TP)",
+  "2026-07-17": "Charla magistral (CM)",
+  "2026-07-20": "Evento Derecho",
+  "2026-07-21": "Aplicaciones (TP)",
+  "2026-07-22": "Evento Derecho",
+  "2026-07-23": "Redacción (TP)",
+  "2026-07-24": "Evento Derecho",
+  "2026-07-30": "Normas IEEE (TP)",
 
-  if(mesIndex < 0) mesIndex = total -1;
-  if(mesIndex >= total) mesIndex = 0;
+  "2026-08-04": "Cierre del programa (CM)"
+};
 
-  track.style.transform = `translateX(-${mesIndex * 100}%)`;
+let mesActual = 5; // junio (0 = enero)
+let año = 2026;
+
+function renderCalendar(){
+  const calendar = document.getElementById("calendar");
+  calendar.innerHTML = "";
+
+  const meses = ["Enero","Febrero","Marzo","Abril","Mayo","Junio","Julio","Agosto"];
+  document.getElementById("mes-titulo").innerText = meses[mesActual] + " " + año;
+
+  const primerDia = new Date(año, mesActual, 1).getDay();
+  const diasMes = new Date(año, mesActual + 1, 0).getDate();
+
+  // espacios vacíos
+  for(let i=0; i<primerDia; i++){
+    calendar.innerHTML += "<div></div>";
+  }
+
+  for(let d=1; d<=diasMes; d++){
+    let fecha = `${año}-${String(mesActual+1).padStart(2,"0")}-${String(d).padStart(2,"0")}`;
+
+    let div = document.createElement("div");
+    div.classList.add("dia");
+
+    div.innerHTML = `<div class="dia-num">${d}</div>`;
+
+    if(eventos[fecha]){
+      let evento = document.createElement("span");
+      evento.classList.add("evento-label");
+      evento.innerText = eventos[fecha];
+
+      evento.onclick = () => abrirModal(fecha, eventos[fecha]);
+
+      div.appendChild(evento);
+    }
+
+    calendar.appendChild(div);
+  }
 }
 
-function mostrarEvento(texto){
-  document.getElementById("evento-info").innerText = texto;
+function cambiarMes(dir){
+  mesActual += dir;
+
+  if(mesActual < 5) mesActual = 5; // junio mínimo
+  if(mesActual > 7) mesActual = 7; // agosto máximo
+
+  renderCalendar();
 }
+
+function abrirModal(fecha, info){
+  document.getElementById("modal").style.display = "flex";
+  document.getElementById("modal-fecha").innerText = fecha;
+  document.getElementById("modal-info").innerText = info;
+}
+
+function cerrarModal(){
+  document.getElementById("modal").style.display = "none";
+}
+
+renderCalendar();
+
+</script>
 </script>
   
 </body>
