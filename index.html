@@ -403,14 +403,6 @@ box-shadow:0 10px 30px rgba(0,0,0,0.2);
   flex-grow:1; /* 🔥 clave */
 }
 
-.foto-ponente{
-  width:200px;
-  height:200px;
-  border-radius:50%;
-  object-fit:cover;
-  display:block;
-}
-
 /* 🔥 FIX TEXTO PONENTES */
 .ponente .info {
   min-width: 0; /* 🔥 CRÍTICO */
@@ -518,10 +510,36 @@ html, body{
   background: var(--gris-claro);
   border-radius:20px;
   margin-top:20px;
-  padding:30px 20px; /* 👈 más pequeño */
-  max-width: 900px; /* 👈 MÁS ANGOSTO */
+  padding:25px 15px; /* 👈 más pequeño */
+  max-width: 800px; /* 👈 MÁS ANGOSTO */
 }
 
+#talleristas .card.ponente{
+  padding:15px;              /* menos espacio interno */
+}
+
+#talleristas .foto-ponente{
+  width:120px;
+  height:120px;              /* imagen más pequeña */
+}
+
+#talleristas .info h3{
+  font-size:16px;            /* nombre más pequeño */
+}
+
+#talleristas .uni{
+  font-size:12px;
+}
+
+#talleristas .tema{
+  font-size:12px;
+}
+
+#talleristas .descripcion{
+  font-size:12px;
+}
+
+  
 #talleristas h2{
   color: var(--azul);
 }
@@ -534,12 +552,6 @@ html, body{
   background: var(--azul);
 }  
 
-/* imágenes más grandes */
-#talleristas .foto-ponente,
-#conversatorio .foto-ponente{
-  width:180px;
-  height:180px;
-}
 @keyframes pulse{
   0%{ transform: scale(1); }
   50%{ transform: scale(1.05); }
