@@ -28,7 +28,7 @@ body{
   font-family: Monserrat, sans-serif; 
   margin:0; 
   background:white; 
-  color:var(--gris-oscuro)
+  color:var(--gris-oscuro);
   padding-top:70px; /* espacio para menú fijo */
 }
   
@@ -418,11 +418,8 @@ El programa se desarrolla a través de diversas actividades académicas que comb
 </div>
 
 <script>
-<script>
-
 const eventos = {
   "2026-06-25": "Inauguración del evento (CM - Híbrida)",
-
   "2026-07-02": "Pregunta de investigación (TP)",
   "2026-07-03": "Motivación: Proyectos PUCP (SC)",
   "2026-07-07": "Búsqueda de fuentes (TP)",
@@ -438,7 +435,6 @@ const eventos = {
   "2026-07-23": "Redacción (TP)",
   "2026-07-24": "Evento Derecho",
   "2026-07-30": "Normas IEEE (TP)",
-
   "2026-08-04": "Cierre del programa (CM)"
 };
 
@@ -449,7 +445,7 @@ function renderCalendar(){
   const calendar = document.getElementById("calendar");
   calendar.innerHTML = "";
 
-  const meses = ["Enero","Febrero","Marzo","Abril","Mayo","Junio","Julio","Agosto"];
+  const meses = ["Enero","Febrero","Marzo","Abril","Mayo","Junio","Julio","Agosto","Septiembre","Octubre","Noviembre","Diciembre"];
   document.getElementById("mes-titulo").innerText = meses[mesActual] + " " + año;
 
   const primerDia = new Date(año, mesActual, 1).getDay();
@@ -480,14 +476,22 @@ function renderCalendar(){
 
     calendar.appendChild(div);
   }
+  const btnPrev = document.querySelector(".calendar-header button:first-child");
+  const btnNext = document.querySelector(".calendar-header button:last-child");
+  
+  btnPrev.style.opacity = mesActual === 5 ? "0.3" : "1";
+  btnPrev.style.cursor = mesActual === 5 ? "not-allowed" : "pointer";
+  
+  btnNext.style.opacity = mesActual === 7 ? "0.3" : "1";
+  btnNext.style.cursor = mesActual === 7 ? "not-allowed" : "pointer";
 }
 
 function cambiarMes(dir){
-  mesActual += dir;
+  const nuevoMes = mesActual + dir;
 
-  if(mesActual < 5) mesActual = 5; // junio mínimo
-  if(mesActual > 7) mesActual = 7; // agosto máximo
+  if(nuevoMes < 5 || nuevoMes > 7) return; // ❌ no hace nada fuera del rango
 
+  mesActual = nuevoMes;
   renderCalendar();
 }
 
@@ -502,8 +506,6 @@ function cerrarModal(){
 }
 
 renderCalendar();
-
-</script>
 </script>
   
 </body>
