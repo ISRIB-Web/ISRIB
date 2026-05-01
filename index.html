@@ -340,19 +340,23 @@ footer{
 }
 
 .ponente .info h3{
-  color: var(--azul); /* nombre */
+  color: var(--azul);
+  text-align: left;
 }
 
 .ponente .uni{
   color: var(--verde); /* universidad */
+  text-align: left;
 }
 
 .ponente .tema{
   color: var(--gris-oscuro); /* tema */
+  text-align: left;
 }
 
 .ponente .descripcion{
   color:var(--gris-oscuro); /* descripción */
+  text-align: justify;
 }
  
 #ponentes{
@@ -459,7 +463,13 @@ box-shadow:0 10px 30px rgba(0,0,0,0.2);
   gap: 20px;
   align-items: stretch;
 }
-
+  
+.contenedor-boton{
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+  
 #inscripcion{
   background: var(--verde);
   color: white;
@@ -690,10 +700,11 @@ html, body{
 <section id="inscripcion" style="text-align:center;">
   <h2>Inscripciones abiertas</h2>
   <p style="text-align:center;">Regístrate ahora para participar en las sesiones virtuales generales y abiertas de ISRIB 2026</p>
-  <p>
-  <button class="btn-inscripcion" onclick="window.open('https://docs.google.com/forms/d/e/1FAIpQLSevctONfde26FlMuBsuuQqzbPPbliDzIWBW5KKrzAGRUVEEPw/viewform?usp=publish-editor', '_blank')">
-    Inscribirme ahora
-  </button>
+  <div class="contenedor-boton">
+    <button class="btn-inscripcion" onclick="window.open('https://docs.google.com/forms/d/e/1FAIpQLSevctONfde26FlMuBsuuQqzbPPbliDzIWBW5KKrzAGRUVEEPw/viewform?usp=publish-editor', '_blank')">
+      Inscribirme ahora
+    </button>
+  </div>
 </section>
 
 <section id="sobre">
