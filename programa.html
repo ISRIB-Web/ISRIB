@@ -172,6 +172,16 @@ tr:hover{
   color:var(--gris-oscuro);
 }
 
+.dia.tiene-evento{
+  background: #eaf3ff;
+  border: 1px solid var(--azul);
+}
+
+.tp{ background:#d9f2d9 !important; }
+.cm{ background:#d9e8ff !important; }
+.sc{ background:#fff4cc !important; }
+.sd{ background:#ffe0e0 !important; }
+
 .evento-label:hover{
   background:var(--azul);
 }
@@ -501,7 +511,20 @@ function renderCalendar(){
       div.appendChild(evento);
     }
 
+    if(eventos[fecha]){
+      div.classList.add("tiene-evento");
+    
+      if(eventos[fecha].includes("(TP")) div.classList.add("tp");
+      if(eventos[fecha].includes("(CM")) div.classList.add("cm");
+      if(eventos[fecha].includes("(SC")) div.classList.add("sc");
+      if(eventos[fecha].includes("Derecho")) div.classList.add("sd");
+    }
+
     calendar.appendChild(div);
+
+    if(eventos[fecha]){
+      div.classList.add("tiene-evento");
+    }
   }
   const btnPrev = document.querySelector(".calendar-header button:first-child");
   const btnNext = document.querySelector(".calendar-header button:last-child");
