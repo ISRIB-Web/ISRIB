@@ -167,6 +167,11 @@ tr:hover{
   cursor:pointer;
 }
 
+.dia{
+  background:#f5f5f5;
+  color:var(--gris-oscuro);
+}
+
 .evento-label:hover{
   background:var(--azul);
 }
@@ -507,17 +512,6 @@ function renderCalendar(){
   btnNext.style.opacity = mesActual === 7 ? "0.3" : "1";
   btnNext.style.cursor = mesActual === 7 ? "not-allowed" : "pointer";
 
-  if(eventos[fecha]){
-  div.classList.add("tiene-evento");
-
-  let evento = document.createElement("span");
-  evento.classList.add("evento-label");
-  evento.innerText = eventos[fecha];
-  evento.onclick = () => abrirModal(fecha, eventos[fecha]);
-
-  div.appendChild(evento);
-}
-}
 
 function cambiarMes(dir){
   const nuevoMes = mesActual + dir;
