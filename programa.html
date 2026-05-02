@@ -199,6 +199,25 @@ tr:hover{
   font-size:20px;
 }
   
+.dia.tiene-evento::after{
+  content:"";
+  width:8px;
+  height:8px;
+  background:var(--verde);
+  border-radius:50%;
+  position:absolute;
+  bottom:6px;
+  right:6px;
+}
+ @media (max-width: 768px){
+  .evento-label{
+    display:none;
+  }
+
+  .dia{
+    min-height:60px;
+  }
+} 
 </style>
 
 </head>
@@ -376,19 +395,22 @@ El programa se desarrolla a través de diversas actividades académicas que comb
 
   <div class="card-d">
     <img src="derecho/propiedad.jpg" class="card-img">
-    <h3>⚖️ Propiedad intelectual</h3>
+    <h3>Propiedad intelectual</h3>
+    <h3>20/07/26</h3>
     <p>Se abordarán conceptos clave sobre derechos de autor, patentes y protección del conocimiento en investigación.</p>
   </div>
 
   <div class="card-d">
     <img src="derecho/propiedad.jpg" class="card-img">
-    <h3>📊 Ética en investigación</h3>
+    <h3>Ética en investigación</h3>
+    <h3>22/07/26</h3>
     <p>Se analizarán principios éticos, integridad académica y buenas prácticas en la producción científica.</p>
   </div>
 
   <div class="card-d">
     <img src="derecho/propiedad.jpg" class="card-img">
-    <h3>🔐 Protección de datos</h3>
+    <h3>Protección de datos</h3>
+    <h3>24/07/26</h3>
     <p>Se explorará el manejo responsable de datos personales en proyectos de investigación.</p>
   </div>
 
@@ -484,6 +506,17 @@ function renderCalendar(){
   
   btnNext.style.opacity = mesActual === 7 ? "0.3" : "1";
   btnNext.style.cursor = mesActual === 7 ? "not-allowed" : "pointer";
+
+  if(eventos[fecha]){
+  div.classList.add("tiene-evento");
+
+  let evento = document.createElement("span");
+  evento.classList.add("evento-label");
+  evento.innerText = eventos[fecha];
+  evento.onclick = () => abrirModal(fecha, eventos[fecha]);
+
+  div.appendChild(evento);
+}
 }
 
 function cambiarMes(dir){
