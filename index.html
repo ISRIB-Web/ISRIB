@@ -602,6 +602,13 @@ html, body{
 .text-white{
   color:white;
 }
+
+.texto-areas{
+  text-align:center;
+  font-size:18px;
+  line-height:1.6;
+  color:var(--gris-oscuro);
+}
   
 /* TABLET */
 @media (max-width: 900px){
@@ -636,6 +643,36 @@ html, body{
 
   .miembro{
     padding: 15px;
+  }
+
+  .cards{
+    flex-direction: column;
+  }
+
+  .card{
+    width: 100%;
+  }
+
+  .grupo.miembros{
+    grid-template-columns: 1fr;
+  }
+
+  .grupo.ponentes{
+    grid-template-columns: 1fr;
+    gap: 25px;
+  }
+
+  .mensaje{
+    font-size: 12px;
+    padding: 12px;
+  }
+
+  .miembro{
+    padding: 15px;
+  }
+  
+  .descripcion{
+    display:none;
   }
   
 }
@@ -722,7 +759,7 @@ Como resultado formativo, los estudiantes desarrollarán un trabajo académico
 <section id="areas">
 
 <h2>Carreras universitarias involucradas en el evento</h2>
-<h3 style="text-align: justify;">Cada una cumple un rol importante: la Ingeniería Biomédica aporta el contenido científico, las Ciencias de la Información enseñan 
+<h3 class="texto-areas">Cada una cumple un rol importante: la Ingeniería Biomédica aporta el contenido científico, las Ciencias de la Información enseñan 
 cómo investigar y manejar fuentes, y el Derecho asegura que todo se haga de forma ética y legal. 
 Juntas permiten desarrollar investigaciones completas, confiables y bien fundamentadas.</h3>
   
@@ -770,13 +807,13 @@ Conoce a nuestros speakers invitados
 
 <div class="card ponente">
 
-  <a href="https://www.linkedin.com/company/112293954/admin/settings/manage-admins/" target="_blank">
+  <a href="https://www.linkedin.com/in/dante-elias/" target="_blank">
   <img src="ponentes/sinImagen.jpg" class="foto-ponente" loading="lazy">
   </a>
 
   <div class="info">
     <h3>Dante Angel Elias Giordano</h3>
-    <span class="uni">Universidad</span>
+    <span class="uni">Biomecánica y Rehabilitación</span>
     <p class="tema">Perú</p>
     <p class="descripcion" style="text-align: justify;">
       Ingeniero mecánico por la Pontificia Universidad Católica del Perú (PUCP) y doctor en Ciencias de la 
@@ -794,11 +831,13 @@ Conoce a nuestros speakers invitados
 
 <div class="card ponente">
 
+  <a href="https://www.linkedin.com/in/paulovela/" target="_blank">
   <img src="ponentes/sinImagen.jpg" class="foto-ponente" loading="lazy">
+  </a>
 
   <div class="info">
     <h3>Paulo Camilo Alberto Vela Anton</h3>
-    <span class="uni">Universidad</span>
+    <span class="uni">Gestión de la Innovación y Tecnología con Impacto Social</span>
     <p class="tema">Perú</p>
     <p class="descripcion" style="text-align: justify;">
       Ingeniero mecatrónico y magíster en Informática Biomédica por la Universidad Peruana Cayetano Heredia (UPCH). 
@@ -822,12 +861,14 @@ Conoce a nuestros speakers invitados
 
 <div class="card ponente">
 
+  <a href="https://www.linkedin.com/in/lizardo-kendy-torres-ayala-3b7699301/" target="_blank">
   <img src="ponentes/sinImagen.jpg" class="foto-ponente" loading="lazy">
+  </a>
 
   <div class="info">
     <h3>Lizardo Kendy Torres Ayala</h3>
-    <span class="uni">Universidad</span>
-    <p class="tema">País</p>
+    <span class="uni">Ingeniería de Materiales y Biomateriales </span>
+    <p class="tema">Perú</p>
     <p class="descripcion" style="text-align: justify;">
       Breve descripción del ponente, experiencia, logros, etc.
     </p>
@@ -837,12 +878,14 @@ Conoce a nuestros speakers invitados
 
 <div class="card ponente">
 
+  <a href="https://www.linkedin.com" target="_blank">
   <img src="ponentes/sinImagen.jpg" class="foto-ponente" loading="lazy">
+  </a>
 
   <div class="info">
-    <h3>Ponente 1</h3>
-    <span class="uni">Universidad</span>
-    <p class="tema">País</p>
+    <h3>Antonio Perianes Rodriguez</h3>
+    <span class="uni">Ciencias de la información / Biblioteconomia</span>
+    <p class="tema">España</p>
     <p class="descripcion" style="text-align: justify;">
       Breve descripción del ponente, experiencia, logros, etc.
     </p>
@@ -856,12 +899,14 @@ Conoce a nuestros speakers invitados
 
 <div class="card ponente">
 
+  <a href="https://www.linkedin.com" target="_blank">
   <img src="ponentes/sinImagen.jpg" class="foto-ponente" loading="lazy">
+  </a>
 
   <div class="info">
-    <h3>Ponente1</h3>
-    <span class="uni">Universidad</span>
-    <p class="tema">País</p>
+    <h3>Ricardo Eito Brun</h3>
+    <span class="uni">Ciencias de la información / Biblioteconomia</span>
+    <p class="tema">España</p>
     <p class="descripcion" style="text-align: justify;">
       Breve descripción del ponente, experiencia, logros, etc.
     </p>
@@ -871,12 +916,14 @@ Conoce a nuestros speakers invitados
 
 <div class="card ponente">
 
+  <a href="https://www.linkedin.com" target="_blank">
   <img src="ponentes/sinImagen.jpg" class="foto-ponente" loading="lazy">
+  </a>
 
   <div class="info">
-    <h3>Ponente 1</h3>
-    <span class="uni">Universidad</span>
-    <p class="tema">País</p>
+    <h3>Carlos Spuch Calvar</h3>
+    <span class="uni">Biomedicina</span>
+    <p class="tema">España</p>
     <p class="descripcion" style="text-align: justify;">
       Breve descripción del ponente, experiencia, logros, etc.
     </p>
