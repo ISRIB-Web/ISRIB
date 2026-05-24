@@ -27,7 +27,7 @@ scroll-behavior:smooth;
   
 /* ===== BODY ===== */
 body{ 
-  font-family: Monserrat, sans-serif; 
+  font-family: Montserrat, sans-serif; 
   margin:0; 
   background:white; 
   color:var(--gris-oscuro);
@@ -141,13 +141,23 @@ img{
 /* =============== MIEMBROS ============================= */
 .miembro{
   background:white;
+
   border-radius:18px;
   padding:20px;
+
   text-align:center;
+
   transition: all 0.3s ease;
+
   position:relative;
-  overflow: hidden;
-  min-width: 0;
+  overflow:hidden;
+
+  min-width:0;
+  height:100%;
+
+  display:flex;
+  flex-direction:column;
+  align-items:center;
 }
 
 .miembro:hover{
@@ -172,13 +182,6 @@ img{
   color:var(--gris-oscuro);
   display:block;
   margin-bottom:10px;
-}
-
-.miembro{
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
 }
 
 .miembro:hover img,
@@ -336,35 +339,36 @@ footer{
 
 .ponente{
   display:flex;
+  flex-direction:column;
   gap:15px;
+
+  width:100%;
+  height:100%;
+
   align-items:flex-start;
 
   background:white;
   padding:20px;
+
   border-radius:16px;
-
   border-left:6px solid var(--verde);
-  width: 100%;
-  box-shadow:0 8px 20px rgba(0,0,0,0.15);
-}
 
+  box-shadow:0 8px 20px rgba(0,0,0,0.15);
+
+  transition:0.3s ease;
+}
+  
 .ponente .info h3{
-  color: var(--azul);
-  text-align:  center;
+  margin:0;
+
+  color:var(--azul);
+
+  font-size:18px;
+  text-align:center;
 }
 
 .ponente .uni{
   color: var(--verde); /* universidad */
-  text-align:  center;
-}
-
-.ponente .tema{
-  color: var(--gris-oscuro); /* tema */
-  text-align:  center;
-}
-
-.ponente .descripcion{
-  color:var(--gris-oscuro); /* descripción */
   text-align:  center;
 }
  
@@ -396,19 +400,14 @@ box-shadow:0 10px 30px rgba(0,0,0,0.2);
   border-radius:50%;
   object-fit:cover;
   flex-shrink:0;
-}
-  
-.info h3{
-  margin:0;
-  color:var(--azul);
-  font-size:18px;
-}
+}  
 
 .descripcion{
   font-size:13px;
   color:var(--gris-oscuro);
   margin-top:8px;
   line-height:1.4;
+  text-align:center;
 }
 
 .uni{
@@ -419,9 +418,10 @@ box-shadow:0 10px 30px rgba(0,0,0,0.2);
 }
 
 .tema{
-  text-align: left;
+  color:var(--gris-oscuro);
+  text-align:center;
   font-size:14px;
-  margin-top: auto; /* 🔥 clave */
+  margin-top:auto;
 }
 
 
@@ -431,10 +431,7 @@ box-shadow:0 10px 30px rgba(0,0,0,0.2);
   flex-grow:1; /* 🔥 clave */
 }
 
-/* 🔥 FIX TEXTO PONENTES */
-.ponente .info {
-  min-width: 0; /* 🔥 CRÍTICO */
-}
+
 
 .cards {
   display: flex;
@@ -442,22 +439,9 @@ box-shadow:0 10px 30px rgba(0,0,0,0.2);
   align-items: stretch; /* 🔥 AGREGA ESTO */
 }
 
-.card {
-  flex: 1;
-  display: flex;              /* 🔥 */
-  flex-direction: column;     /* 🔥 */
-  justify-content: center;    /* 🔥 opcional */
-}
-
-.ponente{
-  width: 100%;
-  height: 100%; /* 🔥 importante */
-  display: flex;
-  flex-direction: column;
-}
-
-.ponente .info {
-  overflow: hidden;
+.ponente .info{
+  min-width:0;
+  overflow:hidden;
 }
 
 .grupo.miembros {
@@ -596,6 +580,20 @@ html, body{
   50%{ transform: scale(1.05); }
   100%{ transform: scale(1); }
 }
+
+/* ===== UTILIDADES ===== */
+
+.text-center{
+  text-align:center;
+}
+
+.text-justify{
+  text-align:justify;
+}
+
+.text-white{
+  color:white;
+}
   
 /* TABLET */
 @media (max-width: 900px){
@@ -610,6 +608,7 @@ html, body{
   }
 }
 
+  
 /* CELULAR */
 @media (max-width: 500px){
 
@@ -622,25 +621,6 @@ html, body{
     gap: 25px; /* 🔥 más espacio */
   }
 
-}
-
-@media (max-width: 768px){
-  .cards{
-    flex-direction: column; /* 🔥 se vuelven verticales */
-  }
-    /* ❌ Ocultar descripción de ponentes */
-  .ponente .descripcion{
-    display: none;
-  }
-
-  /* ❌ Ocultar mensaje de miembros */
-  .miembro .mensaje{
-    display: none;
-  }
-}
-
-@media (max-width: 500px){
-
   .mensaje{
     font-size: 12px;
     padding: 12px;
@@ -649,32 +629,9 @@ html, body{
   .miembro{
     padding: 15px;
   }
-
-}
   
-@media (max-width: 768px){
-
-  .miembro:hover img,
-  .miembro:hover h3,
-  .miembro:hover span{
-    opacity: 1;
-  }
-
 }
-
-@media (max-width: 768px){
-  .ponente{
-    flex-direction: column;
-    align-items: center;
-    text-align: justify;
-  }
-
-  .foto-ponente{
-    width:100px;
-    height:100px;
-  }
-}
-  
+   
 </style>
 
 </head>
@@ -719,7 +676,7 @@ html, body{
 <section id="sobre">
 <h2>Sobre el evento</h2>
 
-<p style="text-align: justify";>
+<p class="text-justify">
 El International Student Research & Innovation Bootcamp (ISRIB) 2026 es un 
   programa académico intensivo orientado a fomentar la iniciación científica 
   y el desarrollo de competencias investigativas desde etapas tempranas. 
@@ -728,7 +685,7 @@ El International Student Research & Innovation Bootcamp (ISRIB) 2026 es un
   académica.
 </p>
 <p></p>
-<p style="text-align: justify";>
+<p class="text-justify">
 El programa se desarrolla bajo un enfoque interdisciplinario que integra 
   Ingeniería Biomédica, Ciencias de la Información y Derecho, permitiendo a 
   los participantes comprender el proceso completo de la investigación 
@@ -737,14 +694,14 @@ El programa se desarrolla bajo un enfoque interdisciplinario que integra
   formales.
 </p>
 <p> </p>
-<p style="text-align: justify";>
+<p class="text-justify">
 A través de charlas magistrales, talleres prácticos y sesiones de motivación 
   científica, los participantes interactúan con docentes e investigadores 
   nacionales e internacionales, incorporando principios de pensamiento 
   crítico, ética, propiedad intelectual e integridad académica.
 </p>
 <p></p>
-<p style="text-align: justify";>
+<p class="text-justify">
 Como resultado formativo, los estudiantes desarrollarán un trabajo académico 
   tipo revisión de literatura, fortaleciendo sus capacidades para analizar, 
   sintetizar y comunicar conocimiento científico en un entorno colaborativo y
@@ -789,7 +746,7 @@ Juntas permiten desarrollar investigaciones completas, confiables y bien fundame
 <section id="ponentes">
 
 <h2>Ponentes de nuestras charlas magistrales</h2>
-<p style="text-align:center; color:white;">
+<p class="text-center text-white">
 Conoce a nuestros speakers invitados
 </p>
 <div class="carousel">
