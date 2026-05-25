@@ -402,6 +402,44 @@ box-shadow:0 10px 30px rgba(0,0,0,0.2);
   box-shadow:0 10px 25px rgba(0,0,0,0.2);
 }
 
+/* ===== DESCRIPCIÓN OCULTA PONENTES ===== */
+
+.ponente{
+  position:relative;
+  overflow:hidden;
+}
+
+.ponente .descripcion-hover{
+  position:absolute;
+  inset:0;
+
+  background:var(--azul);
+  color:white;
+
+  padding:20px;
+
+  opacity:0;
+  transition:0.3s ease;
+
+  overflow-y:auto;
+
+  border-radius:16px;
+
+  text-align:justify;
+  line-height:1.6;
+  font-size:13px;
+}
+
+/* desktop */
+.ponente:hover .descripcion-hover{
+  opacity:1;
+}
+
+/* celular */
+.ponente.activo .descripcion-hover{
+  opacity:1;
+}
+
 .foto-ponente{
   width:120px;
   height:120px;
@@ -673,11 +711,7 @@ html, body{
   .miembro{
     padding: 15px;
   }
-  
-  .descripcion{
-    display:none;
-  }
-  
+   
 }
    
 </style>
@@ -818,7 +852,7 @@ Conoce a nuestros speakers invitados
     <h3>Dante Angel Elias Giordano</h3>
     <span class="uni">Biomecánica y Rehabilitación</span>
     <p class="tema">Perú</p>
-    <p class="descripcion" style="text-align: justify;">
+    <div class="descripcion-hover">
       Ingeniero mecánico por la Pontificia Universidad Católica del Perú (PUCP) y doctor en Ciencias de la 
       Ingeniería con mención en Diseño Mecánico Asistido por Computador por la Pontificia Universidad Católica de 
       Chile. Profesor a tiempo completo en la PUCP desde 1992 e investigador desde el año 2000. Es coordinador del 
@@ -827,7 +861,7 @@ Conoce a nuestros speakers invitados
       Perú (2013). Cuenta con amplia experiencia como autor de publicaciones científicas, organizador de eventos 
       académicos internacionales y revisor de artículos para congresos y revistas especializadas. Además, 
       se desempeña como asesor en la formulación y ejecución de proyectos de investigación.
-    </p>
+    </div>
   </div>
 
 </div>
@@ -842,7 +876,7 @@ Conoce a nuestros speakers invitados
     <h3>Paulo Camilo Alberto Vela Anton</h3>
     <span class="uni">Gestión de la Innovación y Tecnología con Impacto Social</span>
     <p class="tema">Perú</p>
-    <p class="descripcion" style="text-align: justify;">
+    <div class="descripcion-hover">
       Ingeniero mecatrónico y magíster en Informática Biomédica por la Universidad Peruana Cayetano Heredia (UPCH). 
       Actualmente cursa estudios en política de tecnología e innovación en University College London (UCL). 
       Es miembro de programas internacionales como Leaders in Innovation Fellowships y Engineering for Change. 
@@ -852,7 +886,7 @@ Conoce a nuestros speakers invitados
       Actualmente participa en iniciativas de promoción de la inteligencia artificial y transferencia tecnológica 
       en el Perú, integrando ingeniería, datos y políticas de innovación para fortalecer el desarrollo tecnológico 
       y el bienestar social.
-    </p>
+    </div>
   </div>
 
 </div>
@@ -872,9 +906,9 @@ Conoce a nuestros speakers invitados
     <h3>Lizardo Kendy Torres Ayala</h3>
     <span class="uni">Ingeniería de Materiales y Biomateriales </span>
     <p class="tema">Perú</p>
-    <p class="descripcion" style="text-align: justify;">
+    <div class="descripcion-hover">
       Breve descripción del ponente, experiencia, logros, etc.
-    </p>
+    </div>
   </div>
 
 </div>
@@ -889,9 +923,9 @@ Conoce a nuestros speakers invitados
     <h3>Antonio Perianes Rodriguez</h3>
     <span class="uni">Ciencias de la información / Biblioteconomia</span>
     <p class="tema">España</p>
-    <p class="descripcion" style="text-align: justify;">
+    <div class="descripcion-hover">
       Breve descripción del ponente, experiencia, logros, etc.
-    </p>
+    </div>
   </div>
 
 </div>
@@ -910,9 +944,9 @@ Conoce a nuestros speakers invitados
     <h3>Ricardo Eito Brun</h3>
     <span class="uni">Ciencias de la información / Biblioteconomia</span>
     <p class="tema">España</p>
-    <p class="descripcion" style="text-align: justify;">
+    <div class="descripcion-hover">
       Breve descripción del ponente, experiencia, logros, etc.
-    </p>
+    </div>
   </div>
 
 </div>
@@ -927,9 +961,9 @@ Conoce a nuestros speakers invitados
     <h3>Carlos Spuch Calvar</h3>
     <span class="uni">Biomedicina</span>
     <p class="tema">España</p>
-    <p class="descripcion" style="text-align: justify;">
+    <div class="descripcion-hover">
       Breve descripción del ponente, experiencia, logros, etc.
-    </p>
+    </div>
   </div>
 
 </div>
@@ -971,7 +1005,9 @@ Profesionales invitados al panel de discusión
     <h3>Nombre Profesional</h3>
     <span class="uni">Institución</span>
     <p class="tema">Rol en el conversatorio</p>
-    <p class="descripcion">Breve perfil</p>
+    <div class="descripcion-hover">
+      Breve perfil
+    </div>
   </div>
 </div>
 
@@ -981,7 +1017,9 @@ Profesionales invitados al panel de discusión
     <h3>Nombre Profesional</h3>
     <span class="uni">Institución</span>
     <p class="tema">Rol en el conversatorio</p>
-    <p class="descripcion">Breve perfil</p>
+    <div class="descripcion-hover">
+      Breve perfil
+    </div>
   </div>
 </div>
 
@@ -996,7 +1034,9 @@ Profesionales invitados al panel de discusión
     <h3>Nombre Profesional</h3>
     <span class="uni">Institución</span>
     <p class="tema">Rol en el conversatorio</p>
-    <p class="descripcion">Breve perfil</p>
+    <div class="descripcion-hover">
+      Breve perfil
+    </div>
   </div>
 </div>
 
@@ -1006,7 +1046,9 @@ Profesionales invitados al panel de discusión
     <h3>Nombre Profesional</h3>
     <span class="uni">Institución</span>
     <p class="tema">Rol en el conversatorio</p>
-    <p class="descripcion">Breve perfil</p>
+    <div class="descripcion-hover">
+      Breve perfil
+    </div>
   </div>
 </div>
 
@@ -1049,7 +1091,9 @@ Especialistas que guiarán los talleres prácticos
     <h3>Nombre Tallerista</h3>
     <span class="uni">Institución</span>
     <p class="tema">Tema del taller</p>
-    <p class="descripcion">Descripción breve</p>
+    <div class="descripcion-hover">
+      Breve perfil
+    </div>
   </div>
 </div>
 
@@ -1059,7 +1103,9 @@ Especialistas que guiarán los talleres prácticos
     <h3>Nombre Tallerista</h3>
     <span class="uni">Institución</span>
     <p class="tema">Tema del taller</p>
-    <p class="descripcion">Descripción breve</p>
+    <div class="descripcion-hover">
+      Breve perfil
+    </div>
   </div>
 </div>
 
@@ -1074,7 +1120,9 @@ Especialistas que guiarán los talleres prácticos
     <h3>Nombre Tallerista</h3>
     <span class="uni">Institución</span>
     <p class="tema">Tema del taller</p>
-    <p class="descripcion">Descripción breve</p>
+    <div class="descripcion-hover">
+      Breve perfil
+    </div>
   </div>
 </div>
 
@@ -1084,7 +1132,9 @@ Especialistas que guiarán los talleres prácticos
     <h3>Nombre Tallerista</h3>
     <span class="uni">Institución</span>
     <p class="tema">Tema del taller</p>
-    <p class="descripcion">Descripción breve</p>
+    <div class="descripcion-hover">
+      Breve perfil
+    </div>
   </div>
 </div>
 
@@ -1429,6 +1479,19 @@ initSlider("ponentes-track");
 initSlider("talleristas-track");
 initSlider("conversatorio-track");
 
+/* abrir descripción en celular */
+document.querySelectorAll(".ponente").forEach(card => {
+
+  card.addEventListener("click", () => {
+
+    if(window.innerWidth <= 768){
+      card.classList.toggle("activo");
+    }
+
+  });
+
+});
+  
 </script>
 
 </body>
