@@ -506,8 +506,8 @@ function renderCalendar(){
       evento.classList.add("evento-label");
       evento.innerText = eventos[fecha];
 
-      evento.onclick = () => abrirModal(fecha, eventos[fecha]);
-
+      div.onclick = () => abrirModal(fecha, eventos[fecha]);
+      
       div.appendChild(evento);
     }
 
