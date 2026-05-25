@@ -365,6 +365,10 @@ footer{
 
   transition:0.3s ease;
 }
+
+.nombre-toggle{
+  cursor:pointer;
+}
   
 .ponente .info h3{
   margin:0;
@@ -397,11 +401,6 @@ border-left:6px solid var(--verde);
 box-shadow:0 10px 30px rgba(0,0,0,0.2);
 }
   
-.ponente:hover{
-  transform: translateY(-5px);
-  box-shadow:0 10px 25px rgba(0,0,0,0.2);
-}
-
 /* ===== DESCRIPCIÓN OCULTA PONENTES ===== */
 
 .ponente{
@@ -430,14 +429,9 @@ box-shadow:0 10px 30px rgba(0,0,0,0.2);
   font-size:13px;
 }
 
-/* desktop */
-.ponente:hover .descripcion-hover{
-  opacity:1;
-}
-
-/* celular */
 .ponente.activo .descripcion-hover{
   opacity:1;
+  pointer-events:auto;
 }
 
 .foto-ponente{
@@ -849,7 +843,7 @@ Conoce a nuestros speakers invitados
   </a>
 
   <div class="info">
-    <h3>Dante Angel Elias Giordano</h3>
+    <h3 class="nombre-toggle">Dante Angel Elias Giordano</h3>
     <span class="uni">Biomecánica y Rehabilitación</span>
     <p class="tema">Perú</p>
     <div class="descripcion-hover">
@@ -873,7 +867,7 @@ Conoce a nuestros speakers invitados
   </a>
 
   <div class="info">
-    <h3>Paulo Camilo Alberto Vela Anton</h3>
+    <h3 class="nombre-toggle">Paulo Camilo Alberto Vela Anton</h3>
     <span class="uni">Gestión de la Innovación y Tecnología con Impacto Social</span>
     <p class="tema">Perú</p>
     <div class="descripcion-hover">
@@ -903,7 +897,7 @@ Conoce a nuestros speakers invitados
   </a>
 
   <div class="info">
-    <h3>Lizardo Kendy Torres Ayala</h3>
+    <h3 class="nombre-toggle">Lizardo Kendy Torres Ayala</h3>
     <span class="uni">Ingeniería de Materiales y Biomateriales </span>
     <p class="tema">Perú</p>
     <div class="descripcion-hover">
@@ -920,7 +914,7 @@ Conoce a nuestros speakers invitados
   </a>
 
   <div class="info">
-    <h3>Antonio Perianes Rodriguez</h3>
+    <h3 class="nombre-toggle">Antonio Perianes Rodriguez</h3>
     <span class="uni">Ciencias de la información / Biblioteconomia</span>
     <p class="tema">España</p>
     <div class="descripcion-hover">
@@ -941,7 +935,7 @@ Conoce a nuestros speakers invitados
   </a>
 
   <div class="info">
-    <h3>Ricardo Eito Brun</h3>
+    <h3 class="nombre-toggle">Ricardo Eito Brun</h3>
     <span class="uni">Ciencias de la información / Biblioteconomia</span>
     <p class="tema">España</p>
     <div class="descripcion-hover">
@@ -958,7 +952,7 @@ Conoce a nuestros speakers invitados
   </a>
 
   <div class="info">
-    <h3>Carlos Spuch Calvar</h3>
+    <h3 class="nombre-toggle">Carlos Spuch Calvar</h3>
     <span class="uni">Biomedicina</span>
     <p class="tema">España</p>
     <div class="descripcion-hover">
@@ -985,7 +979,8 @@ Conoce a nuestros speakers invitados
 
 <h2>Ponentes de nuestras sesiones de motivación científica</h2>
 <p style="text-align:center; color:white;">
-Profesionales invitados al panel de discusión
+Investigadores y especialistas invitados que participan en sesiones
+de motivación científica con demostraciones prácticas.
 </p>
 
 <div class="carousel">
@@ -1002,9 +997,9 @@ Profesionales invitados al panel de discusión
 <div class="card ponente">
   <img src="conversatorio/c1.jpg" class="foto-ponente" onerror="this.src='ponentes/sinImagen.jpg'">
   <div class="info">
-    <h3>Nombre Profesional</h3>
+    <h3 class="nombre-toggle">Nombre Profesional</h3>
     <span class="uni">Institución</span>
-    <p class="tema">Rol en el conversatorio</p>
+    <p class="tema">Tipo de demostración</p>
     <div class="descripcion-hover">
       Breve perfil
     </div>
@@ -1014,9 +1009,9 @@ Profesionales invitados al panel de discusión
 <div class="card ponente">
   <img src="conversatorio/c2.jpg" class="foto-ponente" onerror="this.src='ponentes/sinImagen.jpg'">
   <div class="info">
-    <h3>Nombre Profesional</h3>
+    <h3 class="nombre-toggle">Nombre Profesional</h3>
     <span class="uni">Institución</span>
-    <p class="tema">Rol en el conversatorio</p>
+    <p class="tema">Tipo de demostración</p>
     <div class="descripcion-hover">
       Breve perfil
     </div>
@@ -1031,9 +1026,9 @@ Profesionales invitados al panel de discusión
 <div class="card ponente">
   <img src="conversatorio/c1.jpg" class="foto-ponente" onerror="this.src='ponentes/sinImagen.jpg'">
   <div class="info">
-    <h3>Nombre Profesional</h3>
+    <h3 class="nombre-toggle">Nombre Profesional</h3>
     <span class="uni">Institución</span>
-    <p class="tema">Rol en el conversatorio</p>
+    <p class="tema">Tipo de demostración</p>
     <div class="descripcion-hover">
       Breve perfil
     </div>
@@ -1043,9 +1038,9 @@ Profesionales invitados al panel de discusión
 <div class="card ponente">
   <img src="conversatorio/c2.jpg" class="foto-ponente" onerror="this.src='ponentes/sinImagen.jpg'">
   <div class="info">
-    <h3>Nombre Profesional</h3>
+    <h3 class="nombre-toggle">Nombre Profesional</h3>
     <span class="uni">Institución</span>
-    <p class="tema">Rol en el conversatorio</p>
+    <p class="tema">Tipo de demostración</p>
     <div class="descripcion-hover">
       Breve perfil
     </div>
@@ -1088,7 +1083,7 @@ Especialistas que guiarán los talleres prácticos
 <div class="card ponente">
   <img src="talleristas/t1.jpg" class="foto-ponente" onerror="this.src='ponentes/sinImagen.jpg'">
   <div class="info">
-    <h3>Nombre Tallerista</h3>
+    <h3 class="nombre-toggle">Nombre Tallerista</h3>
     <span class="uni">Institución</span>
     <p class="tema">Tema del taller</p>
     <div class="descripcion-hover">
@@ -1100,7 +1095,7 @@ Especialistas que guiarán los talleres prácticos
 <div class="card ponente">
   <img src="talleristas/t2.jpg" class="foto-ponente" onerror="this.src='ponentes/sinImagen.jpg'">
   <div class="info">
-    <h3>Nombre Tallerista</h3>
+    <h3 class="nombre-toggle">Nombre Tallerista</h3>
     <span class="uni">Institución</span>
     <p class="tema">Tema del taller</p>
     <div class="descripcion-hover">
@@ -1117,7 +1112,7 @@ Especialistas que guiarán los talleres prácticos
 <div class="card ponente">
   <img src="talleristas/t1.jpg" class="foto-ponente" onerror="this.src='ponentes/sinImagen.jpg'">
   <div class="info">
-    <h3>Nombre Tallerista</h3>
+    <h3 class="nombre-toggle">Nombre Tallerista</h3>
     <span class="uni">Institución</span>
     <p class="tema">Tema del taller</p>
     <div class="descripcion-hover">
@@ -1129,7 +1124,7 @@ Especialistas que guiarán los talleres prácticos
 <div class="card ponente">
   <img src="talleristas/t2.jpg" class="foto-ponente" onerror="this.src='ponentes/sinImagen.jpg'">
   <div class="info">
-    <h3>Nombre Tallerista</h3>
+    <h3 class="nombre-toggle">Nombre Tallerista</h3>
     <span class="uni">Institución</span>
     <p class="tema">Tema del taller</p>
     <div class="descripcion-hover">
@@ -1479,13 +1474,26 @@ initSlider("ponentes-track");
 initSlider("talleristas-track");
 initSlider("conversatorio-track");
 
-/* abrir descripción en celular */
-document.querySelectorAll(".ponente").forEach(card => {
+document.querySelectorAll(".nombre-toggle").forEach(nombre => {
 
-  card.addEventListener("click", () => {
+  nombre.addEventListener("click", () => {
 
-    if(window.innerWidth <= 768){
-      card.classList.toggle("activo");
+    const card = nombre.closest(".ponente");
+
+    /* cerrar si ya estaba abierto */
+    if(card.classList.contains("activo")){
+
+      card.classList.remove("activo");
+
+    }else{
+
+      /* cerrar otros */
+      document.querySelectorAll(".ponente").forEach(c => {
+        c.classList.remove("activo");
+      });
+
+      /* abrir actual */
+      card.classList.add("activo");
     }
 
   });
