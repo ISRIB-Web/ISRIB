@@ -474,6 +474,31 @@ box-shadow:0 10px 30px rgba(0,0,0,0.2);
   z-index:5;
   display:inline-block;
 }
+
+/* ===== EFECTO HOVER IMÁGENES ===== */
+
+.foto-ponente,
+.miembro img{
+  transition: all 0.3s ease;
+}
+
+.foto-ponente:hover,
+.miembro img:hover{
+  transform: scale(1.06);
+  filter: brightness(1.08);
+  cursor: pointer;
+}
+
+/* ===== SUBRAYADO EN NOMBRES ===== */
+
+.nombre-toggle{
+  cursor:pointer;
+  transition:0.3s ease;
+}
+
+.nombre-toggle:hover{
+  text-decoration: underline;
+}
   
 .descripcion{
   font-size:13px;
