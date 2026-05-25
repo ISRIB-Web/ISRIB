@@ -405,7 +405,7 @@ box-shadow:0 10px 30px rgba(0,0,0,0.2);
 
 .ponente{
   position:relative;
-  overflow:hidden;
+  overflow:visible;
 }
 
 .ponente .descripcion-hover{
@@ -427,6 +427,9 @@ box-shadow:0 10px 30px rgba(0,0,0,0.2);
   text-align:justify;
   line-height:1.6;
   font-size:13px;
+
+  pointer-events:none;
+  z-index:2;
 }
 
 .ponente.activo .descripcion-hover{
@@ -440,8 +443,15 @@ box-shadow:0 10px 30px rgba(0,0,0,0.2);
   border-radius:50%;
   object-fit:cover;
   flex-shrink:0;
+  cursor:pointer;
 }  
 
+.foto-link{
+  position:relative;
+  z-index:5;
+  display:inline-block;
+}
+  
 .descripcion{
   font-size:13px;
   color:var(--gris-oscuro);
@@ -838,8 +848,8 @@ Conoce a nuestros speakers invitados
 
 <div class="card ponente">
 
-  <a href="https://www.linkedin.com/in/dante-elias/" target="_blank">
-  <img src="ponentes/sinImagen.jpg" class="foto-ponente" loading="lazy">
+  <a href="https://www.linkedin.com/in/dante-elias/" target="_blank" class="foto-link">
+    <img src="ponentes/sinImagen.jpg" class="foto-ponente" loading="lazy">
   </a>
 
   <div class="info">
@@ -862,7 +872,7 @@ Conoce a nuestros speakers invitados
 
 <div class="card ponente">
 
-  <a href="https://www.linkedin.com/in/paulovela/" target="_blank">
+  <a href="https://www.linkedin.com/in/paulovela/" target="_blank" class="foto-link">
   <img src="ponentes/sinImagen.jpg" class="foto-ponente" loading="lazy">
   </a>
 
@@ -892,7 +902,7 @@ Conoce a nuestros speakers invitados
 
 <div class="card ponente">
 
-  <a href="https://www.linkedin.com/in/lizardo-kendy-torres-ayala-3b7699301/" target="_blank">
+  <a href="https://www.linkedin.com/in/lizardo-kendy-torres-ayala-3b7699301/" target="_blank" class="foto-link">
   <img src="ponentes/sinImagen.jpg" class="foto-ponente" loading="lazy">
   </a>
 
@@ -909,7 +919,7 @@ Conoce a nuestros speakers invitados
 
 <div class="card ponente">
 
-  <a href="https://www.linkedin.com" target="_blank">
+  <a href="https://www.linkedin.com" target="_blank" class="foto-link">
   <img src="ponentes/sinImagen.jpg" class="foto-ponente" loading="lazy">
   </a>
 
@@ -930,7 +940,7 @@ Conoce a nuestros speakers invitados
 
 <div class="card ponente">
 
-  <a href="https://www.linkedin.com" target="_blank">
+  <a href="https://www.linkedin.com" target="_blank" class="foto-link">
   <img src="ponentes/sinImagen.jpg" class="foto-ponente" loading="lazy">
   </a>
 
@@ -947,7 +957,7 @@ Conoce a nuestros speakers invitados
 
 <div class="card ponente">
 
-  <a href="https://www.linkedin.com" target="_blank">
+  <a href="https://www.linkedin.com" target="_blank" class="foto-link">
   <img src="ponentes/sinImagen.jpg" class="foto-ponente" loading="lazy">
   </a>
 
@@ -995,7 +1005,9 @@ de motivación científica con demostraciones prácticas.
 <div class="grupo ponentes">
 
 <div class="card ponente">
-  <img src="conversatorio/c1.jpg" class="foto-ponente" onerror="this.src='ponentes/sinImagen.jpg'">
+  <a href="https://www.linkedin.com" target="_blank" class="foto-link">
+  <img src="ponentes/sinImagen.jpg" class="foto-ponente" loading="lazy">
+  </a>
   <div class="info">
     <h3 class="nombre-toggle">Nombre Profesional</h3>
     <span class="uni">Institución</span>
@@ -1007,7 +1019,9 @@ de motivación científica con demostraciones prácticas.
 </div>
 
 <div class="card ponente">
-  <img src="conversatorio/c2.jpg" class="foto-ponente" onerror="this.src='ponentes/sinImagen.jpg'">
+  <a href="https://www.linkedin.com" target="_blank" class="foto-link">
+  <img src="ponentes/sinImagen.jpg" class="foto-ponente" loading="lazy">
+  </a>
   <div class="info">
     <h3 class="nombre-toggle">Nombre Profesional</h3>
     <span class="uni">Institución</span>
@@ -1024,7 +1038,9 @@ de motivación científica con demostraciones prácticas.
 <div class="grupo ponentes">
 
 <div class="card ponente">
-  <img src="conversatorio/c1.jpg" class="foto-ponente" onerror="this.src='ponentes/sinImagen.jpg'">
+  <a href="https://www.linkedin.com" target="_blank" class="foto-link">
+  <img src="ponentes/sinImagen.jpg" class="foto-ponente" loading="lazy">
+  </a>
   <div class="info">
     <h3 class="nombre-toggle">Nombre Profesional</h3>
     <span class="uni">Institución</span>
@@ -1036,7 +1052,9 @@ de motivación científica con demostraciones prácticas.
 </div>
 
 <div class="card ponente">
-  <img src="conversatorio/c2.jpg" class="foto-ponente" onerror="this.src='ponentes/sinImagen.jpg'">
+  <a href="https://www.linkedin.com" target="_blank" class="foto-link">
+  <img src="ponentes/sinImagen.jpg" class="foto-ponente" loading="lazy">
+  </a>
   <div class="info">
     <h3 class="nombre-toggle">Nombre Profesional</h3>
     <span class="uni">Institución</span>
@@ -1081,7 +1099,9 @@ Especialistas que guiarán los talleres prácticos
 <div class="grupo ponentes">
 
 <div class="card ponente">
-  <img src="talleristas/t1.jpg" class="foto-ponente" onerror="this.src='ponentes/sinImagen.jpg'">
+  <a href="https://www.linkedin.com" target="_blank" class="foto-link">
+  <img src="ponentes/sinImagen.jpg" class="foto-ponente" loading="lazy">
+  </a>
   <div class="info">
     <h3 class="nombre-toggle">Nombre Tallerista</h3>
     <span class="uni">Institución</span>
@@ -1093,7 +1113,9 @@ Especialistas que guiarán los talleres prácticos
 </div>
 
 <div class="card ponente">
-  <img src="talleristas/t2.jpg" class="foto-ponente" onerror="this.src='ponentes/sinImagen.jpg'">
+  <a href="https://www.linkedin.com" target="_blank" class="foto-link">
+  <img src="ponentes/sinImagen.jpg" class="foto-ponente" loading="lazy">
+  </a>
   <div class="info">
     <h3 class="nombre-toggle">Nombre Tallerista</h3>
     <span class="uni">Institución</span>
@@ -1110,7 +1132,9 @@ Especialistas que guiarán los talleres prácticos
 <div class="grupo ponentes">
 
 <div class="card ponente">
-  <img src="talleristas/t1.jpg" class="foto-ponente" onerror="this.src='ponentes/sinImagen.jpg'">
+  <a href="https://www.linkedin.com" target="_blank" class="foto-link">
+  <img src="ponentes/sinImagen.jpg" class="foto-ponente" loading="lazy">
+  </a>
   <div class="info">
     <h3 class="nombre-toggle">Nombre Tallerista</h3>
     <span class="uni">Institución</span>
@@ -1122,7 +1146,9 @@ Especialistas que guiarán los talleres prácticos
 </div>
 
 <div class="card ponente">
-  <img src="talleristas/t2.jpg" class="foto-ponente" onerror="this.src='ponentes/sinImagen.jpg'">
+  <a href="https://www.linkedin.com" target="_blank" class="foto-link">
+  <img src="ponentes/sinImagen.jpg" class="foto-ponente" loading="lazy">
+  </a>
   <div class="info">
     <h3 class="nombre-toggle">Nombre Tallerista</h3>
     <span class="uni">Institución</span>
@@ -1499,7 +1525,22 @@ document.querySelectorAll(".nombre-toggle").forEach(nombre => {
   });
 
 });
-  
+
+/* cerrar descripción al tocar fuera */
+document.addEventListener("click", (e) => {
+
+  /* si hizo click en nombre, no cerrar */
+  if(e.target.closest(".nombre-toggle")) return;
+
+  /* si hizo click en imagen/linkedin, no cerrar */
+  if(e.target.closest(".foto-link")) return;
+
+  /* cerrar todos */
+  document.querySelectorAll(".ponente").forEach(card => {
+    card.classList.remove("activo");
+  });
+
+});
 </script>
 
 </body>
