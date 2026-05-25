@@ -430,11 +430,27 @@ box-shadow:0 10px 30px rgba(0,0,0,0.2);
 
   pointer-events:none;
   z-index:2;
+
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  flex-direction:column;
 }
 
 .ponente.activo .descripcion-hover{
   opacity:1;
   pointer-events:auto;
+}
+
+.ponente.activo .foto-link,
+.ponente.activo .info > span,
+.ponente.activo .info > .tema{
+  opacity:0;
+  transition:0.3s ease;
+}
+
+.ponente.activo .nombre-toggle{
+  color:transparent;
 }
 
 .foto-ponente{
