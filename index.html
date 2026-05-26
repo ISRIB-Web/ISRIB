@@ -73,12 +73,38 @@ header{
   margin-bottom:20px;
 }
 
+/* ===== LOGOS FOOTER ===== */
+
 .logos-footer{
-  width: 500px;
-  max-width: 90%;
-  padding: 5px 20px;
-  display: block;
-  margin: 0 auto;
+  display:flex;
+  justify-content:center;
+  align-items:center; /* 🔥 misma altura visual */
+  gap:25px;
+  flex-wrap:wrap;
+
+  margin:20px auto;
+}
+
+.logos-footer a{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+
+  height:70px; /* 🔥 altura igual para todos */
+}
+
+.logos-footer img{
+  max-height:70px; /* 🔥 TODOS misma altura */
+  width:auto;
+
+  object-fit:contain;
+
+  transition:0.3s ease;
+}
+
+.logos-footer img:hover{
+  transform:scale(1.08);
+  filter:brightness(1.05);
 }
 
 header h1{
@@ -1517,7 +1543,25 @@ Especialistas que guiarán los talleres prácticos
 
 </div>
 
-<img src="file_00000000e8c8720e8494bf6ab19bbb41.png" class="logos-footer">
+<div class="logos-footer">
+
+  <a href="https://link1.com" target="_blank">
+    <img src="footer/footer1.png" alt="Logo 1">
+  </a>
+
+  <a href="https://link2.com" target="_blank">
+    <img src="footer/footer2.png" alt="Logo 2">
+  </a>
+
+  <a href="https://link3.com" target="_blank">
+    <img src="logo3.png" alt="Logo 3">
+  </a>
+
+  <a href="https://link4.com" target="_blank">
+    <img src="logo4.png" alt="Logo 4">
+  </a>
+
+</div>
   
 <p>© 2026 ISRIB</p>
 
