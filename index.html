@@ -754,7 +754,7 @@ html, body{
 }
 
 #derecho p{
-  color:white;
+  color:var(--azul);
   text-align:center;
 }
 
@@ -775,10 +775,22 @@ html, body{
   max-width:800px;
   margin:25px auto 0 auto;
 }
+  
+@media (max-width: 500px){
 
+  #derecho{
+    padding-left: 50px;
+    padding-right: 50px;
+  }
+}
 @media(max-width:900px){
   .derecho-grid{
     grid-template-columns:1fr;
+  }
+
+    #derecho{
+    padding-left: 50px;
+    padding-right: 50px;
   }
 }
   
