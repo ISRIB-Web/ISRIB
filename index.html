@@ -597,8 +597,6 @@ box-shadow:0 10px 30px rgba(0,0,0,0.2);
   flex-grow:1; /* 🔥 clave */
 }
 
-
-
 .cards {
   display: flex;
   gap: 20px;
@@ -741,6 +739,36 @@ html, body{
   background: var(--azul);
 }  
 
+/* ===== SEMANA DE DERECHO ===== */
+
+#derecho{
+  background:#f8f8f8;
+  border-radius:20px;
+  margin-top:20px;
+  padding:40px 20px;
+}
+
+#derecho h2{
+  color:var(--azul);
+}
+
+#derecho p{
+  text-align:center;
+}
+
+.derecho-grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:20px;
+  margin-top:25px;
+}
+
+@media(max-width:900px){
+  .derecho-grid{
+    grid-template-columns:1fr;
+  }
+}
+  
 @keyframes pulse{
   0%{ transform: scale(1); }
   50%{ transform: scale(1.05); }
@@ -1247,6 +1275,79 @@ de motivación científica con demostraciones prácticas.
 
 </section>
 
+<!-- Semana de Derecho -->
+<section id="derecho">
+
+<h2>Ponentes de la Semana de Derecho</h2>
+
+<p>
+Especialistas invitados que abordarán temas jurídicos de actualidad.
+</p>
+
+<div class="derecho-grid">
+
+  <!-- Ponente 1 -->
+  <div class="card ponente">
+    <a href="LINK_LINKEDIN" target="_blank" class="foto-link">
+      <img src="ponentes/foto1.jpg" class="foto-ponente">
+    </a>
+    <div class="info">
+      <h3 class="nombre-toggle">Nombre del ponente</h3>
+      <span class="uni">
+        Especialidad o institución
+      </span>
+      <p class="tema">
+        Perú
+      </p>
+
+      <div class="descripcion-hover">
+        Biografía completa del ponente.
+      </div>
+    </div>
+  </div>
+
+  <!-- Ponente 2 -->
+  <div class="card ponente">
+    <a href="LINK_LINKEDIN" target="_blank" class="foto-link">
+      <img src="ponentes/foto1.jpg" class="foto-ponente">
+    </a>
+
+    <div class="info">
+      <h3 class="nombre-toggle">Nombre del ponente</h3>
+      <span class="uni">
+        Especialidad o institución
+      </span>
+      <p class="tema">
+        Perú
+      </p>
+      <div class="descripcion-hover">
+        Biografía completa del ponente.
+      </div>
+    </div>
+  </div>
+
+  <!-- Ponente 3 -->
+  <div class="card ponente">
+    <a href="LINK_LINKEDIN" target="_blank" class="foto-link">
+      <img src="ponentes/foto1.jpg" class="foto-ponente">
+    </a>
+    <div class="info">
+      <h3 class="nombre-toggle">Nombre del ponente</h3>
+      <span class="uni">
+        Especialidad o institución
+      </span>
+      <p class="tema">
+        Perú
+      </p>
+      <div class="descripcion-hover">
+        Biografía completa del ponente.
+      </div>
+    </div>
+  </div>
+
+</div>
+
+</section>
   
 <!-- Talleristas -->
 <section id="talleristas">
