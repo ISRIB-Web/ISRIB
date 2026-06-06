@@ -742,18 +742,25 @@ html, body{
 /* ===== SEMANA DE DERECHO ===== */
 
 #derecho{
-  background:#f8f8f8;
+  background: var(--azul);
   border-radius:20px;
   margin-top:20px;
   padding:40px 20px;
 }
 
 #derecho h2{
-  color:var(--azul);
+  color:white;
+  font-size:32px; /* mismo tamaño que charlas magistrales */
 }
 
 #derecho p{
+  color:white;
   text-align:center;
+}
+
+#derecho .ponente{
+  border-left:6px solid var(--verde);
+  box-shadow:0 10px 30px rgba(0,0,0,0.2);
 }
 
 .derecho-grid{
@@ -761,6 +768,7 @@ html, body{
   grid-template-columns:repeat(3,1fr);
   gap:20px;
   margin-top:25px;
+  align-items:stretch;
 }
 
 @media(max-width:900px){
@@ -1280,69 +1288,88 @@ de motivación científica con demostraciones prácticas.
 
 <h2>Ponentes de la Semana de Derecho</h2>
 
-<p>
+<p style="text-align:center; color:white;">
 Especialistas invitados que abordarán temas jurídicos de actualidad.
 </p>
 
 <div class="derecho-grid">
 
-  <!-- Ponente 1 -->
+  <!-- PONENTE 1 -->
   <div class="card ponente">
-    <a href="LINK_LINKEDIN" target="_blank" class="foto-link">
-      <img src="ponentes/foto1.jpg" class="foto-ponente">
+
+    <a href="LINK_LINKEDIN_1" target="_blank" class="foto-link">
+      <img src="ponentes/foto1.jpg" class="foto-ponente" loading="lazy">
     </a>
+
     <div class="info">
-      <h3 class="nombre-toggle">Nombre del ponente</h3>
+      <h3 class="nombre-toggle">Nombre Completo del Ponente</h3>
+
       <span class="uni">
-        Especialidad o institución
+        Especialidad o Institución
       </span>
-      <p class="tema">
-        Perú
-      </p>
+
+      <img src="bandera/Flag_of_Peru.svg" class="bandera-pais">
+
+      <p class="tema">Perú</p>
 
       <div class="descripcion-hover">
-        Biografía completa del ponente.
+        Aquí coloca la biografía completa del ponente, experiencia profesional,
+        investigaciones, publicaciones, cargos académicos y cualquier otra
+        información relevante.
       </div>
     </div>
+
   </div>
 
-  <!-- Ponente 2 -->
+  <!-- PONENTE 2 -->
   <div class="card ponente">
-    <a href="LINK_LINKEDIN" target="_blank" class="foto-link">
-      <img src="ponentes/foto1.jpg" class="foto-ponente">
+
+    <a href="LINK_LINKEDIN_2" target="_blank" class="foto-link">
+      <img src="ponentes/foto2.jpg" class="foto-ponente" loading="lazy">
     </a>
 
     <div class="info">
-      <h3 class="nombre-toggle">Nombre del ponente</h3>
+      <h3 class="nombre-toggle">Nombre Completo del Ponente</h3>
+
       <span class="uni">
-        Especialidad o institución
+        Especialidad o Institución
       </span>
-      <p class="tema">
-        Perú
-      </p>
+
+      <img src="bandera/Bandera_de_España_(sin_escudo).svg.png"
+           class="bandera-pais">
+
+      <p class="tema">España</p>
+
       <div class="descripcion-hover">
-        Biografía completa del ponente.
+        Aquí coloca la biografía completa del segundo ponente.
       </div>
     </div>
+
   </div>
 
-  <!-- Ponente 3 -->
+  <!-- PONENTE 3 -->
   <div class="card ponente">
-    <a href="LINK_LINKEDIN" target="_blank" class="foto-link">
-      <img src="ponentes/foto1.jpg" class="foto-ponente">
+
+    <a href="LINK_LINKEDIN_3" target="_blank" class="foto-link">
+      <img src="ponentes/foto3.jpg" class="foto-ponente" loading="lazy">
     </a>
+
     <div class="info">
-      <h3 class="nombre-toggle">Nombre del ponente</h3>
+      <h3 class="nombre-toggle">Nombre Completo del Ponente</h3>
+
       <span class="uni">
-        Especialidad o institución
+        Especialidad o Institución
       </span>
-      <p class="tema">
-        Perú
-      </p>
+
+      <img src="bandera/Flag_of_Peru.svg" class="bandera-pais">
+
+      <p class="tema">Perú</p>
+
       <div class="descripcion-hover">
-        Biografía completa del ponente.
+        Aquí coloca la biografía completa del tercer ponente.
       </div>
     </div>
+
   </div>
 
 </div>
