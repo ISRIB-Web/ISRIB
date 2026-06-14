@@ -64,11 +64,22 @@ h1{
   color:#0048ab;
 }
 
+.tabla-container{
+  width:100%;
+  overflow-x:auto;
+  margin-top:20px;
+}
+
+.tabla-container table{
+  min-width:800px;
+}
+
 table{
   width:100%;
   border-collapse:collapse;
+  margin:0 auto;
 }
-
+  
 th, td{
   border:1px solid #ddd;
   padding:10px;
@@ -86,6 +97,22 @@ tr:nth-child(even){
 
 tr:hover{
   background: #eaf3ff;
+}
+
+th:nth-child(1), td:nth-child(1){
+  width:120px;
+}
+
+th:nth-child(2), td:nth-child(2){
+  width:120px;
+}
+
+th:nth-child(4), td:nth-child(4){
+  width:90px;
+}
+
+th:nth-child(5), td:nth-child(5){
+  width:70px;
 }
 
 #derecho{
@@ -232,6 +259,16 @@ tr:hover{
   .dia{
     min-height:60px;
   }
+
+  .tabla-container{
+    overflow-x:auto;
+    -webkit-overflow-scrolling:touch;
+  }
+
+  .tabla-container table{
+    min-width:700px;
+  }
+
 } 
 </style>
 
@@ -271,6 +308,8 @@ El programa se desarrolla a través de diversas actividades académicas que comb
 
 </div>
 
+
+<div class="tabla-container">
 <table>
 <tr>
 <th>Fecha</th>
@@ -417,6 +456,7 @@ El programa se desarrolla a través de diversas actividades académicas que comb
 </tr>
 
 </table>
+</div> 
 
 </section>
 
