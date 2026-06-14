@@ -793,12 +793,6 @@ html, body{
     padding-right: 50px;
   }
 }
-  
-@keyframes pulse{
-  0%{ transform: scale(1); }
-  50%{ transform: scale(1.05); }
-  100%{ transform: scale(1); }
-}
 
 /* ===== UTILIDADES ===== */
 
@@ -824,6 +818,110 @@ html, body{
   margin:0 auto 20px auto;
 }
   
+/* ===== RESPALDO INSTITUCIONAL ===== */
+
+#respaldo{
+  background:white;
+  border-radius:20px;
+  margin-top:20px;
+  padding:40px 20px;
+}
+
+#respaldo h2{
+  color:var(--azul);
+}
+
+.respaldo-grid{
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:25px;
+  margin-top:25px;
+}
+
+.respaldo-card{
+  background:white;
+  padding:30px;
+  border-radius:18px;
+  box-shadow:0 8px 20px rgba(0,0,0,0.12);
+  text-align:center;
+  transition:0.3s ease;
+}
+
+.respaldo-card:hover{
+  transform:translateY(-5px);
+}
+
+.respaldo-card img{
+  max-height:120px;
+  width:auto;
+  object-fit:contain;
+  margin-bottom:15px;
+}
+
+.respaldo-card h3{
+  color:var(--azul);
+  margin-bottom:10px;
+}
+
+/* ===== PATROCINADOR ===== */
+
+#patrocinador{
+  background:var(--verde);
+  border-radius:20px;
+  margin-top:20px;
+  padding:40px 20px;
+  color:white;
+  text-align:center;
+}
+
+#patrocinador h2{
+  color:white;
+}
+
+.patrocinador-card{
+  background:white;
+  max-width:500px;
+  margin:25px auto 0;
+  padding:30px;
+  border-radius:18px;
+  box-shadow:0 8px 20px rgba(0,0,0,0.15);
+}
+
+.patrocinador-card img{
+  max-height:140px;
+  width:auto;
+  object-fit:contain;
+}
+
+.patrocinador-card h3{
+  color:var(--azul);
+  margin-top:15px;
+}
+
+.patrocinador-card p{
+  color:var(--gris-oscuro);
+}
+  
+.respaldo-card img,
+.patrocinador-card img{
+  transition:0.3s ease;
+}
+
+.respaldo-card img:hover,
+.patrocinador-card img:hover{
+  transform:scale(1.05);
+  filter:brightness(1.05);
+}
+/* MÓVIL */
+
+@media(max-width:900px){
+
+  .respaldo-grid{
+    grid-template-columns:1fr;
+  }
+
+}
+    
 /* TABLET */
 @media (max-width: 900px){
 
@@ -885,6 +983,12 @@ html, body{
     padding: 15px;
   }
    
+}
+
+@keyframes pulse{
+  0%{ transform: scale(1); }
+  50%{ transform: scale(1.05); }
+  100%{ transform: scale(1); }
 }
    
 </style>
@@ -1754,7 +1858,6 @@ Especialistas que guiarán los talleres prácticos
 <div class="indicadores" id="dots-comite"></div>
 
 </section>
-
 <section style="text-align:center;">
   <h2>Programa</h2>
   <p>Consulta el cronograma completo del evento</p>
@@ -1762,33 +1865,55 @@ Especialistas que guiarán los talleres prácticos
     <button class="btn-inscripcion">Ver programa completo</button>
   </a>
 </section>
-  
-<footer id="contacto">
 
-<p>Contacto: isrib.official@gmail.com</p>
+<div class="respaldo-card">
+  <a href="https://www.pucp.edu.pe/" target="_blank">
+    <img src="respaldo/logo-universidad1.png"
+         alt="Pontificia Universidad Católica del Perú">
+  </a>
+  <h3>Pontificia Universidad Católica del Perú</h3>
+</div>
 
-<div class="social">
+<div class="respaldo-card">
 
-<a href="https://www.instagram.com/isrib.official/" target="_blank">Instagram</a>
-
-<a href="https://www.facebook.com/profile.php?id=61580579842807" target="_blank">Facebook</a>
-
-<a href="https://www.youtube.com/@ISRIB" target="_blank">YouTube</a>
-
-<a href="https://www.linkedin.com/company/isrib2026/about/?viewAsMember=true" target="_blank">LinkedIn</a>
+  <a href="https://www.uc3m.es/" target="_blank">
+    <img src="respaldo/logo-universidad2.png"
+         alt="Universidad Carlos III de Madrid">
+  </a>
+  <h3>Universidad Carlos III de Madrid</h3>
 
 </div>
 
-<div class="logos-footer">
+<div class="patrocinador-card">
 
+  <a href="https://www.pagina-del-patrocinador.com/"
+     target="_blank">
+
+    <img src="patrocinador/logo-patrocinador.png"
+         alt="Patrocinador">
+
+  </a>
+
+  <h3>Nombre del Patrocinador</h3>
+
+</div>
+  
+<footer id="contacto">
+<p>Contacto: isrib.official@gmail.com</p>
+<div class="social">
+<a href="https://www.instagram.com/isrib.official/" target="_blank">Instagram</a>
+<a href="https://www.facebook.com/profile.php?id=61580579842807" target="_blank">Facebook</a>
+<a href="https://www.youtube.com/@ISRIB" target="_blank">YouTube</a>
+<a href="https://www.linkedin.com/company/isrib2026/about/?viewAsMember=true" target="_blank">LinkedIn</a>
+</div>
+
+<div class="logos-footer">
   <a href="https://www.instagram.com/embs.pucp/" target="_blank">
     <img src="footer/footer1.png" alt="Logo 1">
   </a>
-
   <a href="https://www.instagram.com/parespucp/" target="_blank">
     <img src="footer/footer2.png" alt="Logo 2">
   </a>
-
   <a href="https://www.instagram.com/themis.pe/" target="_blank">
     <img src="footer/footer3.png" alt="Logo 3">
   </a>
