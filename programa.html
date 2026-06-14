@@ -230,11 +230,50 @@ th:nth-child(5), td:nth-child(5){
   background:white;
   padding:25px;
   border-radius:12px;
-  max-width:400px;
+  max-width:700px;
   width:90%;
-  text-align:center;
+  text-align:left;
+
+  max-height:80vh;
+  overflow-y:auto;
+
+  box-shadow:0 10px 30px rgba(0,0,0,.2);
 }
 
+#modal-fecha{
+  color:var(--azul);
+  margin-bottom:5px;
+}
+
+#modal-titulo{
+  color:var(--gris-oscuro);
+  margin-bottom:20px;
+}
+
+#modal-content p{
+  margin:10px 0;
+}
+
+#modal-descripcion{
+  text-align:justify;
+  line-height:1.6;
+}
+
+#modal-link a{
+  display:inline-block;
+  margin-top:15px;
+  background:var(--azul);
+  color:white;
+  text-decoration:none;
+  padding:10px 15px;
+  border-radius:8px;
+  font-weight:bold;
+}
+
+#modal-link a:hover{
+  opacity:.9;
+}
+  
 .cerrar{
   float:right;
   cursor:pointer;
@@ -267,6 +306,15 @@ th:nth-child(5), td:nth-child(5){
 
   .tabla-container table{
     min-width:700px;
+  }
+
+  .modal-content{
+    width:95%;
+    padding:20px;
+  }
+
+  #modal-descripcion{
+    font-size:14px;
   }
 
 } 
@@ -506,31 +554,199 @@ El programa se desarrolla a través de diversas actividades académicas que comb
 <!-- MODAL -->
 <div id="modal" class="modal">
   <div class="modal-content">
+
     <span class="cerrar" onclick="cerrarModal()">×</span>
+
     <h3 id="modal-fecha"></h3>
-    <p id="modal-info"></p>
+
+    <h4 id="modal-titulo"></h4>
+
+    <p id="modal-objetivo"></p>
+
+    <p id="modal-responsable"></p>
+
+    <p id="modal-modalidad"></p>
+
+    <p id="modal-horario"></p>
+
+    <p id="modal-descripcion"></p>
+
+    <p id="modal-link"></p>
+
   </div>
 </div>
 
 <script>
 const eventos = {
-  "2026-06-25": "Inauguración del evento (CM - Híbrida)",
-  "2026-07-02": "Descubriendo la Ingeniería Biomédica y mi tema de investigación (TP)",
-  "2026-07-03": "Motivación: Proyectos PUCP (SC)",
-  "2026-07-07": "Búsqueda de información e indagación del tema escogido(TP)",
-  "2026-07-09": "Lectura y delimitación del tema (y/o pregunta de investigación) (TP)",
-  "2026-07-11": "Motivación internacional (SC)",
-  "2026-07-14": "Organización de ideas y esquema de redacción (TP)",
-  "2026-07-15": "Motivación PUCP (SC)",
-  "2026-07-16": "Organización de ideas y esquema de redacción (TP)",
-  "2026-07-17": "Charla magistral (CM)",
-  "2026-07-20": "Evento Derecho",
-  "2026-07-21": "Redacción del cuerpo del texto (Parte II) (TP)",
-  "2026-07-22": "Evento Derecho",
-  "2026-07-23": "Redacción de la introducción y conclusiones de la RL(TP)",
-  "2026-07-24": "Evento Derecho",
-  "2026-07-30": "Finalización de la revisión de literatura, breve inducción sobre la ética en la investigación y posible diseño visual (TP)",
-  "2026-08-04": "Sesión de Cierre: Presentación de los trabajos en vivo (CM)"
+
+  /* ==========================
+     JUNIO
+  ========================== */
+
+  "2026-06-25": {
+    tipo: "CM",
+    titulo: "Inauguración del evento",
+    modalidad: "Híbrida",
+    horario: "11:00 a. m. - 1:00 p. m.",
+    link: "#"
+  },
+
+  /* ==========================
+     JULIO
+  ========================== */
+
+  "2026-07-02": {
+    tipo: "TP",
+    titulo: "Sesión 1: Descubriendo la Ingeniería Biomédica y mi tema de investigación",
+    objetivo: "Comprender qué es una revisión de literatura y elegir un tema de ingeniería biomédica de interés.",
+    responsable: "Selena Sevincha",
+    modalidad: "Virtual",
+    horario: "3:00 p. m. a 5:00 p. m.",
+    descripcion: "Aprenderás la diferencia entre un artículo original y una revisión de literatura. Participarás en una lluvia de ideas sobre ingeniería biomédica y harás un ejercicio práctico de discusión en voz alta en pequeños grupos para definir tu tema y tu pregunta de investigación inicial.",
+    link: "#"
+  },
+
+  "2026-07-03": {
+    tipo: "SC",
+    titulo: "Sesión de motivación: Proyectos PUCP",
+    modalidad: "Por confirmar",
+    link: "#"
+  },
+
+  "2026-07-07": {
+    tipo: "TP",
+    titulo: "Sesión 2: Búsqueda de información e indagación del tema escogido",
+    objetivo: "Aprender a buscar en bases de datos confiables y descartar información no académica o de autoridad dudosa.",
+    responsable: "Diego Márquez",
+    modalidad: "Virtual",
+    horario: "3:00 p. m. a 5:00 p. m.",
+    descripcion: "Conocerás el uso de herramientas como Google Académico, PubMed e IEEE, aplicando palabras clave y operadores de búsqueda. Aprenderás a evaluar la calidad de tus fuentes mediante el Test CRAAP y armarás una lista preliminar de 3 a 5 fuentes confiables.",
+    link: "#"
+  },
+
+  "2026-07-09": {
+    tipo: "TP",
+    titulo: "Sesión 3: Lectura y delimitación del tema (y/o pregunta de investigación)",
+    objetivo: "Leer críticamente y acotar el tema de investigación.",
+    responsable: "Diego Márquez",
+    modalidad: "Virtual",
+    horario: "3:00 p. m. a 5:00 p. m.",
+    descripcion: "Aprenderás estrategias para leer un artículo académico de forma efectiva, concentrándote en el resumen, la introducción y las conclusiones.",
+    link: "#"
+  },
+
+  "2026-07-11": {
+    tipo: "SC",
+    titulo: "Sesión de motivación: Proyectos internacionales",
+    modalidad: "Por confirmar",
+    link: "#"
+  },
+
+  "2026-07-14": {
+    tipo: "TP",
+    titulo: "Sesión 4: Organización de ideas y esquema de redacción",
+    objetivo: "Sintetizar la investigación previa y estructurar la revisión de literatura.",
+    responsable: "Dalia Loayza",
+    modalidad: "Virtual",
+    horario: "3:00 p. m. a 5:00 p. m.",
+    descripcion: "Conocerás diferentes patrones para organizar tu texto y realizarás actividades prácticas para construir tu esquema de trabajo.",
+    link: "#"
+  },
+
+  "2026-07-15": {
+    tipo: "SC",
+    titulo: "Sesión de motivación: Proyectos PUCP",
+    modalidad: "Por confirmar",
+    link: "#"
+  },
+
+  "2026-07-16": {
+    tipo: "TP",
+    titulo: "Sesión 5: Redacción del cuerpo del texto (Parte I)",
+    objetivo: "Redactar el primer subtema integrando las fuentes y evitando el plagio.",
+    responsable: "Selena Sevincha",
+    modalidad: "Virtual",
+    horario: "3:00 p. m. a 5:00 p. m.",
+    descripcion: "Aprenderás las bases para la construcción de párrafos, el uso de conectores lógicos y la importancia de citar correctamente.",
+    link: "#"
+  },
+
+  "2026-07-17": {
+    tipo: "CM",
+    titulo: "Segunda sesión (Charla Magistral)",
+    modalidad: "Híbrida",
+    link: "#"
+  },
+
+  "2026-07-20": {
+    tipo: "SD",
+    titulo: "Semana de Derecho: Propiedad Intelectual",
+    modalidad: "Por confirmar",
+    link: "#"
+  },
+
+  "2026-07-21": {
+    tipo: "TP",
+    titulo: "Sesión 6: Redacción del cuerpo del texto (Parte II)",
+    objetivo: "Desarrollar el segundo subtema, fomentando el análisis crítico.",
+    responsable: "Selena Sevincha",
+    modalidad: "Virtual",
+    horario: "3:00 p. m. a 5:00 p. m.",
+    descripcion: "Aprenderás a realizar transiciones correctas entre párrafos y a hacer dialogar distintas fuentes académicas.",
+    link: "#"
+  },
+
+  "2026-07-22": {
+    tipo: "SD",
+    titulo: "Semana de Derecho: Ética en Investigación",
+    modalidad: "Virtual",
+    link: "#"
+  },
+
+  "2026-07-23": {
+    tipo: "TP",
+    titulo: "Sesión 7: Redacción de la introducción y conclusiones de la RL",
+    objetivo: "Enganchar al lector y avanzar en los hallazgos de la investigación.",
+    responsable: "Ana Martínez",
+    modalidad: "Virtual",
+    horario: "3:00 p. m. a 5:00 p. m.",
+    descripcion: "Aprenderás a estructurar la introducción y la conclusión para completar el borrador final de tu revisión de literatura.",
+    link: "#"
+  },
+
+  "2026-07-24": {
+    tipo: "SD",
+    titulo: "Semana de Derecho: Protección de Datos",
+    modalidad: "Virtual",
+    link: "#"
+  },
+
+  "2026-07-30": {
+    tipo: "TP",
+    titulo: "Sesión 8: Finalización de la revisión de literatura, ética y diseño visual",
+    objetivo: "Pulir la redacción del texto escrito, preparar la presentación oral y recibir una inducción sobre ética.",
+    responsable: "Mónica Arakaki",
+    modalidad: "Virtual",
+    horario: "3:00 p. m. a 5:00 p. m.",
+    descripcion: "Conocerás estrategias para la producción escrita integral de tu trabajo, elaboración de diapositivas, uso ético de IA y presentación oral.",
+    link: "#"
+  },
+
+  /* ==========================
+     AGOSTO
+  ========================== */
+
+  "2026-08-04": {
+    tipo: "CM",
+    titulo: "Sesión de Cierre: Presentación de los trabajos en vivo",
+    objetivo: "Exponer oralmente los hallazgos de la investigación de manera clara y articulada.",
+    responsable: "Edilberto Casado",
+    modalidad: "Híbrida",
+    horario: "11:00 a. m. a 1:00 p. m.",
+    descripcion: "Evento final del taller donde los estudiantes presentarán y defenderán sus trabajos de investigación.",
+    link: "#"
+  }
+
 };
 
 let mesActual = 5; // junio (0 = enero)
@@ -562,7 +778,7 @@ function renderCalendar(){
     if(eventos[fecha]){
       let evento = document.createElement("span");
       evento.classList.add("evento-label");
-      evento.innerText = eventos[fecha];
+      evento.innerText = eventos[fecha].titulo;
 
       div.onclick = () => abrirModal(fecha, eventos[fecha]);
       
@@ -572,10 +788,17 @@ function renderCalendar(){
     if(eventos[fecha]){
       div.classList.add("tiene-evento");
     
-      if(eventos[fecha].includes("(TP")) div.classList.add("tp");
-      if(eventos[fecha].includes("(CM")) div.classList.add("cm");
-      if(eventos[fecha].includes("(SC")) div.classList.add("sc");
-      if(eventos[fecha].includes("Derecho")) div.classList.add("sd");
+      if(eventos[fecha].tipo === "TP")
+        div.classList.add("tp");
+
+      if(eventos[fecha].tipo === "CM")
+        div.classList.add("cm");
+      
+      if(eventos[fecha].tipo === "SC")
+        div.classList.add("sc");
+      
+      if(eventos[fecha].tipo === "SD")
+        div.classList.add("sd");
     }
 
     calendar.appendChild(div);
@@ -604,10 +827,45 @@ function cambiarMes(dir){
   renderCalendar();
 }
 
-function abrirModal(fecha, info){
+function abrirModal(fecha, evento){
+
   document.getElementById("modal").style.display = "flex";
-  document.getElementById("modal-fecha").innerText = fecha;
-  document.getElementById("modal-info").innerText = info;
+
+  document.getElementById("modal-fecha").innerText =
+    "Fecha: " + fecha;
+
+  document.getElementById("modal-titulo").innerText =
+    evento.titulo || "";
+
+  document.getElementById("modal-objetivo").innerHTML =
+    evento.objetivo
+    ? "<strong>Objetivo:</strong> " + evento.objetivo
+    : "";
+
+  document.getElementById("modal-responsable").innerHTML =
+    evento.responsable
+    ? "<strong>A cargo de:</strong> " + evento.responsable
+    : "";
+
+  document.getElementById("modal-modalidad").innerHTML =
+    evento.modalidad
+    ? "<strong>Modalidad:</strong> " + evento.modalidad
+    : "";
+
+  document.getElementById("modal-horario").innerHTML =
+    evento.horario
+    ? "<strong>Horario:</strong> " + evento.horario
+    : "";
+
+  document.getElementById("modal-descripcion").innerHTML =
+    evento.descripcion
+    ? "<strong>Descripción:</strong><br>" + evento.descripcion
+    : "";
+
+  document.getElementById("modal-link").innerHTML =
+    evento.link && evento.link !== "#"
+    ? `<a href="${evento.link}" target="_blank">🔗 Acceder a la sesión</a>`
+    : "";
 }
 
 function cerrarModal(){
