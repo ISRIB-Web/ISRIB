@@ -819,99 +819,77 @@ html, body{
 }
   
 /* ===== RESPALDO INSTITUCIONAL ===== */
-
 #respaldo{
-  background:white;
-  border-radius:20px;
-  margin-top:20px;
-  padding:40px 20px;
-}
-
-#respaldo h2{
-  color:var(--azul);
+    background:white;
+    border-radius:20px;
+    padding:40px 20px;
+    margin-top:20px;
+    text-align:center;
 }
 
 .respaldo-grid{
-  display:grid;
-  grid-template-columns:repeat(2,1fr);
-  gap:25px;
-  margin-top:25px;
+    display:flex;
+    justify-content:center;
+    align-items:flex-start;
+    gap:80px;
+    flex-wrap:wrap;
+    margin-top:30px;
 }
 
-.respaldo-card{
-  background:white;
-  padding:30px;
-  border-radius:18px;
-  box-shadow:0 8px 20px rgba(0,0,0,0.12);
-  text-align:center;
-  transition:0.3s ease;
+.respaldo-item{
+    width:350px;
 }
 
-.respaldo-card:hover{
-  transform:translateY(-5px);
+.respaldo-item img{
+    max-width:250px;
+    max-height:120px;
+    width:auto;
+    height:auto;
+    transition:.3s;
 }
 
-.respaldo-card img{
-  max-height:120px;
-  width:auto;
-  object-fit:contain;
-  margin-bottom:15px;
+.respaldo-item img:hover{
+    transform:scale(1.05);
 }
 
-.respaldo-card h3{
-  color:var(--azul);
-  margin-bottom:10px;
+.respaldo-item h3{
+    color:var(--azul);
+    font-size:1rem;
+    margin-top:15px;
+    line-height:1.4;
 }
 
 /* ===== PATROCINADOR ===== */
-
 #patrocinador{
-  background:var(--verde);
-  border-radius:20px;
-  margin-top:20px;
-  padding:40px 20px;
-  color:white;
-  text-align:center;
+    background:white;
+    border-radius:20px;
+    padding:40px 20px;
+    margin-top:20px;
+    text-align:center;
 }
 
-#patrocinador h2{
-  color:white;
+.patrocinador-item{
+    max-width:500px;
+    margin:30px auto 0 auto;
 }
 
-.patrocinador-card{
-  background:white;
-  max-width:500px;
-  margin:25px auto 0;
-  padding:30px;
-  border-radius:18px;
-  box-shadow:0 8px 20px rgba(0,0,0,0.15);
+.patrocinador-item img{
+    max-width:350px;
+    max-height:140px;
+    width:auto;
+    height:auto;
+    transition:.3s;
 }
 
-.patrocinador-card img{
-  max-height:140px;
-  width:auto;
-  object-fit:contain;
+.patrocinador-item img:hover{
+    transform:scale(1.05);
 }
 
-.patrocinador-card h3{
-  color:var(--azul);
-  margin-top:15px;
+.patrocinador-item h3{
+    color:var(--azul);
+    margin-top:15px;
 }
 
-.patrocinador-card p{
-  color:var(--gris-oscuro);
-}
-  
-.respaldo-card img,
-.patrocinador-card img{
-  transition:0.3s ease;
-}
-
-.respaldo-card img:hover,
-.patrocinador-card img:hover{
-  transform:scale(1.05);
-  filter:brightness(1.05);
-}
 /* MÓVIL */
 
 @media(max-width:900px){
@@ -1866,38 +1844,52 @@ Especialistas que guiarán los talleres prácticos
   </a>
 </section>
 
-<div class="respaldo-card">
-  <a href="https://www.iisgaliciasur.es/es/" target="_blank">
-    <img src="respaldo/IISGS_marca_completa_GALICIA_SUR_color_fondo_transparente.png"
-         alt="Instituto de Investigación Sanitaria Galicia Sur">
-  </a>
-  <h3>Instituto de Investigación Sanitaria Galicia Sur</h3>
-</div>
+<!-- ===== RESPALDO INSTITUCIONAL ===== -->
+<section id="respaldo">
 
-<div class="respaldo-card">
+    <h2>Respaldo Institucional</h2>
 
-  <a href="https://www.pucp.edu.pe/" target="_blank">
-    <img src="respaldo/PUCP-(azul)-alta_resolución (1).png"
-         alt="Pontificia Universidad Católica del Perú">
-  </a>
-  <h3>Pontificia Universidad Católica del Perú</h3>
+    <div class="respaldo-grid">
 
-</div>
+        <div class="respaldo-item">
+            <a href="https://www.iisgaliciasur.es/es/" target="_blank">
+                <img src="respaldo/IISGS_marca_completa_GALICIA_SUR_color_fondo_transparente.png"
+                     alt="Instituto de Investigación Sanitaria Galicia Sur">
+            </a>
+            <h3>Instituto de Investigación Sanitaria Galicia Sur</h3>
+        </div>
 
-<div class="patrocinador-card">
+        <div class="respaldo-item">
+            <a href="https://www.pucp.edu.pe/" target="_blank">
+                <img src="respaldo/PUCP-(azul)-alta_resolución (1).png"
+                     alt="Pontificia Universidad Católica del Perú">
+            </a>
+            <h3>Pontificia Universidad Católica del Perú</h3>
+        </div>
 
-  <a href="https://lynbiolearning.com/"
-     target="_blank">
+    </div>
 
-    <img src="patrocinador/horizontal (1).png"
-         alt="Patrocinador">
+</section>
 
-  </a>
+<!-- ===== PATROCINADOR ===== -->
+<section id="patrocinador">
 
-  <h3>Nombre del Patrocinador</h3>
+    <h2>Patrocinador</h2>
 
-</div>
-  
+    <div class="patrocinador-item">
+
+        <a href="https://lynbiolearning.com/" target="_blank">
+            <img src="patrocinador/horizontal (1).png"
+                 alt="LynBio Learning">
+        </a>
+
+        <h3>LynBio Learning</h3>
+
+    </div>
+
+</section>
+
+<!-- ===== Footer ===== -->
 <footer id="contacto">
 <p>Contacto: isrib.official@gmail.com</p>
 <div class="social">
