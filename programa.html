@@ -250,7 +250,7 @@ th:nth-child(5), td:nth-child(5){
   margin-bottom:20px;
 }
 
-modal-content p{
+.modal-content p{
   margin:10px 0;
 }
 
@@ -385,12 +385,12 @@ El programa se desarrolla a través de diversas actividades académicas que comb
 
 <tr>
 <td>03 de julio</td>
-<td> 17:00 - 17:30 y 18:30 - 19:00 </td>
+<td> 17:00 - 17:30</td>
 <td>Sesiones de motivación "Ecosistema Espacial PUCP" y </td>
 <td>Virtual</td>
 <td>SC</td>
 </tr>
-
+  
 <tr>
 <td>03 de julio</td>
 <td>18:30 - 19:00 </td>
@@ -624,7 +624,7 @@ const eventos = {
   "2026-07-02": {
     tipo: "TP",
     tituloc: "TP1",
-    titulo:"Descubriendo la Ingeniería Biomédica y mi tema de investigación"
+    titulo:"Descubriendo la Ingeniería Biomédica y mi tema de investigación",
     objetivo: "Comprender qué es una revisión de literatura y elegir un tema de ingeniería biomédica de interés",
     responsable: "Selena Sevincha",
     modalidad: "Virtual",
@@ -763,7 +763,7 @@ const eventos = {
   "2026-07-24": {
     tipo: "SD",
     tituloc: "SD3",
-    tituloc: "Semana de Derecho: Protección de Datos",
+    titulo: "Semana de Derecho: Protección de Datos",
     modalidad: "Virtual",
     horario: "18:00 p. m. a 19:30 p. m.",
     link: "#"
@@ -888,8 +888,8 @@ function abrirModal(fecha, evento){
     evento.titulo || "";
 
   document.getElementById("modal-tituloc").innerHTML =
-    evento.modalidad
-    ? "<strong>Título:</strong> " + evento.modalidad
+    evento.titulo
+    ? "<strong>Título:</strong> " + evento.titulo
     : "";
   
   document.getElementById("modal-objetivo").innerHTML =
