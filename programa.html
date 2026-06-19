@@ -387,7 +387,7 @@ El programa se desarrolla a través de diversas actividades académicas que comb
 <td>03 de julio</td>
 <td> 17:00 - 17:30 y 18:30 - 19:00 </td>
 <td>Sesiones de motivación "Ecosistema Espacial PUCP" y </td>
-<td>- - - </td>
+<td>Virtual</td>
 <td>SC</td>
 </tr>
 
@@ -395,7 +395,7 @@ El programa se desarrolla a través de diversas actividades académicas que comb
 <td>03 de julio</td>
 <td>18:30 - 19:00 </td>
 <td>Sesiones de motivación "Desarrollo y Caracterización de un modelo de córnea artificial"</td>
-<td>- - - </td>
+<td>Virtual</td>
 <td>SC</td>
 </tr>
   
@@ -417,9 +417,9 @@ El programa se desarrolla a través de diversas actividades académicas que comb
 
 <tr>
 <td>11 de julio</td>
-<td> - - - </td>
+<td>(Por confirmar)</td>
 <td>Sesión de motivación (Proyectos internacionales)</td>
-<td>- - - </td>
+<td>Virtual</td>
 <td>SC</td>
 </tr>
 
@@ -435,7 +435,7 @@ El programa se desarrolla a través de diversas actividades académicas que comb
 <td>15 de julio</td>
 <td>17:30 - 18:00</td>
 <td>Sesión de motivación "Desarrollo de un exoesqueleto para el soporte de las extremidades inferiores (por precisar)"</td>
-<td>- - -</td>
+<td>Virtual</td>
 <td>SC</td>
 </tr>
 
@@ -443,7 +443,7 @@ El programa se desarrolla a través de diversas actividades académicas que comb
 <td>15 de julio</td>
 <td>18:00 - 18:30</td>
 <td>Sesión de motivación "Guante modular para la  cuantificación de bradicinesia y temblor en la enfermedad de Parkinson"</td>
-<td>- - -</td>
+<td>Virtual</td>
 <td>SC</td>
 </tr>
 
@@ -451,7 +451,7 @@ El programa se desarrolla a través de diversas actividades académicas que comb
 <td>15 de julio</td>
 <td>18:30 - 19:00</td>
 <td>Sesión de motivación "Biomecanica y Rehabilitación"</td>
-<td>- - -</td>
+<td>Virtual</td>
 <td>SC</td>
 </tr>
 
@@ -465,7 +465,7 @@ El programa se desarrolla a través de diversas actividades académicas que comb
 
 <tr>
 <td>17 de julio</td>
-<td> - - - </td>
+<td>11:00 - 13:00</td>
 <td>Segunda sesión (Charla Magistral)</td>
 <td>Híbrida</td>
 <td>CM</td>
@@ -473,9 +473,9 @@ El programa se desarrolla a través de diversas actividades académicas que comb
 
 <tr>
 <td>20 de julio</td>
-<td> - - - </td>
+<td>18:00 - 19:30</td>
 <td>Evento de Derecho</td>
-<td>- - - </td>
+<td>Virtual</td>
 <td>SD</td>
 </tr>
 
@@ -489,7 +489,7 @@ El programa se desarrolla a través de diversas actividades académicas que comb
 
 <tr>
 <td>22 de julio</td>
-<td> - - - </td>
+<td>18:00 - 19:30</td>
 <td>Evento de Derecho</td>
 <td>Virtual</td>
 <td>SD</td>
@@ -505,7 +505,7 @@ El programa se desarrolla a través de diversas actividades académicas que comb
 
 <tr>
 <td>24 de julio</td>
-<td> - - - </td>
+<td>18:00 - 19:30</td>
 <td>Evento de Derecho</td>
 <td>Virtual</td>
 <td>SD</td>
@@ -521,7 +521,7 @@ El programa se desarrolla a través de diversas actividades académicas que comb
 
 <tr>
 <td>04 de agosto</td>
-<td> 11:00 - 13:00</td>
+<td>11:00 - 13:00</td>
 <td>Sesión de Cierre: Presentación de los trabajos en vivo</td>
 <td>Híbrida</td>
 <td>CM</td>
@@ -583,7 +583,9 @@ El programa se desarrolla a través de diversas actividades académicas que comb
 
     <h3 id="modal-fecha"></h3>
 
-    <h4 id="modal-titulo"></h4>
+    <h4 id="modal-tituloc"></h4>
+
+    <p id="modal-titulo"></p>
 
     <p id="modal-objetivo"></p>
 
@@ -609,7 +611,7 @@ const eventos = {
 
   "2026-06-25": {
     tipo: "CM",
-    titulo: "Inauguración del evento",
+    tituloc: "Inauguración del evento",
     modalidad: "Híbrida",
     horario: "11:00 a. m. - 1:00 p. m.",
     link: "#"
@@ -621,8 +623,9 @@ const eventos = {
 
   "2026-07-02": {
     tipo: "TP",
-    titulo: "Sesión 1: Descubriendo la Ingeniería Biomédica y mi tema de investigación",
-    objetivo: "Comprender qué es una revisión de literatura y elegir un tema de ingeniería biomédica de interés.",
+    tituloc: "TP1",
+    titulo:"Descubriendo la Ingeniería Biomédica y mi tema de investigación"
+    objetivo: "Comprender qué es una revisión de literatura y elegir un tema de ingeniería biomédica de interés",
     responsable: "Selena Sevincha",
     modalidad: "Virtual",
     horario: "3:00 p. m. a 5:00 p. m.",
@@ -632,16 +635,18 @@ const eventos = {
 
   "2026-07-03": {
     tipo: "SC",
-    titulo: "Sesión de motivación: Ecosistema Espacial PUCP y Desarrollo | Caracterización de un modelo de córnea artificial. ",
-    responsable: "Instituto de radioastronomía (INRAS PUCP) | Abraham Zabaleta Romero",
-    modalidad: "Por confirmar",
+    tituloc: "SC1",
+    titulo:"Ecosistema Espacial PUCP y Desarrollo | Caracterización de un modelo de córnea artificial",
+    responsable: "Neils Edison Vilchez Lagos (INRAS PUCP) | Abraham Zabaleta Romero",
+    modalidad: "Virtual",
     horario: "5:00 p.m. - 5:30 p.m. | 6:30 p.m. - 7:00 p.m",
     link: "#"
   },
 
   "2026-07-07": {
     tipo: "TP",
-    titulo: "Sesión 2: Búsqueda de información e indagación del tema escogido",
+    tituloc: "TP2" ,
+    titulo: "Búsqueda de información e indagación del tema escogido",
     objetivo: "Aprender a buscar en bases de datos confiables y descartar información no académica o de autoridad dudosa.",
     responsable: "Diego Márquez",
     modalidad: "Virtual",
@@ -652,6 +657,7 @@ const eventos = {
 
   "2026-07-09": {
     tipo: "TP",
+    tituloc: "TP3",
     titulo: "Sesión 3: Lectura y delimitación del tema (y/o pregunta de investigación)",
     objetivo: "Leer críticamente y acotar el tema de investigación.",
     responsable: "Diego Márquez",
@@ -663,14 +669,16 @@ const eventos = {
 
   "2026-07-11": {
     tipo: "SC",
-    titulo: "Sesión de motivación: Proyectos internacionales",
-    modalidad: "Por confirmar",
+    tituloc: "SC2",
+    titulo: "Sesión de motivación: Proyectos internacionale (por confirmar)",
+    modalidad: "Virtual",
     link: "#"
   },
 
   "2026-07-14": {
     tipo: "TP",
-    titulo: "Sesión 4: Organización de ideas y esquema de redacción",
+    tituloc: "TP4",
+    titulo: "Organización de ideas y esquema de redacción",
     objetivo: "Sintetizar la investigación previa y estructurar la revisión de literatura.",
     responsable: "Dalia Loayza",
     modalidad: "Virtual",
@@ -681,7 +689,8 @@ const eventos = {
 
   "2026-07-15": {
     tipo: "SC",
-    titulo: "Sesión de motivación: Desarrollo de un exoesqueleto para el soporte de las extremidades inferiores (por precisar) | Guante modular para la  cuantificación de bradicinesia y temblor en la enfermedad de Parkinson | Biomecanica y Rehabilitación",
+    tituloc: "SC3",
+    titulo: "Desarrollo de un exoesqueleto para el soporte de las extremidades inferiores (por precisar) | Guante modular para la  cuantificación de bradicinesia y temblor en la enfermedad de Parkinson | Biomecanica y Rehabilitación",
     responsable: "Eric Moscoso Muñiz | Lucero Munive Huaranga | Ana Céspedes Trece",
     modalidad: "Por confirmar",
     horario: "5:30 p.m. - 6:00 p.m. | 6:00 p.m. - 6:30 p.m. | 6:30 p.m. - 7:00 p.m.",
@@ -690,7 +699,8 @@ const eventos = {
 
   "2026-07-16": {
     tipo: "TP",
-    titulo: "Sesión 5: Redacción del cuerpo del texto (Parte I)",
+    tituloc: "TP5",
+    titulo: "Redacción del cuerpo del texto (Parte I)",
     objetivo: "Redactar el primer subtema integrando las fuentes y evitando el plagio.",
     responsable: "Selena Sevincha",
     modalidad: "Virtual",
@@ -701,21 +711,26 @@ const eventos = {
 
   "2026-07-17": {
     tipo: "CM",
-    titulo: "Segunda sesión (Charla Magistral)",
+    tituloc: "Segunda sesión  de Charla Magistral",
+    titulo: "Charla Magistral II",
     modalidad: "Híbrida",
+    horario: "11:00 a. m. a 13:00 p. m.",
     link: "#"
   },
 
   "2026-07-20": {
     tipo: "SD",
+    tituloc: "SD1",
     titulo: "Semana de Derecho: Propiedad Intelectual",
-    modalidad: "Por confirmar",
+    modalidad: "Virtual",
+    horario: "18:00 p. m. a 19:30 p. m.",
     link: "#"
   },
 
   "2026-07-21": {
     tipo: "TP",
-    titulo: "Sesión 6: Redacción del cuerpo del texto (Parte II)",
+    tituloc: "TP6",
+    titulo: "Redacción del cuerpo del texto (Parte II)",
     objetivo: "Desarrollar el segundo subtema, fomentando el análisis crítico.",
     responsable: "Selena Sevincha",
     modalidad: "Virtual",
@@ -726,14 +741,17 @@ const eventos = {
 
   "2026-07-22": {
     tipo: "SD",
+    tituloc: "SD2",
     titulo: "Semana de Derecho: Ética en Investigación",
     modalidad: "Virtual",
+    horario: "18:00 p. m. a 19:30 p. m.",
     link: "#"
   },
 
   "2026-07-23": {
     tipo: "TP",
-    titulo: "Sesión 7: Redacción de la introducción y conclusiones de la RL",
+    tituloc: "TP7",
+    titulo: "Redacción de la introducción y conclusiones de la RL",
     objetivo: "Enganchar al lector y avanzar en los hallazgos de la investigación.",
     responsable: "Ana Martínez",
     modalidad: "Virtual",
@@ -744,14 +762,17 @@ const eventos = {
 
   "2026-07-24": {
     tipo: "SD",
-    titulo: "Semana de Derecho: Protección de Datos",
+    tituloc: "SD3",
+    tituloc: "Semana de Derecho: Protección de Datos",
     modalidad: "Virtual",
+    horario: "18:00 p. m. a 19:30 p. m.",
     link: "#"
   },
 
   "2026-07-30": {
     tipo: "TP",
-    titulo: "Sesión 8: Finalización de la revisión de literatura, ética y diseño visual",
+    tituloc: "TP8",
+    titulo: "Finalización de la revisión de literatura, ética y diseño visual",
     objetivo: "Pulir la redacción del texto escrito, preparar la presentación oral y recibir una inducción sobre ética.",
     responsable: "Mónica Arakaki",
     modalidad: "Virtual",
@@ -766,7 +787,8 @@ const eventos = {
 
   "2026-08-04": {
     tipo: "CM",
-    titulo: "Sesión de Cierre: Presentación de los trabajos en vivo",
+    tituloc: "Sesión de Cierre: Presentación de los trabajos en vivo",
+    titulo: "Presentación de los trabajos en vivo",
     objetivo: "Exponer oralmente los hallazgos de la investigación de manera clara y articulada.",
     responsable: "Edilberto Casado",
     modalidad: "Híbrida",
@@ -862,9 +884,14 @@ function abrirModal(fecha, evento){
   document.getElementById("modal-fecha").innerText =
     "Fecha: " + fecha;
 
-  document.getElementById("modal-titulo").innerText =
+  document.getElementById("modal-tituloc").innerText =
     evento.titulo || "";
 
+  document.getElementById("modal-tituloc").innerHTML =
+    evento.modalidad
+    ? "<strong>Título:</strong> " + evento.modalidad
+    : "";
+  
   document.getElementById("modal-objetivo").innerHTML =
     evento.objetivo
     ? "<strong>Objetivo:</strong> " + evento.objetivo
