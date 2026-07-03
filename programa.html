@@ -450,7 +450,7 @@ El programa se desarrolla a través de diversas actividades académicas que comb
 <tr>
 <td>15 de julio</td>
 <td>18:30 - 19:00</td>
-<td>Sesión de motivación "Biomecanica y Rehabilitación"</td>
+<td>Sesión de motivación "Biomecánica y Rehabilitación"</td>
 <td>Virtual</td>
 <td>SC</td>
 </tr>
@@ -554,7 +554,7 @@ El programa se desarrolla a través de diversas actividades académicas que comb
 
   <div class="card-d">
     
-    <h3>Experiencias en al inevstigación jurídica</h3>
+    <h3>Experiencias en la investigación jurídica</h3>
     <h3>24/07/26</h3>
     <p>Se explorará el manejo responsable de datos personales en proyectos de investigación.</p>
   </div>
@@ -637,7 +637,7 @@ const eventos = {
     tipo: "SC",
     tituloc: "SC1",
     titulo:"Ecosistema Espacial PUCP y Desarrollo | Caracterización de un modelo de córnea artificial",
-    responsable: "Neils Edison Vilchez Lagos (INRAS PUCP) | Abraham Zabaleta Romero",
+    responsable: "Neils Edison Vilchez Lagos (INRAS PUCP) | Abraham Zavaleta Romero",
     modalidad: "Virtual",
     horario: "5:00 p.m. - 5:30 p.m. | 6:30 p.m. - 7:00 p.m",
     link: "#"
@@ -670,7 +670,7 @@ const eventos = {
   "2026-07-11": {
     tipo: "SC",
     tituloc: "SC2",
-    titulo: "Sesión de motivación: Proyectos internacionale (por confirmar)",
+    titulo: "Sesión de motivación: Proyectos internacionales (por confirmar)",
     modalidad: "Virtual",
     link: "#"
   },
@@ -765,7 +765,7 @@ const eventos = {
   "2026-07-24": {
     tipo: "SD",
     tituloc: "SD3",
-    titulo: "Semana de Derecho: Experiencias en la invetsigación jurídica",
+    titulo: "Semana de Derecho: Experiencias en la investigación jurídica",
     responsable: "Edison Tabra",
     modalidad: "Virtual",
     horario: "18:00 p. m. a 19:30 p. m.",
@@ -855,11 +855,8 @@ function renderCalendar(){
     }
 
     calendar.appendChild(div);
-
-    if(eventos[fecha]){
-      div.classList.add("tiene-evento");
-    }
   }
+  
   const btnPrev = document.querySelector(".calendar-header button:first-child");
   const btnNext = document.querySelector(".calendar-header button:last-child");
   
@@ -890,7 +887,7 @@ function abrirModal(fecha, evento){
   document.getElementById("modal-tituloc").innerText =
     evento.titulo || "";
 
-  document.getElementById("modal-tituloc").innerHTML =
+  document.getElementById("modal-titulo").innerHTML =
     evento.titulo
     ? "<strong>Título:</strong> " + evento.titulo
     : "";
